@@ -1,11 +1,9 @@
 import React, {ReactNode, useState} from 'react';
 import clsx from 'clsx';
-import Image from 'next/image'
 import Link from 'next/link';
 import styles from './Navigation.module.scss'
-import closeIcon from '../../assets/X.png';
-import hamburgerIcon from '../../assets/hamburger.png';
 import {useRouter} from "next/router";
+import Icon from '../icon/icon'
 
 interface CustomLinkProps {
     to: string;
@@ -14,27 +12,25 @@ interface CustomLinkProps {
 }
 
 export const Navigation = (): React.JSX.Element => {
-
-
-    const [isMobileHidden, setMobileHidden] = useState(true);
+    const [isMobileMenuHidden, setMobileMenuHidden] = useState(true);
     const [isClosedClicked, setClosedClicked] = useState(false);
 
     const changemenu = () => {
-        setMobileHidden(!isMobileHidden);
+        setMobileMenuHidden(!isMobileMenuHidden);
+    };
+
+    const handleIconState = (state: boolean) => {
+        if(state){
+            setClosedClicked(true);
+            changemenu();
+        } else
+            setClosedClicked(false);
     };
 
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             changemenu();
         }
-    };
-    const close = () => {
-        setClosedClicked(true);
-        changemenu();
-    };
-
-    const closeOnKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') close();
     };
 
     //This method sees what page is active and then bolds the active page's text
@@ -59,35 +55,28 @@ export const Navigation = (): React.JSX.Element => {
             <div className={styles.header__left}>
                 <Link href='/'><h2>Job Derksen</h2></Link>
             </div>
+
             <div className={styles.header__right}>
                 <div
                     className={styles.header__menu}
                     onClick={changemenu}
                     onKeyDown={handleKeyPress}
+                    style={{position:"absolute", zIndex:10001}}
                 >
-                    <Image src={hamburgerIcon} alt='icon' className={'icons'} style={{ height: '20px', width: '30px'}} />
+                    <Icon state={handleIconState}/>
                 </div>
                 <div
                     className={clsx({
                         [styles['slide-out-animation']]: isClosedClicked,
-                        [styles['header__desktop-links']]: isMobileHidden,
-                        [styles['header__mobile-links']]: !isMobileHidden,
+                        [styles['header__desktop-links']]: isMobileMenuHidden,
+                        [styles['header__mobile-links']]: !isMobileMenuHidden
                     })}
                 >
-                    <div className={styles['header__mobile-close-container']}>
-                        <div
-                            onClick={close}
-                            onKeyDown={closeOnKeyPress}
-                            className={styles['header__mobile-close']}
-                        >
-                            <Image src={closeIcon} alt='icon' className={'icons'} style={{ height: '20px', width: '20px' }} />
 
-                        </div>
-                    </div>
                     <div className={styles['header__right-links']}>
                         <ul className={styles.nav_links}>
                             <CustomLink to={'/about'} className='header__nav-link'>About Me</CustomLink>
-                            <CustomLink to={'/projects'} className='header__nav-link'>My Projects</CustomLink>
+                            <CustomLink to={'/projects'} className='header__nav-link'>Portfolio</CustomLink>
                             <CustomLink to={'/contact'} className='header__nav-link'>Contact me</CustomLink>
                         </ul>
                     </div>

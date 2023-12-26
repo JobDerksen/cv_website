@@ -1,6 +1,7 @@
 import React from "react";
 import Head from 'next/head'
 import {PageComponent} from "@/components/pageComponent/PageComponent";
+import Icon from "@/components/icon/icon";
 const About = () => {
 return(
     <>
