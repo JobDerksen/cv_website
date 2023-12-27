@@ -39,7 +39,7 @@ export const Navigation = (): React.JSX.Element => {
         return (
             <li className={clsx({
                 [styles['nav_links_active']]: isActive,
-                [styles['nav_links']]: !isActive
+                [styles['nav_links_notActive']]: !isActive
             })}>
                 <Link href={to} passHref {...props}>
                     {children}

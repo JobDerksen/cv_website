@@ -40,7 +40,7 @@
   background-color: #E0E0E0;
 
   @media (max-width: 800px) {
-    padding: 0 1rem 1rem;
+    padding: 0 1rem 0;
   }
 
   align-items: center;
@@ -157,6 +157,10 @@
 .nav_links {
   display: flex;
   list-style-type: none;
+
+  &_notActive{
+    text-shadow:1px 0 0 #E0E0E0;
+  }
 
   &_active {
     text-shadow:1px 0 0 #4e5555;
