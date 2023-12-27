@@ -36,11 +36,12 @@
 .header {
   display: flex;
   width: auto;
-  padding: 0.25rem 2rem;
+  padding: 0.25rem 2rem 0;
+  height: 4rem;
   background-color: #E0E0E0;
 
   @media (max-width: 800px) {
-    padding: 0 0.4rem 0;
+    padding: 0 0.5rem 0;
   }
 
   align-items: center;
@@ -53,7 +54,7 @@
     @media (max-width: 800px) {
       display: flex;
       right: 0.6rem;
-      top: 1.8rem;
+      top: 1.1rem;
     }
 
     align-items: center;
@@ -99,7 +100,6 @@
     @media (max-width: 800px) {
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
       a{
         h2{
           font-size: 1.75rem;
