@@ -1,15 +1,11 @@
 import React, {useState} from "react";
 import styles from "./icon.module.scss"
 
-type props = {
-    state: (data: boolean) => void;
-};
-const Icon: React.FC<props> = ({state}) => {
+const Icon: React.FC = () => {
 
     const [isActive, setIsActive] = useState(false)
     const handleClick = () => {
         setIsActive(!isActive)
-        state(isActive)
     }
 
     return (
