@@ -23,6 +23,7 @@ export const Navigation = (): React.JSX.Element => {
     },[router.pathname, screenWidth])
 
     const changemenu = () => {
+        setMobileScreen(true)
         setMobileMenuHidden(!isMobileMenuHidden);
     };
 
@@ -51,7 +52,11 @@ export const Navigation = (): React.JSX.Element => {
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
-                <Link href='/'><h2>Job Derksen</h2></Link>
+                <Link href='/' className={styles.displayLinebreak}>
+                    <h2 className={styles.siteTitle}>
+                        <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
+                    </h2>
+                </Link>
             </div>
 
             <div className={styles.header__right}>
@@ -73,9 +78,9 @@ export const Navigation = (): React.JSX.Element => {
 
                     <div className={styles['header__right-links']}>
                         <ul className={styles.nav_links}>
-                            <CustomLink to={'/about'} className='header__nav-link'>About Me</CustomLink>
+                            <CustomLink to={'/about'} className='header__nav-link'>About</CustomLink>
                             <CustomLink to={'/projects'} className='header__nav-link'>Portfolio</CustomLink>
-                            <CustomLink to={'/contact'} className='header__nav-link'>Contact Me</CustomLink>
+                            <CustomLink to={'/contact'} className='header__nav-link'>Contact</CustomLink>
                         </ul>
                     </div>
                 </div>

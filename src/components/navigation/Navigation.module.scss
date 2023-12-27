@@ -12,14 +12,14 @@
 @keyframes slide-out {
   from {
     transform: translateY(90%);
-    background-color: white;
-    margin-top: 5rem;
+    background-color: #E0E0E0;
+    margin-top: 3.5rem;
   }
 
   to {
     transform: translateY(-200%);
-    background-color: white;
-    margin-top: 5rem;
+    background-color: #E0E0E0;
+    margin-top: 3.5rem;
   }
 }
 
@@ -36,12 +36,11 @@
 .header {
   display: flex;
   width: auto;
-  padding: 1rem 2rem;
-  background-color: white;
-  color: white;
+  padding: 0.25rem 2rem;
+  background-color: #E0E0E0;
 
   @media (max-width: 800px) {
-    padding: 1rem;
+    padding: 0 1rem 1rem;
   }
 
   align-items: center;
@@ -50,13 +49,11 @@
   &__menu {
     cursor: pointer;
     display: none;
-    font-size: 1.5rem;
-    font-weight: 700;
 
     @media (max-width: 800px) {
       display: flex;
       right: 2rem;
-      top: 2rem;
+      top: 1.3rem;
     }
 
     align-items: center;
@@ -94,7 +91,7 @@
     a{
       text-decoration: none;
       h2{
-        color: black;
+        color: #232b2b;
         font-weight: 400;
       }
     }
@@ -106,7 +103,7 @@
       height: 50%;
       a{
         h2{
-          font-size: 1.5rem;
+          font-size: 1.75rem;
         }
       }
     }
@@ -133,12 +130,12 @@
 
     // This is the styles for the actual panel that slides in
     &-links {
-      background-color: white;
+      background-color: #E0E0E0;
       display: flex;
       gap: 1rem;
 
       @media (max-width: 800px) {
-        margin-top: 5rem;
+        margin-top: 3.5rem;
         padding-right: 1.2rem;
         position: fixed;
         flex-direction: column;
@@ -162,7 +159,7 @@
   list-style-type: none;
 
   &_active {
-    text-shadow:1px 0 0 #333;
+    text-shadow:1px 0 0 #4e5555;
   }
 
   // if item to left and right apply margin
@@ -187,10 +184,10 @@
     font-size: 1rem;
     line-height: 150%;
     position: relative;
-    color: black;
+    color: #4e5555;
     a {
       text-decoration: none;
-      color: black;
+      color: #4e5555;
       font-size: 1.25rem;
     }
 
