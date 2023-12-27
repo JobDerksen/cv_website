@@ -40,7 +40,7 @@
   background-color: #E0E0E0;
 
   @media (max-width: 800px) {
-    padding: 0 1rem 0;
+    padding: 0 0.4rem 0;
   }
 
   align-items: center;
@@ -52,7 +52,7 @@
 
     @media (max-width: 800px) {
       display: flex;
-      right: 2rem;
+      right: 0.6rem;
       top: 1.3rem;
     }
 
@@ -111,22 +111,6 @@
 
 
   &__mobile {
-
-    // The close menu button
-    &-close-container {
-      padding: 2rem;
-      justify-content: flex-end;
-      display: none;
-
-      @media (max-width: 800px) {
-        display: flex;
-      }
-    }
-
-    &-close {
-      display: flex;
-      cursor: pointer;
-    }
 
     // This is the styles for the actual panel that slides in
     &-links {
