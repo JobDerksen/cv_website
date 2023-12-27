@@ -52,8 +52,8 @@ export const Navigation = (): React.JSX.Element => {
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
-                <Link href='/' className={styles.displayLinebreak}>
-                    <h2 className={styles.siteTitle}>
+                <Link href='/'>
+                    <h2>
                         <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
                     </h2>
                 </Link>
