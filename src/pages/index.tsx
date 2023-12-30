@@ -7,7 +7,7 @@ export default function Home() {
 
     const Home = () => {
         return (
-            <div className='pageContainer' id='/'>
+            <div className='pageContainerHome' id='/'>
                 <div className='content'>
                     Home Page
                 </div>
