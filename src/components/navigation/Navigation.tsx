@@ -1,9 +1,9 @@
 import React, {ReactNode, useEffect, useState} from 'react';
 import clsx from 'clsx';
-import Link from 'next/link';
 import styles from './Navigation.module.scss'
 import {useRouter} from "next/router";
 import Icon from '../icon/icon'
+import { Link } from "react-scroll";
 
 interface CustomLinkProps {
     to: string;
@@ -41,7 +41,7 @@ export const Navigation = (): React.JSX.Element => {
                 [styles['nav_links_active']]: isActive,
                 [styles['nav_links_notActive']]: !isActive
             })}>
-                <Link href={to} passHref {...props}>
+                <Link to={to} activeClass={'Active'} spy={true} smooth={true} offset={0} duration={500}>
                     {children}
                 </Link>
             </li>
@@ -52,7 +52,7 @@ export const Navigation = (): React.JSX.Element => {
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
-                <Link href='/'>
+                <Link to='/' activeClass={'Active'} spy={true} smooth={true} offset={0} duration={500}>
                     <h2>
                         <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
                     </h2>
