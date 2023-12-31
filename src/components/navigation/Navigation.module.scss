@@ -90,6 +90,7 @@
   &__left {
     align-items: flex-end;
     padding-left: 0.5rem;
+    cursor: pointer;
     z-index: 20000;
 
     a{
@@ -143,6 +144,7 @@
 .nav_links {
   display: flex;
   list-style-type: none;
+  cursor: pointer;
 
   &_notActive{
     text-shadow:1px 0 0 #E0E0E0;

@@ -16,6 +16,7 @@ export const Navigation = (): React.JSX.Element => {
     const router = useRouter();
     const [isMobileMenuHidden, setMobileMenuHidden] = useState(true);
     const [isMobileScreen, setMobileScreen] = useState(false);
+    const [isActive, setActive] = useState(false)
 
     useEffect(()=>{
         if(screenWidth < 800 && router.pathname !== '/') setMobileScreen(true)
@@ -27,6 +28,19 @@ export const Navigation = (): React.JSX.Element => {
         setMobileMenuHidden(!isMobileMenuHidden);
     };
 
+    const linkSelected = () => {
+        if(isMobileScreen){
+            setActive(!isActive)
+            changemenu();
+        }
+    }
+
+    const homeSelected = ()=>{
+        if(!isMobileMenuHidden)
+            linkSelected()
+    }
+
+
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             changemenu();
@@ -34,25 +48,29 @@ export const Navigation = (): React.JSX.Element => {
     };
 
     //This method sees what page is active and then bolds the active page's text
-    const CustomLink = ({ to, children, ...props }: CustomLinkProps) => {
-        const isActive = router.pathname === to;
+    const CustomLink = ({ to, children}: CustomLinkProps) => {
         return (
-            <li className={clsx({
-                [styles['nav_links_active']]: isActive,
-                [styles['nav_links_notActive']]: !isActive
-            })}>
-                <Link to={to} activeClass={'Active'} spy={true} smooth={true} offset={0} duration={500}>
+            <li>
+                <Link
+                    to={to}
+                    className={styles.nav_links_notActive}
+                    activeClass={styles.nav_links_active}
+                    spy={true}
+                    smooth={true}
+                    offset={-60}
+                    duration={500}
+                    onClick={linkSelected}
+                >
                     {children}
                 </Link>
             </li>
         );
     }
-
-
+    
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
-                <Link to='/' activeClass={'Active'} spy={true} smooth={true} offset={0} duration={500}>
+                <Link to='/' spy={true} smooth={true} offset={0} duration={500} onClick={homeSelected}>
                     <h2>
                         <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
                     </h2>
@@ -66,7 +84,7 @@ export const Navigation = (): React.JSX.Element => {
                     onKeyDown={handleKeyPress}
                     style={{position:"absolute", zIndex:10001}}
                 >
-                    <Icon/>
+                    <Icon receivedState={isActive}/>
                 </div>
                 <div
                     className={clsx({
@@ -78,9 +96,9 @@ export const Navigation = (): React.JSX.Element => {
 
                     <div className={styles['header__right-links']}>
                         <ul className={styles.nav_links}>
-                            <CustomLink to={'/about'} className='header__nav-link'>About</CustomLink>
-                            <CustomLink to={'/projects'} className='header__nav-link'>Portfolio</CustomLink>
-                            <CustomLink to={'/contact'} className='header__nav-link'>Contact</CustomLink>
+                            <CustomLink to={'/about'} className='header__nav-links'>About</CustomLink>
+                            <CustomLink to={'/projects'} className='header__nav-links'>Portfolio</CustomLink>
+                            <CustomLink to={'/contact'} className='header__nav-links'>Contact</CustomLink>
                         </ul>
                     </div>
                 </div>
