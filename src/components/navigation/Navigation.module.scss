@@ -35,10 +35,11 @@
 
 .header {
   display: flex;
-  width: auto;
-  padding: 0.25rem 2rem 0;
+  width: 100%;
+  padding: 0.25rem 2rem 0 0;
   height: 4rem;
   background-color: #E0E0E0;
+  position: fixed;
 
   @media (max-width: 800px) {
     padding: 0 0.5rem 0;
@@ -53,7 +54,7 @@
 
     @media (max-width: 800px) {
       display: flex;
-      right: 0.6rem;
+      right: 1.6rem;
       top: 1.1rem;
     }
 
@@ -82,11 +83,14 @@
 
   &__right {
     align-items: center;
+    padding-right: 1rem;
   }
 
 
   &__left {
     align-items: flex-end;
+    padding-left: 0.5rem;
+    cursor: pointer;
     z-index: 20000;
 
     a{
@@ -125,7 +129,7 @@
         top: 0;
         right: 0;
         width: 100%;
-        height: 40vw;
+        height: 10rem;
         z-index: 10000;
         animation: slide-in 0.2s ease-in-out;
 
@@ -140,6 +144,7 @@
 .nav_links {
   display: flex;
   list-style-type: none;
+  cursor: pointer;
 
   &_notActive{
     text-shadow:1px 0 0 #E0E0E0;

@@ -1,12 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./icon.module.scss"
+interface IconProps {
+    receivedState: boolean;
+}
+const Icon: React.FC<IconProps> = ({ receivedState}) => {
 
-const Icon: React.FC = () => {
-
-    const [isActive, setIsActive] = useState(false)
+    const [isActive, setIsActive] = useState(true)
     const handleClick = () => {
         setIsActive(!isActive)
     }
+
+    useEffect(()=>{
+        setIsActive(!isActive)
+    },[receivedState])
 
     return (
         <div
