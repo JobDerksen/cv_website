@@ -16,6 +16,11 @@ h1,h2,h3,h4,h5,h6,p
   text-align: center;
 }
 
+.pageTitle {
+  color: #232b2b;
+  font-weight: 100;
+}
+
 .pageContainer {
   height: 700px;
   padding-top: 1rem;
@@ -25,7 +30,6 @@ h1,h2,h3,h4,h5,h6,p
   height: 700px;
   padding-top: 5rem;
 }
-
 
 *{
   -ms-overflow-style: none;
