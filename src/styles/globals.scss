@@ -16,6 +16,11 @@ h1,h2,h3,h4,h5,h6,p
   text-align: center;
 }
 
+.pageTitle {
+  color: #232b2b;
+  font-weight: 100;
+}
+
 .pageContainer {
   height: 700px;
   padding-top: 1rem;
@@ -24,13 +29,6 @@ h1,h2,h3,h4,h5,h6,p
 .pageContainerHome {
   height: 700px;
   padding-top: 5rem;
-}
-
-.linkedinBadgeContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 *{
