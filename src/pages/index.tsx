@@ -23,7 +23,6 @@ export default function Home() {
 
     return (
         <>
-            <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
             <Navigation/>
             <Home/>
             <About/>

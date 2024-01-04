@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import styles from "./icon.module.scss"
+import styles from "./xIcon.module.scss"
 interface IconProps {
     receivedState: boolean;
 }
-const Icon: React.FC<IconProps> = ({ receivedState}) => {
+const XIcon: React.FC<IconProps> = ({ receivedState}) => {
 
     const [isActive, setIsActive] = useState(true)
     const handleClick = () => {
@@ -26,4 +26,4 @@ const Icon: React.FC<IconProps> = ({ receivedState}) => {
     )
 }
 
-export default Icon
+export default XIcon

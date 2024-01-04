@@ -22,12 +22,12 @@ h1,h2,h3,h4,h5,h6,p
 }
 
 .pageContainer {
-  height: 700px;
+  min-height: 100vh;
   padding-top: 1rem;
 }
 
 .pageContainerHome {
-  height: 700px;
+  min-height: 90vh;
   padding-top: 5rem;
 }
 

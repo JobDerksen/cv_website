@@ -2,7 +2,7 @@ import React, {ReactNode, useEffect, useState} from 'react';
 import clsx from 'clsx';
 import styles from './Navigation.module.scss'
 import {useRouter} from "next/router";
-import Icon from '../icon/icon'
+import XIcon from '@/components/icons/xIcon/xIcon'
 import { Link } from "react-scroll";
 
 interface CustomLinkProps {
@@ -40,7 +40,6 @@ export const Navigation = (): React.JSX.Element => {
             linkSelected()
     }
 
-
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             changemenu();
@@ -57,7 +56,7 @@ export const Navigation = (): React.JSX.Element => {
                     activeClass={styles.nav_links_active}
                     spy={true}
                     smooth={true}
-                    offset={-60}
+                    offset={-50}
                     duration={500}
                     onClick={linkSelected}
                 >
@@ -84,7 +83,7 @@ export const Navigation = (): React.JSX.Element => {
                     onKeyDown={handleKeyPress}
                     style={{position:"absolute", zIndex:10001}}
                 >
-                    <Icon receivedState={isActive}/>
+                    <XIcon receivedState={isActive}/>
                 </div>
                 <div
                     className={clsx({
@@ -96,9 +95,36 @@ export const Navigation = (): React.JSX.Element => {
 
                     <div className={styles['header__right-links']}>
                         <ul className={styles.nav_links}>
-                            <CustomLink to={'/about'} className='header__nav-links'>About</CustomLink>
-                            <CustomLink to={'/projects'} className='header__nav-links'>Portfolio</CustomLink>
-                            <CustomLink to={'/contact'} className='header__nav-links'>Contact</CustomLink>
+                            <CustomLink to={'/about'}>About</CustomLink>
+                            <li>
+                                <Link
+                                    to={'/projects'}
+                                    className={styles.nav_links_notActive}
+                                    activeClass={styles.nav_links_active}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-48}
+                                    duration={500}
+                                    onClick={linkSelected}
+                                >
+
+                                    Portfolio
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to={'/contact'}
+                                    className={styles.nav_links_notActive}
+                                    activeClass={styles.nav_links_active}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={5}
+                                    duration={500}
+                                    onClick={linkSelected}
+                                >
+                                    Contact
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
