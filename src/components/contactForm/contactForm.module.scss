@@ -5,6 +5,33 @@
   }
 }
 
+.button{
+  border: 0.01rem solid #4e5555;
+  float: right;
+  background-color: white;
+  font-family: 'montserrat', sans-serif;
+  cursor: pointer;
+  padding: 0.75rem;
+  font-size: 1rem;
+  @media (max-width: 800px) {
+    margin: 0 0.75rem 0.5rem;
+  }
+}
+
+.button:hover{
+  background-color: #4e5555;
+  color: white;
+  @media (max-width: 800px) {
+    background-color: white;
+    color: #4e5555;
+  }
+}
+
+.button:active {
+  background-color: #4e5555;
+  color: white;
+}
+
 .input_container {
   position: relative;
   display: flex;
@@ -63,39 +90,60 @@
   box-shadow: 0 0 0 2px #4e5555;
 }
 
-.input{
-  padding: 0.75rem;
-  border: 0.01rem solid #ccc;
-  font-size: 1rem;
-  width: 100%;
+.input_container_error {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_container_error:focus-within label {
+  transform: translate(0, 12px) scale(0.8);
+  color: #4e5555;
+}
+
+.input_container_error .filled {
+  transform: translate(0, 12px) scale(0.8);
+}
+
+.input_container_error label {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0, 23px) scale(1);
+  transform-origin: top left;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  color: #4e5555;
+  left: 16px;
+  top: -8px;
+}
+
+.input_container_error input {
+  line-height: 1;
+  outline: none;
+  box-shadow: none;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  padding: 24px 16px 4px 16px;
+  border: 0.01rem solid indianred;
   margin-bottom: 0.5rem;
   font-family: 'montserrat', sans-serif;
 }
 
-.button{
-  border: 0.01rem solid #4e5555;
-  float: right;
-  background-color: white;
+.input_container_error textarea {
+  line-height: 1;
+  height: 6rem;
+  outline: none;
+  box-shadow: none;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  padding: 24px 16px 4px 16px;
+  border: 0.01rem solid indianred;
+  margin-bottom: 0.5rem;
   font-family: 'montserrat', sans-serif;
-  cursor: pointer;
-  padding: 0.75rem;
-  font-size: 1rem;
-  @media (max-width: 800px) {
-    margin: 0 0.75rem 0.5rem;
-  }
+  resize: none;
 }
 
-.button:hover{
-  background-color: #4e5555;
-  color: white;
-  @media (max-width: 800px) {
-    background-color: white;
-    color: #4e5555;
-  }
+.input_container input:focus {
+  box-shadow: 0 0 0 2px #4e5555;
 }
 
-.button:active {
-  background-color: #4e5555;
-  color: white;
+.input_container textarea:focus {
+  box-shadow: 0 0 0 2px #4e5555;
 }
-
