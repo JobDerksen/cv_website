@@ -1,15 +1,9 @@
-import React, {ReactNode, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import styles from './Navigation.module.scss'
 import {useRouter} from "next/router";
 import XIcon from '@/components/icons/xIcon/xIcon'
 import { Link } from "react-scroll";
-
-interface CustomLinkProps {
-    to: string;
-    children: ReactNode;
-    [key: string]: any; // This allows any other props to be passed
-}
 
 export const Navigation = (): React.JSX.Element => {
     const screenWidth = typeof window !== 'undefined' ? window.screen.width : 800;
@@ -46,26 +40,6 @@ export const Navigation = (): React.JSX.Element => {
         }
     };
 
-    //This method sees what page is active and then bolds the active page's text
-    const CustomLink = ({ to, children}: CustomLinkProps) => {
-        return (
-            <li>
-                <Link
-                    to={to}
-                    className={styles.nav_links_notActive}
-                    activeClass={styles.nav_links_active}
-                    spy={true}
-                    smooth={true}
-                    offset={-50}
-                    duration={500}
-                    onClick={linkSelected}
-                >
-                    {children}
-                </Link>
-            </li>
-        );
-    }
-    
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
@@ -95,7 +69,20 @@ export const Navigation = (): React.JSX.Element => {
 
                     <div className={styles['header__right-links']}>
                         <ul className={styles.nav_links}>
-                            <CustomLink to={'/about'}>About</CustomLink>
+                            <li>
+                                <Link
+                                    to={'/about'}
+                                    className={styles.nav_links_notActive}
+                                    activeClass={styles.nav_links_active}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-50}
+                                    duration={500}
+                                    onClick={linkSelected}
+                                >
+                                    About
+                                </Link>
+                            </li>
                             <li>
                                 <Link
                                     to={'/projects'}
@@ -118,7 +105,7 @@ export const Navigation = (): React.JSX.Element => {
                                     activeClass={styles.nav_links_active}
                                     spy={true}
                                     smooth={true}
-                                    offset={5}
+                                    offset={-15}
                                     duration={500}
                                     onClick={linkSelected}
                                 >

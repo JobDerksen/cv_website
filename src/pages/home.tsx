@@ -10,11 +10,7 @@ const Home: React.FC = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <div className='content'>
-                <h1 style={{fontSize:100, fontWeight:900}}>
-                    {/* eslint-disable-next-line react/no-unescaped-entities */}
-                    Hi I'm Job <span style={{fontSize:10}}>(pronounced yob)</span>
-                </h1>
-
+                <h1>Hi, my name is Job Derksen...</h1>
             </div>
         </div>
     );

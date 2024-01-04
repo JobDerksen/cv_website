@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import {Navigation} from "@/components/navigation/Navigation";
 const Projects = () => {
     return(
         <div className='pageContainer' id='/projects'>

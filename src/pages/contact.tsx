@@ -5,6 +5,7 @@ import linkedin from '../assets/LI-In-Bug.png';
 import github from '../assets/github-mark.png';
 import React from "react";
 import EmailIcon from '../components/icons/email/EmailIcon'
+import ContactForm from "@/components/contactForm/contactForm";
 
 const Contact: React.FC = () => {
     const recipient = 'JobDerksen@outlook.com';
@@ -57,8 +58,11 @@ const Contact: React.FC = () => {
                         <span className={styles.links}>JobDerksen@outlook.com</span>
                     </a>
                 </div>
-                <div style={{marginTop:50}}>
+                <div>
                     <a className={styles.telephone} onClick={handleCallClick} style={{cursor: "pointer"}}>Mobile: +44 7564165024</a>
+                </div>
+                <div>
+                    <ContactForm/>
                 </div>
             </div>
         </div>
