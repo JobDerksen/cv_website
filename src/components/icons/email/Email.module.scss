@@ -1,0 +1,44 @@
+.emailIcon {
+  width: 35px;
+  height: 25px;
+  background-color: #232b2b;
+  border: 3px solid white;
+  position: relative;
+  border-radius: 5px;
+  @media (max-width: 415px) {
+    width: 23.3333px;
+    height: 16.667px;
+    border: 2px solid white;
+  }
+}
+
+.letter1, .letter2 {
+  width: 26px;
+  height: 16px;
+  border-top: 3px solid white;
+  position: absolute;
+  left: 4.5px;
+  bottom: 6px;
+  border-radius: 5px;
+  @media (max-width: 415px) {
+    width: 17.3333px;
+    height: 10.6667px;
+    border-top: 2px solid white;
+    left: 3px;
+    bottom: 4px;
+  }
+}
+
+.letter1 {
+  transform: rotate(215deg) translateX(6px);
+  @media (max-width: 415px) {
+    transform: rotate(215deg) translateX(4px);
+  }
+}
+
+.letter2 {
+  transform: rotate(-215deg) translateX(-6px);
+  @media (max-width: 415px) {
+    transform: rotate(-215deg) translateX(-4px);
+  }
+}

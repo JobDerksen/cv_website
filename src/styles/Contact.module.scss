@@ -1,14 +1,55 @@
-.linkedinBadgeContainer {
+.container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  @media (max-width: 800px) {
+    justify-content: left;
+    flex-direction: column;
+  }
 }
 
-.hidden{
-  display: none;
+.telephone{
+  font-size: 1.5rem;
+  color: #232b2b;
+  @media (max-width: 380px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 415px) {
+    font-size: 1.2rem;
+  }
 }
 
-.yes{
+.linkContainer{
+  text-decoration: none;
   display: flex;
-  color: black;
+  margin: 0.5rem 0.5rem 1rem;
+}
+.links{
+  font-size: 1.5rem;
+  color: #232b2b;
+  margin-left: 0.2rem;
+  @media (max-width: 380px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 415px) {
+    font-size: 1.2rem;
+  }
+}
+.image{
+  height: 2rem;
+  width: 2rem;
+  @media (max-width: 415px) {
+    height: 1.5rem;
+    width: 1.5rem;
+
+  }
+  &__linkedin {
+    height: 2rem;
+    width: 2.3518rem;
+    @media (max-width: 415px) {
+      height: 1.5rem;
+      width: 1.7639rem;
+    }
+  }
 }

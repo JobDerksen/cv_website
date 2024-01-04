@@ -22,12 +22,12 @@ h1,h2,h3,h4,h5,h6,p
 }
 
 .pageContainer {
-  height: 700px;
+  min-height: 100vh;
   padding-top: 1rem;
 }
 
 .pageContainerHome {
-  height: 700px;
+  min-height: 90vh;
   padding-top: 5rem;
 }
 
@@ -36,6 +36,27 @@ h1,h2,h3,h4,h5,h6,p
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+.spinner {
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-top: 0.1rem solid #000;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes pulse {
