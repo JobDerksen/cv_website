@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.scss'
 import beatifulMe from '../assets/jpgs/me/me.JPG'
 
 const Home: React.FC = () => {
+
     return (
         <div className='pageContainerHome' id='/'>
             <Head>
@@ -14,15 +15,20 @@ const Home: React.FC = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div className='content'>
-                <Image
-                    className={styles.image}
-                    src={beatifulMe}
-                    alt='Photo of me (Job Derksen)'
-                    priority={true}
-                />
-                <h2>Hi, my name is Job Derksen...</h2>
+            <div className={styles.container}>
+                <div className={styles.imageContainer}>
+                    <Image
+                        className={styles.image}
+                        src={beatifulMe}
+                        alt='Photo of me (Job Derksen)'
+                        priority={true}
+                    />
+                    <h3 className={styles.title}>Hello, my name is Job Derksen A masters student in Computing and
+                        Electronic systems and a current Bartender looking to upgrade career.</h3>
+                </div>
+
             </div>
+            <div className={styles.gradient}/>
         </div>
     );
 }
