@@ -11,6 +11,9 @@ export default function ContactForm() {
     const [errorRecipient, setErrorRecipient] = useState(false)
     const [errorEmail, setErrorEmail] = useState(false);
     const [errorMessage, setErrorMessage] = useState(false);
+
+    const [loading, setLoading] = useState(false);
+
     async function handleSubmit(event) {
         event.preventDefault();
 
@@ -38,34 +41,40 @@ export default function ContactForm() {
         }
 
         if(isValid){
-            const formData = new FormData();
-            formData.append("name", recipient);
-            formData.append("company", company);
-            formData.append("email", email);
-            formData.append("message", message);
-            formData.append("access_key", "c6186122-32fd-4d49-bb20-95694fc75f89");
+            try {
+                setLoading(true);
 
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
+                const formData = new FormData();
+                formData.append("name", recipient);
+                formData.append("company", company);
+                formData.append("email", email);
+                formData.append("message", message);
+                formData.append("access_key", "c6186122-32fd-4d49-bb20-95694fc75f89");
 
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                },
-                body: json
-            });
-            const result = await response.json();
-            if (result.success) {
-                console.log(result);
-                setRecipient('');
-                setEmail('');
-                setMessage('');
-                setCompany('');
-                setErrorRecipient(false);
-                setErrorEmail(false);
-                setErrorMessage(false);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json"
+                    },
+                    body: json
+                });
+                const result = await response.json();
+                if (result.success) {
+                    console.log(result);
+                    setRecipient('');
+                    setEmail('');
+                    setMessage('');
+                    setCompany('');
+                    setErrorRecipient(false);
+                    setErrorEmail(false);
+                    setErrorMessage(false);
+                }
+            } finally {
+                setLoading(false);
             }
         }
     }
@@ -79,7 +88,7 @@ export default function ContactForm() {
                             [styles['input_container']]:!errorRecipient,
                             [styles['input_container_error']]:errorRecipient,
                         })}>
-                            <input type="text" value={recipient} onChange={(e) => setRecipient(e.target.value)}/>
+                            <input type="text" value={recipient} onChange={(e) => setRecipient(e.target.value)} onClick={() => setErrorRecipient(false)}/>
                             <label className={clsx({[styles['filled']]:recipient})} htmlFor={"name"}>
                                 Name
                             </label>
@@ -89,7 +98,7 @@ export default function ContactForm() {
                         [styles['input_container']]: !errorEmail,
                         [styles['input_container_error']]: errorEmail,
                     })}>
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} onClick={() => setErrorEmail(false)}/>
                         <label className={clsx({[styles['filled']]: email})} htmlFor={"email"}>
                             Email
                         </label>
@@ -110,12 +119,15 @@ export default function ContactForm() {
                              name="message"
                              value={message}
                              onChange={(e) => setMessage(e.target.value)}
+                             onClick={() => setErrorMessage(false)}
                          />
                         <label className={clsx({[styles['filled']]: message})} htmlFor={"message"}>
                             Message
                         </label>
                     </div>
-                    <button className={styles.button} type="submit">Say Hello!</button>
+                    <button className={styles.button} type="submit" disabled={loading}>
+                        {loading ?  'sending...' : 'Say Hello!'}
+                    </button>
                 </form>
             </div>
         </>

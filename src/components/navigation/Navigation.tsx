@@ -76,7 +76,7 @@ export const Navigation = (): React.JSX.Element => {
                                     activeClass={styles.nav_links_active}
                                     spy={true}
                                     smooth={true}
-                                    offset={-50}
+                                    offset={-48}
                                     duration={500}
                                     onClick={linkSelected}
                                 >
@@ -105,7 +105,7 @@ export const Navigation = (): React.JSX.Element => {
                                     activeClass={styles.nav_links_active}
                                     spy={true}
                                     smooth={true}
-                                    offset={-15}
+                                    offset={-20}
                                     duration={500}
                                     onClick={linkSelected}
                                 >

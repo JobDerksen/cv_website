@@ -1,5 +1,10 @@
 import Head from "next/head";
 import React from "react";
+import Image from 'next/image'
+import styles from '@/styles/Home.module.scss'
+// @ts-ignore
+import beatifulMe from '../assets/jpgs/me/me.JPG'
+
 const Home: React.FC = () => {
     return (
         <div className='pageContainerHome' id='/'>
@@ -10,7 +15,13 @@ const Home: React.FC = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <div className='content'>
-                <h1>Hi, my name is Job Derksen...</h1>
+                <Image
+                    className={styles.image}
+                    src={beatifulMe}
+                    alt='Photo of me (Job Derksen)'
+                    priority={true}
+                />
+                <h2>Hi, my name is Job Derksen...</h2>
             </div>
         </div>
     );
