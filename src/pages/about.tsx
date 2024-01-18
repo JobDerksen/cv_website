@@ -11,11 +11,9 @@ return(
 
             <link rel="icon" href="/favicon.ico" />
         </Head>
-            <div className='content'>
-                <div className={styles.gradient}>
-                    about me
-                </div>
-            </div>
+        <div className={styles.gradient}>
+            about me
+        </div>
     </div>
 )
 }
