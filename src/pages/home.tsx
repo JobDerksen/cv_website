@@ -1,12 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
-// @ts-ignore
-import beatifulMe from '../assets/jpgs/me/me.JPG'
 
 const Home: React.FC = () => {
-
     return (
         <div className='pageContainerHome' id='/'>
             <Head>
@@ -16,19 +12,16 @@ const Home: React.FC = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <div className={styles.container}>
-                <div className={styles.imageContainer}>
-                    <Image
-                        className={styles.image}
-                        src={beatifulMe}
-                        alt='Photo of me (Job Derksen)'
-                        priority={true}
+                <h1 className={styles.title}>Job Derksen</h1>
+                <h2 className={styles.subTitle}>Developer / Engineer / Bartender</h2>
+                {/* CREDIT - https://www.pexels.com/video/foggy-day-by-the-mountain-9130080/*/}
+                    <video src={require('../../public/video2.mp4')}
+                           autoPlay
+                           muted
+                           loop
+                           className={styles.video}
                     />
-                    <h3 className={styles.title}>Hello, my name is Job Derksen A masters student in Computing and
-                        Electronic systems and a current Bartender looking to upgrade career.</h3>
-                </div>
-
             </div>
-            <div className={styles.gradient}/>
         </div>
     );
 }

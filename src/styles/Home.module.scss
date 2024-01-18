@@ -1,7 +1,8 @@
 .container {
-  display: block;
-  text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .gradient {
@@ -27,6 +28,52 @@
 
 
 .title {
-  margin-top: 2.5rem;
-  color: #4e5555;
+  color: #c5caca;
+  font-weight: 900;
+  margin-top: 30vh;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+  padding-left: 1.5rem;
+  font-size: 5rem;
+  text-align: center;
+
+  @media (max-width: 925px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 800px) {
+    font-size: 2.25rem;
+  }
 }
+
+.subTitle {
+  color: white;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.1rem;
+  padding-left: 1.1rem;
+  font-size: 2.5rem;
+  text-align: center;
+  mix-blend-mode: soft-light;
+
+  @media (max-width: 925px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 800px) {
+    font-size: 1rem;
+    mix-blend-mode: unset;
+  }
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(140%) brightness(90%) grayscale(100%);
+
+  transform: scaleY(-1);
+}
+
