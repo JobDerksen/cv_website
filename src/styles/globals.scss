@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
 
 body {
   font-family: 'montserrat', sans-serif;
-  margin: 0px;
+  margin: 0;
 //disable auto block amrgins
 h1,h2,h3,h4,h5,h6,p
 {
@@ -23,12 +24,12 @@ h1,h2,h3,h4,h5,h6,p
 
 .pageContainer {
   min-height: 100vh;
-  padding-top: 1rem;
+
 }
 
 .pageContainerHome {
-  min-height: 90vh;
-  padding-top: 5rem;
+  min-height: 100vh;
+
 }
 
 *{

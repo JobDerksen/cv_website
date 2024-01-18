@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import styles from '@/styles/projects.module.scss'
 const Projects = () => {
     return(
         <div className='pageContainer' id='/projects'>
@@ -10,7 +11,9 @@ const Projects = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
                 <div className='content'>
-                    My projects
+                    <div className={styles.container}>
+                        My projects
+                    </div>
                 </div>
         </div>
     )

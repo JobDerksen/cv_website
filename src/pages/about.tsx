@@ -1,6 +1,6 @@
 import React from "react";
 import Head from 'next/head'
-import {Navigation} from "@/components/navigation/Navigation";
+import styles from '@/styles/about.module.scss'
 const About = () => {
 return(
     <div className='pageContainer' id='/about'>
@@ -12,7 +12,9 @@ return(
             <link rel="icon" href="/favicon.ico" />
         </Head>
             <div className='content'>
-                about me
+                <div className={styles.gradient}>
+                    about me
+                </div>
             </div>
     </div>
 )

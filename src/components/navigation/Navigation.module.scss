@@ -38,11 +38,13 @@
   width: 100%;
   padding: 0.25rem 2rem 0 0;
   height: 4rem;
-  background-color: #E0E0E0;
+  background-color: rgba(#E0E0E0,0.0);
   position: fixed;
+  transition: 0.2s;
 
   @media (max-width: 800px) {
     padding: 0 0.5rem 0;
+    background-color: rgba(#E0E0E0,1);
   }
 
   align-items: center;
@@ -140,6 +142,12 @@
     }
   }
 }
+.header:hover {
+  background-color: rgba(#E0E0E0,0.8);
+  @media (max-width: 800px) {
+    background-color: #E0E0E0;
+  }
+}
 
 .nav_links {
   display: flex;
@@ -147,7 +155,7 @@
   cursor: pointer;
 
   &_notActive{
-    text-shadow:1px 0 0 #E0E0E0;
+    text-shadow:1px 0 0 rgba(#E0E0E0,0.0);
   }
 
   &_active {
