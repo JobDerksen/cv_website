@@ -191,6 +191,10 @@
       font-size: 1.25rem;
     }
 
+    a:hover{
+      text-shadow:1px 0 0 #4e5555;
+    }
+
     // different if on mobile
     @media (max-width: 800px) {
 
@@ -206,6 +210,8 @@
 
     &:hover::after {
       opacity: 1;
+
     }
   }
 }
+
