@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from "react";
-import styles from './subHeading.module.scss'
+import styles from './SubHeading.module.scss'
 
 const SubHeading: React.FC = () => {
 
@@ -9,7 +9,7 @@ const SubHeading: React.FC = () => {
 
     //function to cycle through the arrays, waiting is the multiplier for how long the text will last on screen
 
-    const cycleList = (list: any[string], waiting: number) => {
+    const CycleList = (list: any[string], waiting: number) => {
         const [currentIndex, setCurrentIndex] = useState(0);
         const [currentText, setCurrentText] = useState(list[currentIndex]);
 
@@ -20,7 +20,7 @@ const SubHeading: React.FC = () => {
             }, 3000 * waiting); // Change text every 2000 milliseconds (2 seconds)
 
             return () => clearInterval(intervalId); // Cleanup the interval on component unmount
-        }, []);
+        });
 
         useEffect(() => {
             // Update the current text when the index changes
@@ -33,12 +33,12 @@ const SubHeading: React.FC = () => {
     return (
         <div className={styles.rowContainer}>
             <div className={styles.rowContainer_firstPart}>
-                <h2 className={styles.subTitle}>{cycleList(textList1, 1)}</h2>
-                <h3 className={styles.subTitle}> {cycleList(textList2, 2)}</h3>
+                <h2 className={styles.subTitle}>{CycleList(textList1, 1)}</h2>
+                <h3 className={styles.subTitle}> {CycleList(textList2, 2)}</h3>
             </div>
             <h2 className={styles.subTitle}> / </h2>
             <h2 className={styles.subTitle}></h2>
-            <h2 className={styles.subTitle}> {cycleList(textList3, 2)}</h2>
+            <h2 className={styles.subTitle}> {CycleList(textList3, 2)}</h2>
         </div>
     );
 }
