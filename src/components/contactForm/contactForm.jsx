@@ -83,13 +83,13 @@ export default function ContactForm() {
         <>
             <div className={styles.container}>
                 <h3>Get in Touch</h3>
-                <form onSubmit={handleSubmit} name='form' id='form'>
+                <form onSubmit={handleSubmit} id='form'>
                         <div className={clsx({
                             [styles['input_container']]:!errorRecipient,
                             [styles['input_container_error']]:errorRecipient,
                         })}>
-                            <input type="text" value={recipient} onChange={(e) => setRecipient(e.target.value)} onClick={() => setErrorRecipient(false)}/>
-                            <label className={clsx({[styles['filled']]:recipient})} htmlFor={"name"}>
+                            <input type="text" value={recipient} onChange={(e) => setRecipient(e.target.value)} onClick={() => setErrorRecipient(false)} id='name'/>
+                            <label className={clsx({[styles['filled']]:recipient})} htmlFor={"name"} htmlFor='name'>
                                 Name
                             </label>
                         </div>
@@ -98,15 +98,15 @@ export default function ContactForm() {
                         [styles['input_container']]: !errorEmail,
                         [styles['input_container_error']]: errorEmail,
                     })}>
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} onClick={() => setErrorEmail(false)}/>
-                        <label className={clsx({[styles['filled']]: email})} htmlFor={"email"}>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} onClick={() => setErrorEmail(false)} id='email'/>
+                        <label className={clsx({[styles['filled']]: email})} htmlFor={"email"} htmlFor='email'>
                             Email
                         </label>
                     </div>
 
                     <div className={styles.input_container}>
-                        <input type="text" value={company} onChange={(e) => setCompany(e.target.value)}/>
-                        <label className={clsx({[styles['filled']]: company})} htmlFor={"company"}>
+                        <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} id='company'/>
+                        <label className={clsx({[styles['filled']]: company})} htmlFor={"company"} htmlFor='company'>
                             Company (optional)
                         </label>
                     </div>
@@ -120,8 +120,9 @@ export default function ContactForm() {
                              value={message}
                              onChange={(e) => setMessage(e.target.value)}
                              onClick={() => setErrorMessage(false)}
+                             id='message'
                          />
-                        <label className={clsx({[styles['filled']]: message})} htmlFor={"message"}>
+                        <label className={clsx({[styles['filled']]: message})} htmlFor={"message"} htmlFor='message'>
                             Message
                         </label>
                     </div>
