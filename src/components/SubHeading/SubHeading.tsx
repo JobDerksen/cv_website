@@ -20,7 +20,7 @@ const SubHeading: React.FC = () => {
             }, 3000 * waiting); // Change text every 2000 milliseconds (2 seconds)
 
             return () => clearInterval(intervalId); // Cleanup the interval on component unmount
-        });
+        },[]);
 
         useEffect(() => {
             // Update the current text when the index changes
