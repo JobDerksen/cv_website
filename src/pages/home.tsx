@@ -19,6 +19,7 @@ const Home: React.FC = () => {
                        autoPlay
                        muted
                        loop
+                       playsInline
                        className={styles.video}
                 />
             </div>
