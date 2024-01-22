@@ -17,6 +17,19 @@ export const Navigation = (): React.JSX.Element => {
         else setMobileScreen(false)
     },[router.pathname, screenWidth])
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if(!isMobileMenuHidden && isMobileScreen){
+                linkSelected()
+            }
+
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [isMobileMenuHidden, isMobileScreen]);
+
     const changeMenu = () => {
         setMobileScreen(true)
         setMobileMenuHidden(!isMobileMenuHidden);

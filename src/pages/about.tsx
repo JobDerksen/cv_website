@@ -2,7 +2,7 @@ import React from "react";
 import Head from 'next/head'
 import styles from '@/styles/about.module.scss'
 import Image from 'next/image'
-import painting from '../../public/painting_of_me_no_background.png';
+import painting from '../../public/painting_of_me.png';
 const About = () => {
 return(
     <div className='pageContainer' id='/about'>
