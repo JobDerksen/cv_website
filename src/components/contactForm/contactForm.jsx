@@ -89,7 +89,7 @@ export default function ContactForm() {
                             [styles['input_container_error']]:errorRecipient,
                         })}>
                             <input type="text" value={recipient} onChange={(e) => setRecipient(e.target.value)} onClick={() => setErrorRecipient(false)} id='name'/>
-                            <label className={clsx({[styles['filled']]:recipient})} htmlFor={"name"} htmlFor='name'>
+                            <label className={clsx({[styles['filled']]:recipient})} htmlFor='name'>
                                 Name
                             </label>
                         </div>
@@ -99,14 +99,14 @@ export default function ContactForm() {
                         [styles['input_container_error']]: errorEmail,
                     })}>
                         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} onClick={() => setErrorEmail(false)} id='email'/>
-                        <label className={clsx({[styles['filled']]: email})} htmlFor={"email"} htmlFor='email'>
+                        <label className={clsx({[styles['filled']]: email})} htmlFor='email'>
                             Email
                         </label>
                     </div>
 
                     <div className={styles.input_container}>
                         <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} id='company'/>
-                        <label className={clsx({[styles['filled']]: company})} htmlFor={"company"} htmlFor='company'>
+                        <label className={clsx({[styles['filled']]: company})} htmlFor='company'>
                             Company (optional)
                         </label>
                     </div>
@@ -122,7 +122,7 @@ export default function ContactForm() {
                              onClick={() => setErrorMessage(false)}
                              id='message'
                          />
-                        <label className={clsx({[styles['filled']]: message})} htmlFor={"message"} htmlFor='message'>
+                        <label className={clsx({[styles['filled']]: message})} htmlFor='message'>
                             Message
                         </label>
                     </div>
