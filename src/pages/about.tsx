@@ -16,11 +16,7 @@ return(
         <div className={styles.gradient}>
             about me
         </div>
-        <Image
-            src={painting}
-            alt='Painting of me'
-            className={styles.paintingImage}
-        />
+
     </div>
 )
 }

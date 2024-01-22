@@ -21,33 +21,14 @@
     font-size: 2.5rem;
     letter-spacing: 1.2rem;
   }
-  @media (max-width: 650px) {
-    font-size: 2rem;
+  @media (max-width: 360px) {
+    font-size: 2.45rem;
+    letter-spacing: 1.2rem;
+  }
+  @media (max-width: 280px) {
+    font-size: 1.8rem;
     letter-spacing: 1rem;
     padding-left: 1rem;
-  }
-}
-
-.subTitle {
-  color: white;
-  font-weight: 700;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1.1rem;
-  padding-left: 1.1rem;
-  font-size: 2.5rem;
-  text-align: center;
-  mix-blend-mode: soft-light;
-
-  @media (max-width: 925px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 800px) {
-    font-size: 0.78rem;
-    letter-spacing: 0.2rem;
-    padding-left: 0.1rem;
-    mix-blend-mode: unset;
-    font-weight: 500;
   }
 }
 
