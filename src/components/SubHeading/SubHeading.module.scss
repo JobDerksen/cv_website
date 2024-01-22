@@ -1,0 +1,72 @@
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+  &_firstPart {
+    display: flex;
+    flex-direction: row;
+    width: 45rem;
+
+    @media (max-width: 1024px) {
+      width: 30rem;
+    }
+
+    @media (max-width: 800px) {
+      width: 14rem;
+    }
+
+    @media (max-width: 380px) {
+      width: 12rem;
+    }
+
+    @media (max-width: 280px) {
+      width: 10rem;
+    }
+    h3 {
+      width:100%;
+      text-align:center;
+    }
+  }
+}
+
+
+
+.subTitle {
+  color: white;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  padding-left: 1rem;
+  font-size: 2rem;
+  mix-blend-mode: soft-light;
+
+  @media (max-width: 1024px) {
+    font-size: 1.6rem;
+    letter-spacing: 0.25rem;
+    padding-left: 0.25rem;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 0.75rem;
+    letter-spacing: 0.25rem;
+    padding-left: 0.25rem;
+    mix-blend-mode: unset;
+    font-weight: 500;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 0.75rem;
+    letter-spacing: 0.15rem;
+    padding-left: 0.15rem;
+    mix-blend-mode: unset;
+    font-weight: 500;
+  }
+
+  @media (max-width: 280px) {
+    font-size: 0.54rem;
+    letter-spacing: 0.1rem;
+    padding-left: 0.1rem;
+    mix-blend-mode: unset;
+    font-weight: 500;
+  }
+}

@@ -17,7 +17,7 @@ export const Navigation = (): React.JSX.Element => {
         else setMobileScreen(false)
     },[router.pathname, screenWidth])
 
-    const changemenu = () => {
+    const changeMenu = () => {
         setMobileScreen(true)
         setMobileMenuHidden(!isMobileMenuHidden);
     };
@@ -25,7 +25,7 @@ export const Navigation = (): React.JSX.Element => {
     const linkSelected = () => {
         if(isMobileScreen){
             setActive(!isActive)
-            changemenu();
+            changeMenu();
         }
     }
 
@@ -36,7 +36,7 @@ export const Navigation = (): React.JSX.Element => {
 
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
-            changemenu();
+            changeMenu();
         }
     };
 
@@ -53,7 +53,7 @@ export const Navigation = (): React.JSX.Element => {
             <div className={styles.header__right}>
                 <div
                     className={styles.header__menu}
-                    onClick={changemenu}
+                    onClick={changeMenu}
                     onKeyDown={handleKeyPress}
                     style={{position:"absolute", zIndex:10001}}
                 >

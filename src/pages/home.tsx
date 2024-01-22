@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import styles from '@/styles/Home.module.scss'
+import SubHeading from '../components/SubHeading/SubHeading'
 
 const Home: React.FC = () => {
     return (
@@ -13,12 +14,13 @@ const Home: React.FC = () => {
             </Head>
             <div className={styles.container}>
                 <h1 className={styles.title}>Job Derksen</h1>
-                <h2 className={styles.subTitle}>Developer / Engineer / Bartender</h2>
+                <SubHeading/>
                     {/* CREDIT - https://www.pexels.com/video/foggy-day-by-the-mountain-9130080/*/}
                 <video src={require('../../public/video2.mp4')}
                        autoPlay
                        muted
                        loop
+                       playsInline
                        className={styles.video}
                 />
             </div>

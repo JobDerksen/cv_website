@@ -1,6 +1,8 @@
 import React from "react";
 import Head from 'next/head'
 import styles from '@/styles/about.module.scss'
+import Image from 'next/image'
+import painting from '../../public/painting_of_me_no_background.png';
 const About = () => {
 return(
     <div className='pageContainer' id='/about'>
@@ -14,6 +16,7 @@ return(
         <div className={styles.gradient}>
             about me
         </div>
+
     </div>
 )
 }

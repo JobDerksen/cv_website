@@ -18,28 +18,17 @@
     font-size: 4rem;
   }
   @media (max-width: 800px) {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
+    letter-spacing: 1.2rem;
   }
-}
-
-.subTitle {
-  color: white;
-  font-weight: 700;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1.1rem;
-  padding-left: 1.1rem;
-  font-size: 2.5rem;
-  text-align: center;
-  mix-blend-mode: soft-light;
-
-  @media (max-width: 925px) {
-    font-size: 2rem;
+  @media (max-width: 360px) {
+    font-size: 2.45rem;
+    letter-spacing: 1.2rem;
   }
-  @media (max-width: 800px) {
-    font-size: 1rem;
+  @media (max-width: 280px) {
+    font-size: 1.8rem;
     letter-spacing: 1rem;
-    mix-blend-mode: unset;
+    padding-left: 1rem;
   }
 }
 
@@ -50,7 +39,7 @@
   width: 100%;
   height: 100dvh;
   object-fit: cover;
-  filter: contrast(140%) brightness(90%) grayscale(100%);
+  filter: contrast(130%) brightness(90%) grayscale(100%);
   transform: scaleY(-1);
 }
 
