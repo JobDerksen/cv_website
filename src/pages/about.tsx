@@ -16,7 +16,7 @@ return(
         </Head>
         <div className={styles.container}>
             <section className={styles.hero}>
-                <h1 className={styles.pageTitle}>About Me</h1>
+                <h1 className={styles.pageTitle}>ABOUT ME</h1>
             </section>
         </div>
 

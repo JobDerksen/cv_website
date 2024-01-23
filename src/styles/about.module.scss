@@ -5,7 +5,7 @@
 }
 
 .hero {
-  min-height: 20vh;
+  min-height: 17vh;
   display: grid;
   place-items: center;
   padding: 1rem;
@@ -23,11 +23,16 @@
 
 .pageTitle {
   font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 1.5rem;
+  padding-left: 1.5rem;
   mix-blend-mode: lighten;
   color: #e0e0e0;
   @media (max-width: 800px) {
     mix-blend-mode: unset;
-    font-size: 3rem;
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    padding-left: 1rem;
   }
 }
 
