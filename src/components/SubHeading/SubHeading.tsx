@@ -34,7 +34,7 @@ const SubHeading: React.FC = () => {
                 <h3 className={styles.subTitle}>{CycleList(textList1, 3000)}</h3>
             </div>
             <div className={styles.rowContainer_secondPart}>
-                <h2 className={styles.subTitle}> /</h2>
+                <h2 className={styles.subTitle}>/</h2>
                 <h2 className={styles.subTitle}></h2>
                 <h2 className={styles.subTitle}> {CycleList(textList2, 12000)}</h2>
             </div>
