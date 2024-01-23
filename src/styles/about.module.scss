@@ -5,13 +5,13 @@
 }
 
 .hero {
-  min-height: 17vh;
+  min-height: 15vh;
   display: grid;
   place-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
 
   background-image: url("../../public/painting_of_me_no_background.png");
-  background-size: 65%;
+  background-size: 66%;
   background-position: left;
   background-attachment: fixed;
   background-repeat:no-repeat;

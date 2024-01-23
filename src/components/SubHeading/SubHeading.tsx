@@ -3,7 +3,7 @@ import styles from './SubHeading.module.scss'
 
 const SubHeading: React.FC = () => {
 
-    const textList1 = ['Sofware Engineer', 'Electronic Engineer','Computer Scientest', 'Data Scientest'];
+    const textList1 = ['Software Engineer', 'Electronic Engineer','Computer Scientist', 'Data Scientist'];
     const textList2 = ['Designer', 'Developer', 'Bartender', 'Powerlifter','Programmer']
 
     //function to cycle through the arrays, waiting is the multiplier for how long the text will last on screen
