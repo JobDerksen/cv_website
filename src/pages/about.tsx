@@ -1,6 +1,7 @@
 import React from "react";
 import Head from 'next/head'
 import styles from '@/styles/about.module.scss'
+import { animateScroll } from 'react-scroll';
 import Image from 'next/image'
 import painting from '../../public/painting_of_me.png';
 const About = () => {

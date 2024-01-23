@@ -1,18 +1,17 @@
 .container {
   background: linear-gradient(to bottom, #595959, white);
-
   margin-top: 0;
   text-align: center;
 }
 
 .hero {
-  min-height: 30vh;
+  min-height: 20vh;
   display: grid;
   place-items: center;
-  padding: 2rem;
+  padding: 1rem;
 
   background-image: url("../../public/painting_of_me_no_background.png");
-  background-size: 60%;
+  background-size: 65%;
   background-position: left;
   background-attachment: fixed;
   background-repeat:no-repeat;
@@ -31,5 +30,4 @@
     font-size: 3rem;
   }
 }
-
 
