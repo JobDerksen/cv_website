@@ -16,12 +16,15 @@ const Home: React.FC = () => {
                 <h1 className={styles.title}>Job Derksen</h1>
                 <SubHeading/>
                     {/* CREDIT - https://www.pexels.com/video/foggy-day-by-the-mountain-9130080/*/}
-                <video src={require('../../public/video2.mp4')}
-                       autoPlay
-                       muted
-                       loop
-                       playsInline
-                       className={styles.video}
+                <video
+                    src={require('../../public/video2.mp4')}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls={false}
+                    preload="yes"
+                    className={styles.video}
                 />
             </div>
         </div>
