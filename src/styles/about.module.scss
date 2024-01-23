@@ -1,11 +1,33 @@
-.gradient {
-  //background: linear-gradient(to bottom, #767979,  white);
-  padding-top: 4rem;
+.container {
+  background: linear-gradient(to bottom, #595959, white);
   margin-top: 0;
   text-align: center;
 }
 
-.paintingImage {
-  height: 15rem;
-  width: 15rem;
+.hero {
+  min-height: 20vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+
+  background-image: url("../../public/painting_of_me_no_background.png");
+  background-size: 65%;
+  background-position: left;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  @media (max-width: 800px) {
+    background-size: 100vh;
+    background-position: center;
+  }
 }
+
+.pageTitle {
+  font-size: 4rem;
+  mix-blend-mode: lighten;
+  color: #e0e0e0;
+  @media (max-width: 800px) {
+    mix-blend-mode: unset;
+    font-size: 3rem;
+  }
+}
+

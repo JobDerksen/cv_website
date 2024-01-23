@@ -1,6 +1,7 @@
 import React from "react";
 import Head from 'next/head'
 import styles from '@/styles/about.module.scss'
+import { animateScroll } from 'react-scroll';
 import Image from 'next/image'
 import painting from '../../public/painting_of_me.png';
 const About = () => {
@@ -13,8 +14,10 @@ return(
 
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className={styles.gradient}>
-            about me
+        <div className={styles.container}>
+            <section className={styles.hero}>
+                <h1 className={styles.pageTitle}>About Me</h1>
+            </section>
         </div>
 
     </div>
