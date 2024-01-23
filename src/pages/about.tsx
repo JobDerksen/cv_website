@@ -13,8 +13,10 @@ return(
 
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className={styles.gradient}>
-            about me
+        <div className={styles.container}>
+            <section className={styles.hero}>
+                <h1 className={styles.pageTitle}>About Me</h1>
+            </section>
         </div>
 
     </div>
