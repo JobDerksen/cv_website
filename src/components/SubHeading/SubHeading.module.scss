@@ -1,34 +1,22 @@
 .rowContainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
   &_firstPart {
     display: flex;
     flex-direction: row;
-    width: 45rem;
-
-    @media (max-width: 1024px) {
-      width: 30rem;
-    }
-
-    @media (max-width: 800px) {
-      width: 14rem;
-    }
-
-    @media (max-width: 380px) {
-      width: 12rem;
-    }
-
-    @media (max-width: 280px) {
-      width: 10rem;
-    }
+    width: 65%;
     h3 {
       width:100%;
-      text-align:center;
+      text-align:right;
     }
   }
+  &_secondPart{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+  }
 }
-
-
 
 .subTitle {
   color: white;
