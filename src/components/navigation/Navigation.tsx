@@ -53,6 +53,14 @@ export const Navigation = (): React.JSX.Element => {
         }
     };
 
+    const returnOffset = () => {
+        if(isMobileScreen){
+            return -64
+        } else {
+            return 0
+        }
+    }
+
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
@@ -89,7 +97,7 @@ export const Navigation = (): React.JSX.Element => {
                                     activeClass={styles.nav_links_active}
                                     spy={true}
                                     smooth={true}
-                                    offset={0}
+                                    offset={returnOffset()}
                                     duration={500}
                                     onClick={linkSelected}
                                 >
