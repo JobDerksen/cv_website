@@ -43,6 +43,7 @@
   object-fit: cover;
   filter: contrast(130%) brightness(90%) grayscale(100%);
   transform: scaleY(-1);
+  transition: 0.4s;
 }
 
 
