@@ -55,7 +55,7 @@ export const Navigation = (): React.JSX.Element => {
 
     const returnOffset = () => {
         if(isMobileScreen){
-            return -64
+            return -52
         } else {
             return 0
         }

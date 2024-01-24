@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import Head from 'next/head'
 import styles from '@/styles/about.module.scss'
+import ScrollHandler from '../components/ScrollHandler/ScrollHandler'
 import { animateScroll } from 'react-scroll';
 import Image from 'next/image'
 import painting from '../../public/painting_of_me.png';
 const About = () => {
+    const ref = useRef<HTMLDivElement>(null);
 return(
     <div className='pageContainer' id='/about'>
         <Head>
@@ -16,10 +18,10 @@ return(
         </Head>
         <div className={styles.container}>
             <section className={styles.hero}>
-                <h1 className={styles.pageTitle}>ABOUT ME</h1>
+                <h1 ref={ref} className={styles.pageTitle}>ABOUT ME</h1>
             </section>
         </div>
-
+        <ScrollHandler className={styles.pageTitle_scroll} elementRef={ref} setScrollMultiplier={1} />
     </div>
 )
 }
