@@ -5,7 +5,7 @@
 }
 
 .hero {
-  min-height: 15vh;
+  min-height: 0;
   display: grid;
   place-items: center;
   padding: 0.5rem;
@@ -22,17 +22,30 @@
 }
 
 .pageTitle {
-  font-size: 4rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 1.5rem;
-  padding-left: 1.5rem;
+  margin-left: 70vw;
   mix-blend-mode: lighten;
   color: #e0e0e0;
+  transition: 0.5s;
+  text-align: center;
+  justify-content: start;
   @media (max-width: 800px) {
     mix-blend-mode: unset;
-    font-size: 2rem;
-    letter-spacing: 1rem;
-    padding-left: 1rem;
+    font-size: 1rem;
+    letter-spacing: -0.1rem;
+    margin-left: 60vw;
+  }
+  &_scroll {
+    font-size: 4rem;
+    margin-left: 30vw;
+    @media (max-width: 800px) {
+      font-size: 2rem;
+      letter-spacing: 1rem;
+      padding-left: 1rem;
+      margin-left: unset;
+    }
   }
 }
 
