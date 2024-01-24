@@ -4,15 +4,16 @@ import useScroll from "./useScroll";
 interface ScrollHandlerProps {
     className: string;
     elementRef: React.RefObject<HTMLDivElement>;
-    setScrollMultiplier: number;
+    initialScrollMultiplier: number;
+    endScrollMultiplier: number;
 }
 
-const ScrollHandler: FC<ScrollHandlerProps> = ({ elementRef, className, setScrollMultiplier }) => {
-    const screenHeight = typeof window !== 'undefined' ? window.screen.height - 440 : 900;
+const ScrollHandler: FC<ScrollHandlerProps> = ({ elementRef, className, initialScrollMultiplier,endScrollMultiplier }) => {
+    const screenHeight = typeof window !== 'undefined' ? window.screen.height: 1080;
     const scrollPosition = useScroll();
 
     useEffect(() => {
-        if (scrollPosition.y > screenHeight * setScrollMultiplier) {
+        if (scrollPosition.y > screenHeight * initialScrollMultiplier && scrollPosition.y < screenHeight * endScrollMultiplier) {
             elementRef.current?.classList.add(className);
         } else {
             elementRef.current?.classList.remove(className);

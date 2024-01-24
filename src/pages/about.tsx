@@ -2,9 +2,7 @@ import React, { useRef } from "react";
 import Head from 'next/head'
 import styles from '@/styles/about.module.scss'
 import ScrollHandler from '../components/ScrollHandler/ScrollHandler'
-import { animateScroll } from 'react-scroll';
-import Image from 'next/image'
-import painting from '../../public/painting_of_me.png';
+
 const About = () => {
     const ref = useRef<HTMLDivElement>(null);
 return(
@@ -17,12 +15,14 @@ return(
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <div className={styles.container}>
-            <section className={styles.hero}>
-                <h1 ref={ref} className={styles.pageTitle}>ABOUT ME</h1>
-            </section>
+            <div className={styles.content}>
+                <section className={styles.hero}>
+                    <h1 ref={ref} className={styles.pageTitle}>ABOUT ME</h1>
+                </section>
+            </div>
         </div>
-        <ScrollHandler className={styles.pageTitle_scroll} elementRef={ref} setScrollMultiplier={1} />
+        <ScrollHandler className={styles.pageTitle_scroll} elementRef={ref} initialScrollMultiplier={0.5} endScrollMultiplier={0.9}/>
     </div>
 )
 }
- export default About;
+export default About;

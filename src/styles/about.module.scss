@@ -12,12 +12,25 @@
 
   background-image: url("../../public/painting_of_me_no_background.png");
   background-size: 66%;
-  background-position: left;
+  background-position: 5rem -15rem;
   background-attachment: fixed;
   background-repeat:no-repeat;
+  @media only screen and (max-width: 1024px) {
+    .avia-safari #top .avia-full-stretch{
+      background-attachment: scroll !important;
+      background-position: 5rem -15rem;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .avia-safari #top .avia-full-stretch{
+      background-attachment: scroll !important;
+      background-size: 100vh;
+      background-position: 40% -7rem;
+    }
+  }
   @media (max-width: 800px) {
     background-size: 100vh;
-    background-position: center;
+    background-position: 40% -5rem;
   }
 }
 
@@ -34,7 +47,7 @@
   @media (max-width: 800px) {
     mix-blend-mode: unset;
     font-size: 1rem;
-    letter-spacing: -0.1rem;
+    letter-spacing: 0;
     margin-left: 60vw;
   }
   &_scroll {
