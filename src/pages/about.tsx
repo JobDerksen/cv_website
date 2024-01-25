@@ -3,9 +3,12 @@ import Head from 'next/head'
 import styles from '@/styles/about.module.scss'
 import ScrollHandler from '../components/ScrollHandler/ScrollHandler'
 import InfoCard from '../components/infoCards/infoCard'
+import Strathclyde from '../../public/university-of-strathclyde-banner.png'
+import ags from '../../public/aberdeen grammar school.jpg'
 
 const About = () => {
     const ref = useRef<HTMLDivElement>(null);
+    const ref2 = useRef<HTMLDivElement>(null);
 
     const [contentHeight, setContentHeight] = useState<number | undefined>(0);
     const [isHealthExpanded, setHealthExpanded] = useState(false);
@@ -33,7 +36,7 @@ return(
 
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className={styles.gradient}>
+        <div ref={ref2} className={styles.gradient}>
             <section className={styles.hero}>
                 <h1 ref={ref} className={styles.pageTitle}>ABOUT ME</h1>
             </section>
@@ -46,27 +49,40 @@ return(
             <h4>
                 Born the 19<sup>th</sup> of April 2001 in Leidschendam Netherlands (near The Hague).
             </h4>
-            <h5 className='sectionHead' onClick={expandHealth}>Education</h5>
-            <a>Just to note - maybe add small view here i.e a summar of whats on the cards</a>
+            <h4 className='sectionHead' onClick={expandHealth}>Education</h4>
             <div className={styles.balls} style={{height: contentHeight, overflow: 'hidden', transition: 'height 0.4s ease'}}>
                 <div ref={contentRef} className={styles.rowContainer}>
                     <InfoCard
-                        image={'Image of my Uni'}
+                        img={Strathclyde}
+                        description={'Strathclyde Image'}
                         heading={'The University of Strathclyde'}
-                        bodyText={'I went to Uni here'}
+                        bodyText={'2019 - 2024'}
                     />
                     <InfoCard
-                        image={'Image of AGS'}
+                        img={ags}
+                        description={'Aberdeen Grammar School Image'}
                         heading={'Aberdeen Grammar School'}
-                        bodyText={'I went to school here'}
+                        bodyText={'2013 - 2019'}
                     />
                 </div>
             </div>
             <h4></h4>
-            <h5 className='sectionHead'>Skills</h5>
+            <h4 className='sectionHead'>Skills</h4>
         </div>
-        <ScrollHandler className={styles.pageTitle_scroll} elementRef={ref} initialScrollMultiplier={0.5}
-                       endScrollMultiplier={0.9}/>
+
+        <ScrollHandler
+            className={styles.pageTitle_scroll}
+            elementRef={ref}
+            initialScrollMultiplier={0.5}
+            endScrollMultiplier={0.9}
+        />
+
+        <ScrollHandler
+            className={styles.gradient_after}
+            elementRef={ref2}
+            initialScrollMultiplier={0.8}
+            endScrollMultiplier={3}
+        />
     </div>
 )
 }

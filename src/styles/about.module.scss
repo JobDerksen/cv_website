@@ -2,6 +2,10 @@
   background: linear-gradient(to bottom, #595959,  #bfd8d9);
   margin-top: 0;
   text-align: center;
+
+  &_after {
+    background: linear-gradient(to bottom, #9fc6b4,  #bfd8d9);
+  }
 }
 
 .hero {

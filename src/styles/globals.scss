@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;700;800;900&display=swap');
 
 body {
   font-family: 'montserrat', sans-serif;
@@ -65,7 +65,7 @@ body {
 
 .mainText{
   font-size: 1.75rem;
-  font-weight: 100;
+  font-weight: 300;
   text-align: justify-all;
   @media (max-width: 800px) {
     font-size: 1.25rem;
