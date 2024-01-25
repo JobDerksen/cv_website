@@ -47,6 +47,7 @@ return(
                 Born the 19<sup>th</sup> of April 2001 in Leidschendam Netherlands (near The Hague).
             </h4>
             <h5 className='sectionHead' onClick={expandHealth}>Education</h5>
+            <>Just to note - maybe add small view here i.e a summar of whats on the cards</>
             <div className={styles.balls} style={{height: contentHeight, overflow: 'hidden', transition: 'height 0.4s ease'}}>
                 <div ref={contentRef} className={styles.rowContainer}>
                     <InfoCard
@@ -62,7 +63,7 @@ return(
                 </div>
             </div>
             <h4></h4>
-            <a>Skills</a>
+            <h5 className='sectionHead'>Skills</h5>
         </div>
         <ScrollHandler className={styles.pageTitle_scroll} elementRef={ref} initialScrollMultiplier={0.5}
                        endScrollMultiplier={0.9}/>
