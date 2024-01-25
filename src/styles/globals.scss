@@ -24,7 +24,6 @@ h1,h2,h3,h4,h5,h6,p
 
 .pageContainer {
   min-height: 100vh;
-
 }
 
 .pageContainerHome {
@@ -64,3 +63,23 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+.mainText{
+  font-size: 1.75rem;
+  font-weight: 100;
+  text-align: justify-all;
+  @media (max-width: 800px) {
+    font-size: 1.25rem;
+  }
+}
+
+.sectionHead{
+  cursor: pointer;
+  width: 100%;
+  border-bottom-color: black;
+  border-bottom: solid;
+  border-width: 0.05rem;
+}
+
+.sectionHead:hover{
+  text-decoration: underline;
+}

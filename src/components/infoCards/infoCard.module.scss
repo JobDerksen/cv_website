@@ -1,0 +1,9 @@
+.outline {
+  width: 27.5vw;
+  box-shadow: 0 0.025rem 0.5rem 0 rgba(28, 47, 48, 0.2), 0 0.375rem 1.25rem 0 rgba(28, 47, 48, 0.19);
+  text-align: center;
+  @media (max-width: 800px) {
+    width: 85vw;
+    margin: 5vw;
+  }
+}
