@@ -40,14 +40,14 @@ return(
         </div>
         <div className={styles.container}>
             <h3 className='mainText'>
-                Hi, I'm Job. A final year student studying my masters in computing and electronic systems.
+                Hi, I am Job. A final year student studying my masters in computing and electronic systems.
                 Currently working as a bartender, but looking for a career change once I graduate.
             </h3>
             <h4>
                 Born the 19<sup>th</sup> of April 2001 in Leidschendam Netherlands (near The Hague).
             </h4>
             <h5 className='sectionHead' onClick={expandHealth}>Education</h5>
-            <>Just to note - maybe add small view here i.e a summar of whats on the cards</>
+            <a>Just to note - maybe add small view here i.e a summar of whats on the cards</a>
             <div className={styles.balls} style={{height: contentHeight, overflow: 'hidden', transition: 'height 0.4s ease'}}>
                 <div ref={contentRef} className={styles.rowContainer}>
                     <InfoCard
