@@ -7,25 +7,28 @@ import Strathclyde from '../../public/university-of-strathclyde-banner.png'
 import ags from '../../public/aberdeen grammar school.jpg'
 
 const About = () => {
-    const ref = useRef<HTMLDivElement>(null);
-    const ref2 = useRef<HTMLDivElement>(null);
+    const aboutRef = useRef<HTMLDivElement>(null);
+    const gradientRef = useRef<HTMLDivElement>(null);
 
     const [contentHeight, setContentHeight] = useState<number | undefined>(0);
-    const [isHealthExpanded, setHealthExpanded] = useState(false);
 
-    const contentRef = useRef<HTMLDivElement>(null);
+    const [contentHeightBanner, setContentHeightBanner] = useState<number | undefined>(0);
+    const heroSizeRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (isHealthExpanded) {
-            setContentHeight(contentRef.current?.scrollHeight);
-        } else {
-            setContentHeight(0);
+        const observer = new ResizeObserver((entries) => {
+            setContentHeightBanner(entries[0].contentRect.height);
+        });
+        if (heroSizeRef.current) {
+            observer.observe(heroSizeRef.current);
         }
-    }, [isHealthExpanded]);
-
-    const expandHealth = () => {
-        setHealthExpanded(!isHealthExpanded)
-    }
+        return () => {
+            if (heroSizeRef.current) {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+                observer.unobserve(heroSizeRef.current);
+            }
+        };
+    }, []);
 
 return(
     <div className={styles.body} id='/about'>
@@ -36,22 +39,23 @@ return(
 
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div ref={ref2} className={styles.gradient}>
-            <section className={styles.hero}>
-                <h1 ref={ref} className={styles.pageTitle}>ABOUT ME</h1>
-            </section>
+        <div style={{height:contentHeightBanner, overflow:'hidden'}}>
+            <div ref={gradientRef} className={styles.gradient}>
+                <section className={styles.hero} ref={heroSizeRef}>
+                    <h1 ref={aboutRef} className={styles.pageTitle}>ABOUT ME</h1>
+                </section>
+            </div>
         </div>
         <div className={styles.container}>
             <h3 className='mainText'>
                 Hi, I am Job. A final year student studying my masters in computing and electronic systems.
                 Currently working as a bartender, but looking for a career change once I graduate.
             </h3>
-            <h4>
-                Born the 19<sup>th</sup> of April 2001 in Leidschendam Netherlands (near The Hague).
-            </h4>
-            <h4 className='sectionHead' onClick={expandHealth}>Education</h4>
-            <div className={styles.balls} style={{height: contentHeight, overflow: 'hidden', transition: 'height 0.4s ease'}}>
-                <div ref={contentRef} className={styles.rowContainer}>
+            <h3 className='mainText'>
+                Born 19<sup>th</sup> of April 2001 in Leidschendam Netherlands (near The Hague).
+            </h3>
+            <h4 className='sectionHead' >Education</h4>
+                <div className={styles.rowContainer}>
                     <InfoCard
                         img={Strathclyde}
                         description={'Strathclyde Image'}
@@ -64,7 +68,6 @@ return(
                         heading={'Aberdeen Grammar School'}
                         bodyText={'2013 - 2019'}
                     />
-                </div>
             </div>
             <h4></h4>
             <h4 className='sectionHead'>Skills</h4>
@@ -72,16 +75,16 @@ return(
 
         <ScrollHandler
             className={styles.pageTitle_scroll}
-            elementRef={ref}
+            elementRef={aboutRef}
             initialScrollMultiplier={0.5}
-            endScrollMultiplier={0.9}
+            endScrollMultiplier={0.85}
         />
 
         <ScrollHandler
             className={styles.gradient_after}
-            elementRef={ref2}
-            initialScrollMultiplier={0.8}
-            endScrollMultiplier={3}
+            elementRef={gradientRef}
+            initialScrollMultiplier={0.7}
+            endScrollMultiplier={20}
         />
     </div>
 )

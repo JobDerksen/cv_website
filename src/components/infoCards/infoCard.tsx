@@ -14,13 +14,17 @@ const InfoCard:FC<cardProps> = ({img,heading,bodyText,description}) => {
 
     return(
         <div className={styles.outline}>
-            <Image
-                src={img}
-                alt={description}
-                className={styles.image}
-            />
-            <h3>{heading}</h3>
-            <a>{bodyText}</a>
+            <div className={styles.complex}>
+                <div style={{zIndex: 2, position:'relative'}}>
+                    <Image
+                        src={img}
+                        alt={description}
+                        className={styles.image}
+                    />
+                    <h3>{heading}</h3>
+                    <a>{bodyText}</a>
+                </div>
+            </div>
         </div>
     );
 }

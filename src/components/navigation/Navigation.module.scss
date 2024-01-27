@@ -41,6 +41,7 @@
   background-color: rgba(#E0E0E0,0.0);
   position: fixed;
   transition: 0.5s;
+  z-index: 2;
 
   @media (max-width: 800px) {
     padding: 0 0.5rem 0;

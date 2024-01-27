@@ -68,18 +68,14 @@ body {
   font-weight: 300;
   text-align: justify-all;
   @media (max-width: 800px) {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
 
 .sectionHead{
-  cursor: pointer;
   width: 100%;
   border-bottom-color: black;
   border-bottom: solid;
   border-width: 0.05rem;
 }
 
-.sectionHead:hover{
-  text-decoration: underline;
-}
