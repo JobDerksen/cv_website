@@ -1,18 +1,22 @@
-.container {
-  background: linear-gradient(to bottom, #595959, white);
-  margin-top: 0;
-  text-align: center;
+.gradient {
+  background: linear-gradient(to bottom, #595959 0%, #bfd8d9 33%, #9fc6b4 66%, #bfd8d9 100%);
+  background-size: 200%;
+  background-position-y: 0;
+  transition: 1s background-position ease-out;
+  height:25rem;
+
+  &_after {
+    background-position-y: -8rem;
+  }
 }
 
 .hero {
   min-height: 0;
-  display: grid;
-  place-items: center;
   padding: 0.5rem;
 
   background-image: url("../../public/painting_of_me_no_background.png");
   background-size: 66%;
-  background-position: 5rem -15rem;
+  background-position: -1rem -15rem;
   background-attachment: fixed;
   background-repeat:no-repeat;
   @media only screen and (max-width: 1024px) {
@@ -38,10 +42,11 @@
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 1.5rem;
+  padding-left: 1.5rem;
   margin-left: 70vw;
   mix-blend-mode: lighten;
   color: #e0e0e0;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
   text-align: center;
   justify-content: start;
   @media (max-width: 800px) {
@@ -52,7 +57,7 @@
   }
   &_scroll {
     font-size: 4rem;
-    margin-left: 30vw;
+    margin-left: 26vw;
     @media (max-width: 800px) {
       font-size: 2rem;
       letter-spacing: 1rem;
@@ -61,4 +66,31 @@
     }
   }
 }
+.container{
+  display:grid;
+  margin-left: 22vw;
+  margin-right: 22vw;
+  justify-content: left;
+  @media (max-width: 800px) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
 
+.body {
+  background-color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1.5rem;
+  z-index: 0;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

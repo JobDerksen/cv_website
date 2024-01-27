@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;700;800;900&display=swap');
 
 body {
   font-family: 'montserrat', sans-serif;
@@ -24,7 +24,6 @@ h1,h2,h3,h4,h5,h6,p
 
 .pageContainer {
   min-height: 100vh;
-
 }
 
 .pageContainerHome {
@@ -62,5 +61,21 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.mainText{
+  font-size: 1.75rem;
+  font-weight: 300;
+  text-align: justify-all;
+  @media (max-width: 800px) {
+    font-size: 1rem;
+  }
+}
+
+.sectionHead{
+  width: 100%;
+  border-bottom-color: black;
+  border-bottom: solid;
+  border-width: 0.05rem;
 }
 

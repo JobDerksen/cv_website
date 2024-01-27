@@ -22,7 +22,6 @@ export const Navigation = (): React.JSX.Element => {
             if(!isMobileMenuHidden && isMobileScreen){
                 linkSelected()
             }
-
         };
         window.addEventListener('scroll', handleScroll);
         return () => {
