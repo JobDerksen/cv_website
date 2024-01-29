@@ -1,5 +1,5 @@
 .gradient {
-  background: linear-gradient(to bottom, #595959 0%, #bfd8d9 33%, #9fc6b4 66%, #bfd8d9 100%);
+  background: linear-gradient(to bottom, #595959 0%, #85d8ce 33%, #9fc6b4 66%, #bfd8d9 100%);
   background-size: 200%;
   background-position-y: 0;
   transition: 1s background-position ease-out;
@@ -25,14 +25,14 @@
       background-position: 5rem -15rem;
     }
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     .avia-safari #top .avia-full-stretch{
       background-attachment: scroll !important;
       background-size: 100vh;
       background-position: 40% -7rem;
     }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     background-size: 100vh;
     background-position: 40% -5rem;
   }
@@ -49,7 +49,7 @@
   transition: 0.5s ease-in-out;
   text-align: center;
   justify-content: start;
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     mix-blend-mode: unset;
     font-size: 1rem;
     letter-spacing: 0;
@@ -58,7 +58,7 @@
   &_scroll {
     font-size: 4rem;
     margin-left: 26vw;
-    @media (max-width: 800px) {
+    @media (max-width: 1024px) {
       font-size: 2rem;
       letter-spacing: 1rem;
       padding-left: 1rem;
@@ -71,7 +71,7 @@
   margin-left: 22vw;
   margin-right: 22vw;
   justify-content: left;
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     margin-left: 1rem;
     margin-right: 1rem;
   }
@@ -89,8 +89,16 @@
   padding: 1rem;
   gap: 1.5rem;
   z-index: 0;
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+.listContainer{
+  display: flex;
+  flex-direction: row;
+  ul{
+    width: 100%;
   }
 }

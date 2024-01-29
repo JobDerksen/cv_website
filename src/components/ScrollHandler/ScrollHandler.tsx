@@ -1,5 +1,6 @@
 import { FC, useEffect} from "react";
-import useScroll from "./useScroll";
+import useScroll from "../../hooks/useScroll";
+import useWindowDimensions from "../../hooks/useWindowDimensions"
 
 interface ScrollHandlerProps {
     className: string;
@@ -9,16 +10,17 @@ interface ScrollHandlerProps {
 }
 
 const ScrollHandler: FC<ScrollHandlerProps> = ({ elementRef, className, initialScrollMultiplier,endScrollMultiplier }) => {
-    const screenHeight = typeof window !== 'undefined' ? window.screen.height: 1080;
-    const scrollPosition = useScroll();
+    const scrollPosition = useScroll(); //hook which gets the scroll position
+    const screenHeight = useWindowDimensions().height; //this gets height of the screen and responds searchbar
 
     useEffect(() => {
+        //initial and end scroll multipliers are used to trigger the start and end scroll position
         if (scrollPosition.y > screenHeight * initialScrollMultiplier && scrollPosition.y < screenHeight * endScrollMultiplier) {
             elementRef.current?.classList.add(className);
         } else {
             elementRef.current?.classList.remove(className);
         }
-    }, [scrollPosition]);
+    }, [scrollPosition, screenHeight]);
 
     return null;
 };
