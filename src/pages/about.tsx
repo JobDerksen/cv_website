@@ -46,9 +46,9 @@ return(
                 </section>
             </div>
         </div>
-        <div className={styles.container}>
-            <h3 className='mainText'>
-                Hi, I am Job. A final year student studying my masters in computing and electronic systems.
+        <main className={styles.container}>
+            <h3 className='mainText' style={{marginTop:50}}>
+                Hi, I&apos;m Job. A final year student studying my masters in computing and electronic systems.
                 Currently working as a bartender, but looking for a career change once I graduate.
             </h3>
             <h3 className='mainText'>
@@ -61,29 +61,47 @@ return(
                         description={'Strathclyde Image'}
                         heading={'The University of Strathclyde'}
                         bodyText={'2019 - 2024'}
-                    />
+                    >
+                        <main className='secondaryText'>
+                                <p style={{textAlign:'center'}}>
+                                    First Year – 68%,
+                                    Second Year – 69%,
+                                    Third Year – 69%,
+                                    Fourth Year – 58%,
+                                    Fifth Year – current.
+                                </p>
+                            <p>Computing:</p>
+                            <p>Engineering:</p>
+
+                        </main>
+                    </InfoCard>
+
                     <InfoCard
                         img={ags}
                         description={'Aberdeen Grammar School Image'}
                         heading={'Aberdeen Grammar School'}
                         bodyText={'2013 - 2019'}
-                    />
-            </div>
+                    >
+                        <p className='secondaryText'>
+                            balls
+                        </p>
+                    </InfoCard>
+                </div>
             <h4></h4>
             <h4 className='sectionHead'>Skills</h4>
-        </div>
+        </main>
 
         <ScrollHandler
             className={styles.pageTitle_scroll}
             elementRef={aboutRef}
             initialScrollMultiplier={0.5}
-            endScrollMultiplier={0.85}
+            endScrollMultiplier={1.001}
         />
 
         <ScrollHandler
             className={styles.gradient_after}
             elementRef={gradientRef}
-            initialScrollMultiplier={0.7}
+            initialScrollMultiplier={0.9}
             endScrollMultiplier={20}
         />
     </div>

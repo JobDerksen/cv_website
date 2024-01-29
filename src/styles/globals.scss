@@ -38,9 +38,6 @@ body {
 *{
   -ms-overflow-style: none;
 }
-::-webkit-scrollbar {
-  display: none;
-}
 
 .spinner-container {
   display: flex;
@@ -67,6 +64,7 @@ body {
   font-size: 1.75rem;
   font-weight: 300;
   text-align: justify-all;
+  color: #232b2b;
   @media (max-width: 800px) {
     font-size: 1rem;
   }
@@ -74,8 +72,18 @@ body {
 
 .sectionHead{
   width: 100%;
+  color: black;
   border-bottom-color: black;
   border-bottom: solid;
   border-width: 0.05rem;
+}
+
+.secondaryText{
+  font-size: 1rem;
+  color: white;
+  text-align: left;
+  @media (max-width: 800px) {
+    font-size: 0.75rem;
+  }
 }
 

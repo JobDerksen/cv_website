@@ -4,8 +4,8 @@
   text-align: center;
   overflow: hidden;
   cursor: pointer;
-  padding-bottom: 0.5rem;
   position: relative;
+  height: clamp(15rem, 32vh, 23rem);
 
   a{
     color: white;
@@ -13,10 +13,13 @@
   h3{
     color: white;
     font-weight: 600;
+    border-bottom-color: white;
+    border-bottom: solid;
+    border-width: 0.05rem;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     width: 80vw;
-    margin: 2vw;
+    margin: 0.25vw;
   }
 }
 
@@ -28,6 +31,75 @@
   width: 100%;
   height: 20vh;
   object-fit: cover;
+  transition: 0.5s;
+  position: relative;
+  bottom: 0;
+
+  &_after{
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    transition: 0.5s;
+    position: relative;
+    bottom: 20vh
+  }
+}
+
+.main {
+  transition: 0.5s;
+  position: relative;
+  bottom: 0;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  @media (max-width: 1024px) {
+    margin-right: 0.1rem;
+    margin-left: 0.1rem;
+  }
+  a{
+    position: relative;
+    right: 0;
+    opacity: 1;
+    transition: 0.5s;
+    z-index: 1;
+  }
+  &_after{
+    transition: 0.5s;
+    position: relative;
+    bottom: 21vh;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    @media (max-width: 1024px) {
+      margin-right: 0.1rem;
+      margin-left: 0.1rem;
+    }
+    a{
+      position: relative;
+      right: -10rem;
+      opacity: 0;
+      z-index: -1;
+      transition: 0.5s;
+    }
+  }
+}
+
+.furtherInfo{
+  position: relative;
+  top: 3rem;
+  transition: 0.5s;
+  height: 1rem;
+  &_after{
+    position: relative;
+    top: -2rem;
+    transition: 0.5s;
+    p{
+      padding: 0;
+      margin: 0 1rem 1rem;
+    }
+  }
+  p{
+    padding: 0;
+    margin: 0 1rem 1rem;
+  }
 }
 
 .complex {
@@ -45,11 +117,11 @@
 }
 
 .complex::before {
-  background: linear-gradient(45deg, rgba(#c7dddd,1), rgba(#bfd9c0,1));
+  background: linear-gradient(160deg, rgba(#00b09b,1), rgba(#9fc6b4,1));
 }
 
 .complex::after {
-  background: linear-gradient(180deg, rgba(#5fa062,1), rgba(#8fbbbc,1));
+  background: linear-gradient(45deg, rgba(#085078,1), rgba(#85d8ce,1));
   transition: 1s opacity ease-out;
 }
 
