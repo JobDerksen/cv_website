@@ -92,13 +92,35 @@
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
+    padding: 0;
+    gap: 1rem;
   }
 }
 
 .listContainer{
-  display: flex;
-  flex-direction: row;
-  ul{
-    width: 100%;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
+  div{
+    display: table-cell;
+    text-align: center;
+    ul{
+      list-style-type: none;
+      margin: 0 0 0 0.2rem;
+      padding: 0;
+      text-align: left;
+      color: white;
+      font-weight: 200;
+      font-size: 0.9rem;
+      width: 100%;
+      @media (max-width: 820px) {
+        font-size: 0.7rem;
+      }
+      li{
+        padding-top: 0.5rem;
+      }
+    }
   }
 }
+

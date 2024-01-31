@@ -5,7 +5,7 @@
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  height: clamp(15rem, 32vh, 23rem);
+  height: clamp(17rem, 32vh, 23rem);
 
   a{
     color: white;
@@ -18,8 +18,8 @@
     border-width: 0.05rem;
   }
   @media (max-width: 1024px) {
-    width: 80vw;
-    margin: 0.25vw;
+    width: 92vw;
+    margin: 0.2vw;
   }
 }
 
@@ -52,8 +52,8 @@
   margin-right: 1rem;
   margin-left: 1rem;
   @media (max-width: 1024px) {
-    margin-right: 0.1rem;
-    margin-left: 0.1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
   }
   a{
     position: relative;
@@ -69,8 +69,9 @@
     margin-right: 1rem;
     margin-left: 1rem;
     @media (max-width: 1024px) {
-      margin-right: 0.1rem;
-      margin-left: 0.1rem;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      bottom: 22.5vh;
     }
     a{
       position: relative;
@@ -89,16 +90,16 @@
   height: 1rem;
   &_after{
     position: relative;
-    top: -2rem;
+    top: -2.25rem;
     transition: 0.5s;
     p{
       padding: 0;
-      margin: 0 1rem 1rem;
+      margin: 0 0 1rem;
     }
   }
   p{
     padding: 0;
-    margin: 0 1rem 1rem;
+    margin: 0 0 1rem;
   }
 }
 
