@@ -1,5 +1,5 @@
 .gradient {
-  background: linear-gradient(to bottom, #595959 0%, #85d8ce 33%, #9fc6b4 66%, #bfd8d9 100%);
+  background: linear-gradient(to bottom, #595959 0%, #85d8ce 33%, #9fc6b4 66%, #085078 120%);
   background-size: 200%;
   background-position-y: 0;
   transition: 1s background-position ease-out;
@@ -97,6 +97,15 @@
   }
 }
 
+.marqueeText{
+  font-size: 0.9rem;
+  font-weight: 200;
+  span{
+    padding:0.5rem;
+    color: white;
+  }
+}
+
 .listContainer{
   display: table;
   width: 100%;
@@ -109,18 +118,38 @@
       list-style-type: none;
       margin: 0 0 0 0.2rem;
       padding: 0;
-      text-align: left;
       color: white;
       font-weight: 200;
-      font-size: 0.9rem;
+      font-size: 1rem;
       width: 100%;
       @media (max-width: 820px) {
+        font-size: 0.8rem;
+      }
+      @media (max-width: 300px) {
         font-size: 0.7rem;
       }
       li{
-        padding-top: 0.5rem;
+        padding-top: 0.1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        @media (max-width: 820px) {
+          padding-left: 0.25rem;
+          padding-right: 0.25rem;
+        }
       }
     }
+  }
+}
+.singularListElem{
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 200;
+  color: white;
+  @media (max-width: 820px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 300px) {
+    font-size: 0.7rem;
   }
 }
 

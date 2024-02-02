@@ -3,6 +3,7 @@ import styles from './infoCard.module.scss'
 import Image, { StaticImageData } from 'next/image'
 import clsx from "clsx";
 
+
 interface cardProps {
     img: StaticImageData;
     heading: string;
@@ -38,7 +39,7 @@ const InfoCard:FC<cardProps> = ({img,heading,bodyText,description,children}) => 
                     })}
                     >
                         <h3>{heading}</h3>
-                        <a>{bodyText}</a>
+                        <h4>{bodyText}</h4>
                         <div className={clsx({
                             [styles['furtherInfo']]: !isClicked,
                             [styles['furtherInfo_after']] : isClicked

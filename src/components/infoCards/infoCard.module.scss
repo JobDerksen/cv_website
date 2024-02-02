@@ -7,8 +7,11 @@
   position: relative;
   height: clamp(17rem, 32vh, 23rem);
 
-  a{
+  h4{
     color: white;
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin: 0.2rem;
   }
   h3{
     color: white;
@@ -18,7 +21,7 @@
     border-width: 0.05rem;
   }
   @media (max-width: 1024px) {
-    width: 92vw;
+    width: 87.5vw;
     margin: 0.2vw;
   }
 }
@@ -29,7 +32,8 @@
 
 .image{
   width: 100%;
-  height: 20vh;
+  //height: 20vh;
+  height: clamp(10rem, 20vh, 23rem);
   object-fit: cover;
   transition: 0.5s;
   position: relative;
@@ -55,7 +59,7 @@
     margin-right: 0.5rem;
     margin-left: 0.5rem;
   }
-  a{
+  h4{
     position: relative;
     right: 0;
     opacity: 1;
@@ -68,12 +72,12 @@
     bottom: 21vh;
     margin-right: 1rem;
     margin-left: 1rem;
-    @media (max-width: 1024px) {
+    @media (max-width: 800px) {
       margin-right: 0.5rem;
       margin-left: 0.5rem;
       bottom: 22.5vh;
     }
-    a{
+    h4{
       position: relative;
       right: -10rem;
       opacity: 0;

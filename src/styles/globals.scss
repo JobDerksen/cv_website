@@ -61,12 +61,14 @@ body {
 }
 
 .mainText{
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   font-weight: 300;
   text-align: justify-all;
   color: #232b2b;
+  margin-top:0.75rem;
+  margin-bottom: 0.5rem;
   @media (max-width: 800px) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -79,12 +81,16 @@ body {
 }
 
 .secondaryText{
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: white;
   text-align: left;
   font-weight: 300;
+  width:100%;
+  border-bottom-color: rgba(white,0.25);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
   @media (max-width: 800px) {
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 }
 
