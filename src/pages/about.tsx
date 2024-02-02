@@ -140,6 +140,7 @@ const About = () => {
                     <p className={styles.marqueeText}>
                         <span>Mathematics - A</span>
                         <span>Physics - A</span>
+                        <span>Computing Science - A</span>
                         <span>Engineering Science - A</span>
                         <span>Chemistry - A</span>
                         <span>Graphic Communication - B</span>
