@@ -13,6 +13,8 @@ const Projects = () => {
                 <div className='content'>
                     <div className={styles.container}>
                         My projects
+                        {/*https://www.energyvoice.com/oilandgas/north-sea/188096/aberdeen-school-scoops-top-oil-and-gas-challenge/*/}
+                        {/*https://www.agcc.co.uk/news-article/aberdeen-grammar-school-wins-top-prize-at-final-of-techfests-stem-in-the-pipeline-oil-and-gas-challenge*/}
                     </div>
                 </div>
         </div>

@@ -10,22 +10,26 @@
   },
   "dependencies": {
     "clsx": "^2.0.0",
+    "glob-parent": "^6.0.2",
     "next": "14.0.4",
     "next-videos": "^1.4.1",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.6.3",
     "react-router-dom": "^6.21.1",
     "react-scroll": "^1.9.0",
+    "react-tooltip": "^5.26.0",
     "sass": "^1.69.5"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "@types/react-helmet": "^6.1.11",
     "@types/react-scroll": "^1.8.10",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "glob-parent": "$glob-parent"
   }
 }
