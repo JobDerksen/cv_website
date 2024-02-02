@@ -66,6 +66,7 @@ const About = () => {
                     description={'Strathclyde Image'}
                     heading={'The University of Strathclyde'}
                     bodyText={'2019 - 2024'}
+                    background={'education'}
                 >
                     <div className={styles.listContainer}>
                         <div style={{textAlign: 'right'}}>
@@ -85,7 +86,7 @@ const About = () => {
                     <p className='secondaryText'>Computing</p>
                     <Marquee pauseOnHover={true} loop={0}>
                         <div>
-                            <p className={styles.marqueeText}>
+                            <p>
                                 <span>Designing Usable Systems</span>
                                 <span>Distributed Information Systems</span>
                                 <span>Mobile Software and Applications</span>
@@ -108,7 +109,7 @@ const About = () => {
                     <p className='secondaryText'>Engineering</p>
                     <Marquee pauseOnHover={true} loop={0}>
                         <div>
-                            <p className={styles.marqueeText}>
+                            <p>
                                 <span>Intelligent Sensing Through Machine Learning</span>
                                 <span>Neural Networks And Deep Learning</span>
                                 <span>Photonic Systems</span>
@@ -129,6 +130,7 @@ const About = () => {
                     description={'Aberdeen Grammar School Image'}
                     heading={'Aberdeen Grammar School'}
                     bodyText={'2013 - 2019'}
+                    background={'education'}
                 >
 
                     <p className='secondaryText'>Advanced Highers</p>
@@ -148,10 +150,74 @@ const About = () => {
 
                 </InfoCard>
             </div>
-            <h4></h4>
             <h4 className='sectionHead'>Skills</h4>
-            {/*Have Three columns languages, software and soft skills*/}
-            {/*Lets also figure out a way we can be creative here*/}
+            {/*Include small sentance above or below explaining more info*/}
+            <div className={styles.rowContainer}>
+                <InfoCard
+                    img={Strathclyde}
+                    description={'Strathclyde Image'}
+                    heading={'Programming Languages'}
+                    bodyText={'Proficient in all'}
+                    background={'languages'}
+                >
+                    <p className={styles.balls}>
+                        <a>Java, </a>
+                        <a>Python, </a>
+                        <a>C, </a>
+                        <a>Arduino(C++),</a>
+                        <a>Kotlin, </a>
+                        <a>JavaScript, </a>
+                        <a>TypeScript, </a>
+                        <a>CSS, </a>
+                        <a>PHP, </a>
+                        <a>XML, </a>
+                        <a>XQuery, </a>
+                        <a>RDF, </a>
+                        <a>SPARQL, </a>
+                        <a>OWL, </a>
+                        <a>HTML, </a>
+                        <a>SQL, </a>
+                        <a>Assembly, </a>
+                        <a>and VHDL</a>
+                    </p>
+                    </InfoCard>
+
+                <InfoCard
+                    img={Strathclyde}
+                    description={'Strathclyde Image'}
+                    heading={'Specialist Software'}
+                    bodyText={'test'}
+                    background={'software'}
+                >
+                    <p className={styles.balls}>
+                        <a>AWS(Amplify and S3 buckets), </a>
+                        <a>Git, </a>
+                        <a>Autodesk (Eagle, Inventor, Fusion 360, and Flow Design), </a>
+                        <a>Figma, </a>
+                        <a>Matlab,</a>
+                        <a>Vivado, </a>
+                        <a>OrCad, </a>
+                        <a>and Excel</a>
+                    </p>
+                </InfoCard>
+                <InfoCard
+                    img={Strathclyde}
+                    description={'Strathclyde Image'}
+                    heading={'Soft Skills'}
+                    bodyText={':D'}
+                    background={'languages'}
+                >
+                    <p className={styles.balls}>
+                        <a>Teamwork, </a>
+                        <a>Dedication, </a>
+                        <a>Leadership, </a>
+                        <a>Customer Service, </a>
+                        <a>Graphic Design, </a>
+                        <a>Creative, </a>
+                        <a>and Public Speaking </a>
+                    </p>
+                </InfoCard>
+            </div>
         </main>
 
         <ScrollHandler

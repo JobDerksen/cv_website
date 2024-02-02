@@ -61,14 +61,14 @@ body {
 }
 
 .mainText{
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 300;
   text-align: justify-all;
   color: #232b2b;
   margin-top:0.75rem;
   margin-bottom: 0.5rem;
   @media (max-width: 800px) {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
@@ -78,6 +78,23 @@ body {
   border-bottom-color: black;
   border-bottom: solid;
   border-width: 0.05rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  @media (max-width: 800px) {
+    font-size: 1rem;
+  }
+
+}
+
+.sectionHeadNoUnderline{
+  width: 100%;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  @media (max-width: 800px) {
+    font-size: 1rem;
+  }
 }
 
 .secondaryText{

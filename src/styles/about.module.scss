@@ -68,8 +68,8 @@
 }
 .container{
   display:grid;
-  margin-left: 22vw;
-  margin-right: 22vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
   justify-content: left;
   @media (max-width: 1024px) {
     margin-left: 1rem;
@@ -85,24 +85,21 @@
 .rowContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: space-evenly;
   gap: 1.5rem;
   z-index: 0;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    gap: 1rem;
-  }
-}
-
-.marqueeText{
-  font-size: 0.9rem;
-  font-weight: 200;
+  width: 100%;
   span{
     padding:0.5rem;
     color: white;
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -153,3 +150,15 @@
   }
 }
 
+.balls{
+  a{
+    padding-right: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: justify-all;
+    color: #232b2b;
+    @media (max-width: 800px) {
+      font-size: 1rem;
+    }
+  }
+}
