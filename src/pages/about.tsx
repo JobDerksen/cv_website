@@ -149,7 +149,6 @@ const About = () => {
                         <span>Chemistry - A</span>
                         <span>Graphic Communication - B</span>
                     </p>
-
                 </InfoCard>
             </div>
             <h4 className='sectionHead'>Skills</h4>

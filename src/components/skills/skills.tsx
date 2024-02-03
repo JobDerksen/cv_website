@@ -46,7 +46,7 @@ const Skills = () => {
                     >
                         <span/>
                         <div style={{marginTop: 10}}>
-                            <p className={styles.skillText}>
+                            <p className='skillText'>
                                 <a>Java, </a>
                                 <a>Python, </a>
                                 <a>C, </a>
@@ -66,7 +66,12 @@ const Skills = () => {
                                 <a>Assembly, </a>
                                 <a>and VHDL</a>
                             </p>
-
+                            <p className='skillText'>
+                                <a>
+                                    I strive to become the best programmer I can be and I intend to keep learning new languages
+                                    and build up my skills in the languages I know.
+                                </a>
+                            </p>
                         </div>
                     </InfoCard>
                 </div>
@@ -77,12 +82,12 @@ const Skills = () => {
                     <InfoCard
                         img={skillhands}
                         description={'Strathclyde Image'}
-                        heading={'Specialist Software'}
+                        heading={'Specialist Software and Libraries'}
                         bodyText={''}
                         background={'software'}
                     >
                         <span/>
-                        <p className={styles.skillText}>
+                        <p className='skillText'>
                             <a>AWS(Amplify and S3 buckets), </a>
                             <a>Git, </a>
                             <a>Autodesk (Eagle, Inventor, Fusion 360, and Flow Design), </a>
@@ -90,7 +95,13 @@ const Skills = () => {
                             <a>Matlab,</a>
                             <a>Vivado, </a>
                             <a>OrCad, </a>
-                            <a>and Excel</a>
+                            <a>Excel, </a>
+                            <a>and Photoshop</a>
+                        </p>
+                        <p className='skillText'>
+                            <a>Tensorflow, </a>
+                            <a>Scikit-Learn, </a>
+                            <a>and the Framework; React.js(Next.js and React Native)</a>
                         </p>
                     </InfoCard>
                 </div>
@@ -106,14 +117,20 @@ const Skills = () => {
                         background={'soft'}
                     >
                         <span/>
-                        <p className={styles.skillText}>
+                        <p className='skillText'>
                             <a>Teamwork, </a>
-                            <a>Dedication, </a>
+                            <a>Self-Discipline, </a>
                             <a>Leadership, </a>
                             <a>Customer Service, </a>
                             <a>Graphic Design, </a>
                             <a>Creative, </a>
                             <a>and Public Speaking </a>
+                        </p>
+                        <p className='skillText'>
+                            <a>
+                                I have picked up many skills throughout my life, from working behind a bar to getting
+                                myself in the gym and project work throughout my educational career.
+                            </a>
                         </p>
                     </InfoCard>
                 </div>

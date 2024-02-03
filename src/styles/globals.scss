@@ -110,3 +110,16 @@ body {
     font-size: 1rem;
   }
 }
+
+.skillText{
+  text-align: left;
+  a{
+    padding-right: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color:white;
+    @media (max-width: 800px) {
+      font-size: 0.9rem;
+    }
+  }
+}
