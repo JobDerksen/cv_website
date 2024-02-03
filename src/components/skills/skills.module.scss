@@ -1,0 +1,46 @@
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  gap: 1.1rem;
+  width: 90vw;
+
+  span{
+    padding:0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.skillText{
+  text-align: left;
+  a{
+    padding-right: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color:white;
+    @media (max-width: 800px) {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  z-index: 0;
+  span{
+    padding:0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+}

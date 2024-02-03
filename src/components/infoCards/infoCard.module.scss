@@ -11,18 +11,13 @@
     color: white;
     font-weight: 300;
     font-size: 1.1rem;
-    margin: 0.2rem;
   }
   h3{
     color: white;
     font-weight: 600;
-    border-bottom-color: white;
-    border-bottom: solid;
-    border-width: 0.05rem;
   }
   @media (max-width: 1024px) {
-    width: 87.5vw;
-    margin: 0.2vw;
+    width: 90vw;
   }
 }
 
@@ -117,11 +112,11 @@
 }
 
 .education::before {
-  background: linear-gradient(160deg, rgba(#00b09b,1), rgba(#9fc6b4,1));
+  background: linear-gradient(160deg, rgba(#1a2a6c,1), rgba(#9fc6b4,1));
 }
 
 .education::after {
-  background: linear-gradient(45deg, rgba(#085078,1), rgba(#85d8ce,1));
+  background: linear-gradient(45deg, rgba(#23074d,1), rgba(#85d8ce,1));
   transition: 1s opacity ease-out;
 }
 
@@ -144,11 +139,11 @@
 }
 
 .languages::before {
-  background: linear-gradient(160deg, rgba(#1a2a6c,1), rgba(#b21f1f,1));
+  background: linear-gradient(45deg, rgba(#1a2a6c,1), rgba(#b21f1f,1));
 }
 
 .languages::after {
-  background: linear-gradient(45deg, rgba(#c0392b,1), rgba(#8e44ad,1));
+  background: linear-gradient(45deg, rgba(#1a2a6c,1), rgba(#360033,1));
   transition: 1s opacity ease-out;
 }
 
@@ -171,14 +166,41 @@
 }
 
 .software::before {
-  background: linear-gradient(160deg, rgba(#1a2a6c,1), rgba(#b21f1f,1));
+  background: linear-gradient(180deg, rgba(#c94b4b,1), rgba(#360033,1));
 }
 
 .software::after {
-  background: linear-gradient(45deg, rgba(#8e44ad,1), rgba(#8e44ad,1));
+  background: linear-gradient(135deg, rgba(#360033,1), rgba(#ad5389,1));
   transition: 1s opacity ease-out;
 }
 
 .software:hover::after {
+  opacity: 0;
+}
+
+.soft {
+  background: transparent;
+}
+
+.soft::before, .soft::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.soft::before {
+  background: linear-gradient(315deg, rgba(#23074d,1), rgba(#c94b4b,1));
+}
+
+.soft::after {
+  background: linear-gradient(90deg, rgba(#ad5389,1), rgba(#1a2a6c,1));
+  transition: 1s opacity ease-out;
+}
+
+.soft:hover::after {
   opacity: 0;
 }

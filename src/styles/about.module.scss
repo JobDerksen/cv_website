@@ -1,5 +1,5 @@
 .gradient {
-  background: linear-gradient(to bottom, #595959 0%, #85d8ce 33%, #9fc6b4 66%, #085078 120%);
+  background: linear-gradient(to bottom, #595959 0%, #85d8ce 33%, #9fc6b4 66%, #1a2a6c 120%);
   background-size: 200%;
   background-position-y: 0;
   transition: 1s background-position ease-out;
@@ -88,7 +88,6 @@
   justify-content: space-evenly;
   gap: 1.5rem;
   z-index: 0;
-  width: 100%;
   span{
     padding:0.5rem;
     color: white;
@@ -147,18 +146,5 @@
   }
   @media (max-width: 300px) {
     font-size: 0.7rem;
-  }
-}
-
-.balls{
-  a{
-    padding-right: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-align: justify-all;
-    color: #232b2b;
-    @media (max-width: 800px) {
-      font-size: 1rem;
-    }
   }
 }

@@ -6,6 +6,8 @@ import ScrollHandler from '../components/ScrollHandler/ScrollHandler'
 import InfoCard from '../components/infoCards/infoCard'
 import Strathclyde from '../../public/university-of-strathclyde-banner.png'
 import ags from '../../public/aberdeen grammar school.jpg'
+import Skills from '../components/skills/skills'
+
 
 const About = () => {
     const aboutRef = useRef<HTMLDivElement>(null);
@@ -152,71 +154,8 @@ const About = () => {
             </div>
             <h4 className='sectionHead'>Skills</h4>
             {/*Include small sentance above or below explaining more info*/}
-            <div className={styles.rowContainer}>
-                <InfoCard
-                    img={Strathclyde}
-                    description={'Strathclyde Image'}
-                    heading={'Programming Languages'}
-                    bodyText={'Proficient in all'}
-                    background={'languages'}
-                >
-                    <p className={styles.balls}>
-                        <a>Java, </a>
-                        <a>Python, </a>
-                        <a>C, </a>
-                        <a>Arduino(C++),</a>
-                        <a>Kotlin, </a>
-                        <a>JavaScript, </a>
-                        <a>TypeScript, </a>
-                        <a>CSS, </a>
-                        <a>PHP, </a>
-                        <a>XML, </a>
-                        <a>XQuery, </a>
-                        <a>RDF, </a>
-                        <a>SPARQL, </a>
-                        <a>OWL, </a>
-                        <a>HTML, </a>
-                        <a>SQL, </a>
-                        <a>Assembly, </a>
-                        <a>and VHDL</a>
-                    </p>
-                    </InfoCard>
-
-                <InfoCard
-                    img={Strathclyde}
-                    description={'Strathclyde Image'}
-                    heading={'Specialist Software'}
-                    bodyText={'test'}
-                    background={'software'}
-                >
-                    <p className={styles.balls}>
-                        <a>AWS(Amplify and S3 buckets), </a>
-                        <a>Git, </a>
-                        <a>Autodesk (Eagle, Inventor, Fusion 360, and Flow Design), </a>
-                        <a>Figma, </a>
-                        <a>Matlab,</a>
-                        <a>Vivado, </a>
-                        <a>OrCad, </a>
-                        <a>and Excel</a>
-                    </p>
-                </InfoCard>
-                <InfoCard
-                    img={Strathclyde}
-                    description={'Strathclyde Image'}
-                    heading={'Soft Skills'}
-                    bodyText={':D'}
-                    background={'languages'}
-                >
-                    <p className={styles.balls}>
-                        <a>Teamwork, </a>
-                        <a>Dedication, </a>
-                        <a>Leadership, </a>
-                        <a>Customer Service, </a>
-                        <a>Graphic Design, </a>
-                        <a>Creative, </a>
-                        <a>and Public Speaking </a>
-                    </p>
-                </InfoCard>
+            <div>
+                <Skills/>
             </div>
         </main>
 
