@@ -9,10 +9,11 @@ interface cardProps {
     heading: string;
     bodyText: string;
     description: string;
+    background: string;
     children: ReactNode;
 }
 
-const InfoCard:FC<cardProps> = ({img,heading,bodyText,description,children}) => {
+const InfoCard:FC<cardProps> = ({img,heading,bodyText,description,children, background}) => {
     const [isClicked, setClicked] = useState(false)
 
     const handleClick = () => {
@@ -21,7 +22,7 @@ const InfoCard:FC<cardProps> = ({img,heading,bodyText,description,children}) => 
 
     return(
         <div className={styles.outline}>
-            <div className={styles.complex}>
+            <div className={styles[background]}>
                 <div style={{zIndex: 2, position:'relative'}} onClick={handleClick}>
                     <Image
                         src={img}

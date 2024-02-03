@@ -6,6 +6,8 @@ import ScrollHandler from '../components/ScrollHandler/ScrollHandler'
 import InfoCard from '../components/infoCards/infoCard'
 import Strathclyde from '../../public/university-of-strathclyde-banner.png'
 import ags from '../../public/aberdeen grammar school.jpg'
+import Skills from '../components/skills/skills'
+
 
 const About = () => {
     const aboutRef = useRef<HTMLDivElement>(null);
@@ -66,6 +68,7 @@ const About = () => {
                     description={'Strathclyde Image'}
                     heading={'The University of Strathclyde'}
                     bodyText={'2019 - 2024'}
+                    background={'education'}
                 >
                     <div className={styles.listContainer}>
                         <div style={{textAlign: 'right'}}>
@@ -85,7 +88,7 @@ const About = () => {
                     <p className='secondaryText'>Computing</p>
                     <Marquee pauseOnHover={true} loop={0}>
                         <div>
-                            <p className={styles.marqueeText}>
+                            <p>
                                 <span>Designing Usable Systems</span>
                                 <span>Distributed Information Systems</span>
                                 <span>Mobile Software and Applications</span>
@@ -108,7 +111,7 @@ const About = () => {
                     <p className='secondaryText'>Engineering</p>
                     <Marquee pauseOnHover={true} loop={0}>
                         <div>
-                            <p className={styles.marqueeText}>
+                            <p>
                                 <span>Intelligent Sensing Through Machine Learning</span>
                                 <span>Neural Networks And Deep Learning</span>
                                 <span>Photonic Systems</span>
@@ -129,6 +132,7 @@ const About = () => {
                     description={'Aberdeen Grammar School Image'}
                     heading={'Aberdeen Grammar School'}
                     bodyText={'2013 - 2019'}
+                    background={'education'}
                 >
 
                     <p className='secondaryText'>Advanced Highers</p>
@@ -140,17 +144,18 @@ const About = () => {
                     <p className={styles.marqueeText}>
                         <span>Mathematics - A</span>
                         <span>Physics - A</span>
+                        <span>Computing Science - A</span>
                         <span>Engineering Science - A</span>
                         <span>Chemistry - A</span>
                         <span>Graphic Communication - B</span>
                     </p>
-
                 </InfoCard>
             </div>
-            <h4></h4>
             <h4 className='sectionHead'>Skills</h4>
-            {/*Have Three columns languages, software and soft skills*/}
-            {/*Lets also figure out a way we can be creative here*/}
+            {/*Include small sentance above or below explaining more info*/}
+            <div>
+                <Skills/>
+            </div>
         </main>
 
         <ScrollHandler

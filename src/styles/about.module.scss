@@ -1,5 +1,5 @@
 .gradient {
-  background: linear-gradient(to bottom, #595959 0%, #85d8ce 33%, #9fc6b4 66%, #085078 120%);
+  background: linear-gradient(to bottom, #595959 0%, #85d8ce 33%, #9fc6b4 66%, #1a2a6c 120%);
   background-size: 200%;
   background-position-y: 0;
   transition: 1s background-position ease-out;
@@ -68,9 +68,10 @@
 }
 .container{
   display:grid;
-  margin-left: 22vw;
-  margin-right: 22vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
   justify-content: left;
+  padding-bottom: 4rem;
   @media (max-width: 1024px) {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -85,24 +86,19 @@
 .rowContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: space-evenly;
   gap: 1.5rem;
   z-index: 0;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    gap: 1rem;
-  }
-}
-
-.marqueeText{
-  font-size: 0.9rem;
-  font-weight: 200;
   span{
     padding:0.5rem;
     color: white;
+    font-size: 0.9rem;
+    font-weight: 200;
+  }
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -152,4 +148,3 @@
     font-size: 0.7rem;
   }
 }
-

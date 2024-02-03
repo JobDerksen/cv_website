@@ -13,7 +13,7 @@ export const Navigation = (): React.JSX.Element => {
     const [isActive, setActive] = useState(false)
 
     useEffect(()=>{
-        if(screenWidth < 800 && router.pathname !== '/') setMobileScreen(true)
+        if(screenWidth < 820 && router.pathname !== '/') setMobileScreen(true)
         else setMobileScreen(false)
     },[router.pathname, screenWidth])
 
