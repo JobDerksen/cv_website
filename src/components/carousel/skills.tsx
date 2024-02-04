@@ -1,6 +1,6 @@
 import InfoCard from "@/components/infoCards/infoCard";
 import hand from "../../../public/hand.png";
-import styles from "./skills.module.scss";
+import styles from "./carousel.module.scss";
 import skillhands from "../../../public/skillhands.png";
 import softhand from "../../../public/softhand.png";
 import React, {useEffect, useState} from "react";
@@ -35,7 +35,7 @@ const Skills = () => {
             }>
                 <div className={clsx({
                     [styles['styles.embla__slide']]: isMobileScreen,
-                    [styles['']]: !isMobileScreen,
+                    [styles['desktopWidth']]: !isMobileScreen,
                 })}>
                     <InfoCard
                         img={hand}
@@ -77,7 +77,7 @@ const Skills = () => {
                 </div>
                 <div className={clsx({
                     [styles['styles.embla__slide']]: isMobileScreen,
-                    [styles['']]: !isMobileScreen,
+                    [styles['desktopWidth']]: !isMobileScreen,
                 })}>
                     <InfoCard
                         img={skillhands}
@@ -107,7 +107,7 @@ const Skills = () => {
                 </div>
                 <div className={clsx({
                     [styles['styles.embla__slide']]: isMobileScreen,
-                    [styles['']]: !isMobileScreen,
+                    [styles['desktopWidth']]: !isMobileScreen,
                 })}>
                     <InfoCard
                         img={softhand}
