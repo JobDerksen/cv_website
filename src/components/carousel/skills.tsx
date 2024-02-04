@@ -45,7 +45,7 @@ const Skills = () => {
                         background={'languages'}
                     >
                         <span/>
-                        <div style={{marginTop: 10}}>
+                        <div>
                             <p className='skillText'>
                                 <a>Java, </a>
                                 <a>Python, </a>
