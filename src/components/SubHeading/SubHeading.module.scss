@@ -28,6 +28,10 @@
   font-size: 2rem;
   mix-blend-mode: soft-light;
 
+  @media (max-width: 1200px) {
+    font-size: 1.75rem;
+  }
+
   @media (max-width: 1024px) {
     font-size: 1.6rem;
     letter-spacing: 0.25rem;

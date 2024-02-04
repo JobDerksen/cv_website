@@ -41,9 +41,9 @@
   background-color: rgba(#E0E0E0,0.0);
   position: fixed;
   transition: 0.5s;
-  z-index: 2;
+  z-index: 1000;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     padding: 0 0.5rem 0;
     background-color: rgba(#E0E0E0,1);
     height: 3.25rem;
@@ -56,7 +56,7 @@
     cursor: pointer;
     display: none;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 820px) {
       display: flex;
       right: 1.6rem;
       top: 0.75rem;
@@ -71,7 +71,7 @@
     gap: 3rem;
 
     // This is the panel that appears when opened on mobile
-    @media (max-width: 1024px) {
+    @media (max-width: 820px) {
       position: fixed;
       padding-right: 1.2rem;
       flex-direction: column;
@@ -107,7 +107,7 @@
       }
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 820px) {
       flex-direction: column;
       align-items: center;
       a{
@@ -127,7 +127,7 @@
       display: flex;
       gap: 1rem;
 
-      @media (max-width: 1024px) {
+      @media (max-width: 820px) {
         margin-top: 3rem;
         padding-right: 1.2rem;
         position: fixed;
@@ -156,7 +156,7 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     background-color: #E0E0E0;
     height: 3.25rem;
     a{
@@ -186,7 +186,7 @@
   }
 
   // if on mobile do not apply left margin and display vertically
-  @media (max-width: 1024px) {
+  @media (max-width: 820px) {
     flex-direction: column;
     text-align: center;
 
@@ -222,7 +222,7 @@
       }
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 820px) {
       font-size: 1.125rem;
     }
 
