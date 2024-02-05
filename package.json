@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "clsx": "^2.0.0",
-    "embla-carousel-autoplay": "^8.0.0-rc22",
     "embla-carousel-react": "^8.0.0-rc22",
     "glob-parent": "^6.0.2",
     "next": "14.0.4",

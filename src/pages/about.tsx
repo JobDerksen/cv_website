@@ -59,13 +59,13 @@ const About = () => {
                 Canada in 2007 and then to Scotland in 2013 where I reside now.
             </h3>
             <h4 className='sectionHead'>Education</h4>
-                <div>
+                <div className='desktopWidth'>
                     <Education/>
                 </div>
             <h4 className='sectionHead'>Skills</h4>
-            <div>
-                <Skills/>
-            </div>
+                <div className='desktopWidth'>
+                    <Skills/>
+                </div>
         </main>
 
         <ScrollHandler

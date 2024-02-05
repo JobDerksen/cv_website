@@ -5,18 +5,17 @@ import skillhands from "../../../public/skillhands.png";
 import softhand from "../../../public/softhand.png";
 import React, {useEffect, useState} from "react";
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import clsx from 'clsx';
 import {useRouter} from "next/router";
 
 const Skills = () => {
-    const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()])
+    const [emblaRef] = useEmblaCarousel({ loop: false, containScroll: 'trimSnaps'   })
     const router = useRouter();
-    const screenWidth = typeof window !== 'undefined' ? window.screen.width : 800;
+    const screenWidth = typeof window !== 'undefined' ? window.screen.width : 760;
     const [isMobileScreen, setMobileScreen] = useState(false);
 
     useEffect(()=>{
-        if(screenWidth <= 1024 && router.pathname !== '/about') setMobileScreen(true)
+        if(screenWidth <= 760 && router.pathname !== '/about') setMobileScreen(true)
         else setMobileScreen(false)
     },[router.pathname, screenWidth])
 
@@ -35,7 +34,7 @@ const Skills = () => {
             }>
                 <div className={clsx({
                     [styles['styles.embla__slide']]: isMobileScreen,
-                    [styles['desktopWidth']]: !isMobileScreen,
+                    ['desktopWidth']: !isMobileScreen,
                 })}>
                     <InfoCard
                         img={hand}
@@ -50,10 +49,10 @@ const Skills = () => {
                                 <a>Java, </a>
                                 <a>Python, </a>
                                 <a>C, </a>
-                                <a>Arduino(C++),</a>
-                                <a>Kotlin, </a>
                                 <a>JavaScript, </a>
                                 <a>TypeScript, </a>
+                                <a>Arduino(C++),</a>
+                                <a>Kotlin, </a>
                                 <a>CSS, </a>
                                 <a>PHP, </a>
                                 <a>XML, </a>
@@ -68,7 +67,7 @@ const Skills = () => {
                             </p>
                             <p className='skillText'>
                                 <a>
-                                    I strive to become the best programmer I can be and I intend to keep learning new languages
+                                I strive to become the best programmer I can be and I intend to keep learning new languages
                                     and build up my skills in the languages I know.
                                 </a>
                             </p>
@@ -77,7 +76,7 @@ const Skills = () => {
                 </div>
                 <div className={clsx({
                     [styles['styles.embla__slide']]: isMobileScreen,
-                    [styles['desktopWidth']]: !isMobileScreen,
+                    ['desktopWidth']: !isMobileScreen,
                 })}>
                     <InfoCard
                         img={skillhands}
@@ -107,7 +106,7 @@ const Skills = () => {
                 </div>
                 <div className={clsx({
                     [styles['styles.embla__slide']]: isMobileScreen,
-                    [styles['desktopWidth']]: !isMobileScreen,
+                    ['desktopWidth']: !isMobileScreen,
                 })}>
                     <InfoCard
                         img={softhand}
