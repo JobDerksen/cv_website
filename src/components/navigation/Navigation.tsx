@@ -16,15 +16,16 @@ export const Navigation = (): React.JSX.Element => {
      and tablet menu which is a combination*/
     useEffect(()=>{
         if(screenWidth < 1400) {
-            setTabletScreen(true)
+            setTabletScreen(true);
+            setMobileScreen(false);
             if(screenWidth < 820){
-                setMobileScreen(true)
-                setTabletScreen(false)
+                setMobileScreen(true);
+                setTabletScreen(false);
             }
         }
         else {
-            setMobileScreen(false)
-            setTabletScreen(false)
+            setMobileScreen(false);
+            setTabletScreen(false);
         }
     },[screenWidth])
 

@@ -43,7 +43,7 @@ const About = () => {
                 </section>
             </div>
         </div>
-        <main className={styles.container}>
+        <main className='content' style={{justifyContent:'left'}}>
             <h4 className='sectionHead' style={{marginTop: 50}}>Introduction</h4>
             <h3 className='mainText'>
                 Hi, I&apos;m Job. A final year student studying my masters in computing and electronic systems, CES.

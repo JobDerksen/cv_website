@@ -82,7 +82,6 @@ export default function ContactForm() {
     return (
         <>
             <div className={styles.container}>
-                <h3>Get in Touch</h3>
                 <form onSubmit={handleSubmit} id='form'>
                         <div className={clsx({
                             [styles['input_container']]:!errorRecipient,

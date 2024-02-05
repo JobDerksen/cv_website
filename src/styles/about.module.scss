@@ -66,30 +66,6 @@
     }
   }
 }
-.container{
-  display:grid;
-  margin-left:20vw;
-  margin-right:20vw;
-  justify-content: left;
-  padding-bottom: 4rem;
-  @media (max-width: 1600px) {
-    margin-left:15vw;
-    margin-right:15vw;
-  }
-  @media (max-width: 1350px) {
-    margin-left:10vw;
-    margin-right:10vw;
-  }
-  @media (max-width: 1350px) {
-    margin-left:7.5vw;
-    margin-right:7.5vw;
-  }
-  @media (max-width: 1200px) {
-    margin-left:2.5vw;
-    margin-right:2.5vw;
-  }
-
-}
 
 .body {
   background-color: #e0e0e0;
