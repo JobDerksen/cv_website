@@ -1,22 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import styles from './Navigation.module.scss'
-import {useRouter} from "next/router";
 import XIcon from '@/components/icons/xIcon/xIcon'
 import { Link } from "react-scroll";
+import useWindowDimensions from "../../hooks/useWindowDimensions"
 
 export const Navigation = (): React.JSX.Element => {
-    const screenWidth = typeof window !== 'undefined' ? window.screen.width : 800;
-    const router = useRouter();
     const [isMobileMenuHidden, setMobileMenuHidden] = useState(true);
     const [isMobileScreen, setMobileScreen] = useState(false);
+    const [isTabletScreen, setTabletScreen] = useState(false);
     const [isActive, setActive] = useState(false)
+    const screenWidth = useWindowDimensions().width;
 
+    /*useEffect checks if the screen type, this is to control the menu type - Mobile menu or desktop menu
+     and tablet menu which is a combination*/
     useEffect(()=>{
-        if(screenWidth < 820 && router.pathname !== '/') setMobileScreen(true)
-        else setMobileScreen(false)
-    },[router.pathname, screenWidth])
+        if(screenWidth < 1400) {
+            setTabletScreen(true)
+            if(screenWidth < 820){
+                setMobileScreen(true)
+                setTabletScreen(false)
+            }
+        }
+        else {
+            setMobileScreen(false)
+            setTabletScreen(false)
+        }
+    },[screenWidth])
 
+    //hides mobile menu when a scroll happens
     useEffect(() => {
         const handleScroll = () => {
             if(!isMobileMenuHidden && isMobileScreen){
@@ -29,31 +41,30 @@ export const Navigation = (): React.JSX.Element => {
         };
     }, [isMobileMenuHidden, isMobileScreen]);
 
+    //hides and opens menu for mobile
     const changeMenu = () => {
         setMobileScreen(true)
         setMobileMenuHidden(!isMobileMenuHidden);
     };
 
+    //when page link is pressed on mobile menu and changes hamburger/X icon
     const linkSelected = () => {
         if(isMobileScreen){
             setActive(!isActive)
             changeMenu();
         }
     }
-
+    /*when home is pressed - makes sure menu doesn't open or hamburger
+     changes but closes the menu if it is open (only use case really would be on home
+     screen since if on other screen the scroll is activated which closes the menu anyway)*/
     const homeSelected = ()=>{
         if(!isMobileMenuHidden)
             linkSelected()
     }
 
-    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
-            changeMenu();
-        }
-    };
-
+    //if on tablet or mobile the scroll offset has to account for the menu
     const returnOffset = () => {
-        if(isMobileScreen){
+        if(isMobileScreen || isTabletScreen){
             return -52
         } else {
             return 0
@@ -74,14 +85,13 @@ export const Navigation = (): React.JSX.Element => {
                 <div
                     className={styles.header__menu}
                     onClick={changeMenu}
-                    onKeyDown={handleKeyPress}
                     style={{position:"absolute", zIndex:10001}}
                 >
                     <XIcon receivedState={isActive}/>
                 </div>
                 <div
                     className={clsx({
-                        [styles['slide-out-animation']]: isMobileScreen,
+                        [styles['slide-out-animation']]: isMobileScreen && !isTabletScreen,
                         [styles['header__desktop-links']]: isMobileMenuHidden,
                         [styles['header__mobile-links']]: !isMobileMenuHidden
                     })}

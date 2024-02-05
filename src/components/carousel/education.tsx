@@ -3,21 +3,20 @@ import styles from "./carousel.module.scss";
 import React, {useEffect, useState} from "react";
 import useEmblaCarousel from 'embla-carousel-react'
 import clsx from 'clsx';
-import {useRouter} from "next/router";
 import Strathclyde from "../../../public/university-of-strathclyde-banner.png";
 import Marquee from "react-fast-marquee";
 import ags from "../../../public/aberdeen grammar school.jpg";
+import useWindowDimensions from "../../hooks/useWindowDimensions"
 
 const Education = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false, containScroll: 'trimSnaps'  })
-    const router = useRouter();
-    const screenWidth = typeof window !== 'undefined' ? window.screen.width : 760;
+    const screenWidth = useWindowDimensions().width;
     const [isMobileScreen, setMobileScreen] = useState(false);
 
     useEffect(()=>{
-        if(screenWidth <= 760 && router.pathname !== '/about') setMobileScreen(true)
-        else setMobileScreen(false)
-    },[router.pathname, screenWidth])
+        if(screenWidth < 760) setMobileScreen(true);
+        else setMobileScreen(false);
+    },[screenWidth])
 
     return (
         <div className={clsx({
