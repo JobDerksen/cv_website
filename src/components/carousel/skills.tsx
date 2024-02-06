@@ -10,7 +10,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions"
 
 const Skills = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false, containScroll: 'trimSnaps'   })
-    const screenWidth = useWindowDimensions().width;
+    const screenWidth = typeof window !== 'undefined' ? window.screen.width : 760;
     const [isMobileScreen, setMobileScreen] = useState(false);
 
     useEffect(()=>{
