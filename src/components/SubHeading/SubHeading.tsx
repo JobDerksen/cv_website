@@ -18,12 +18,12 @@ const SubHeading: React.FC = () => {
             }, waiting)
 
             return () => clearInterval(intervalId);
-        },[]);
+        },[list.length, waiting]);
 
         useEffect(() => {
             // Update the current text when the index changes
             setCurrentText(list[currentIndex]);
-        }, [currentIndex]);
+        }, [currentIndex, list]);
 
         return currentText;
     }
