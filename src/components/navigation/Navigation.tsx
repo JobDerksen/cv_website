@@ -19,11 +19,14 @@ export const Navigation = (): React.JSX.Element => {
 
     //hides mobile menu when a scroll happens
     useEffect(() => {
+        function closeMenu(){
+            if(isActive && isMobileScreen) setActive(!isActive)
+        }
         window.addEventListener('scroll', closeMenu);
         return () => {
             window.removeEventListener('scroll', closeMenu);
         };
-    }, [isActive]);
+    }, [isActive, isMobileScreen]);
 
 
     //when page link is pressed on mobile menu and changes hamburger/X icon
@@ -31,13 +34,6 @@ export const Navigation = (): React.JSX.Element => {
         if(isMobileScreen){
             setActive(!isActive)
         }
-    }
-    /*when home is pressed - makes sure menu doesn't open or hamburger
-     changes but closes the menu if it is open (only use case really would be on home
-     screen since if on other screen the scroll is activated which closes the menu anyway)*/
-    const closeMenu = ()=>{
-        if(isActive)
-            linkSelected()
     }
 
     //if on tablet or mobile the scroll offset has to account for the menu
@@ -52,7 +48,7 @@ export const Navigation = (): React.JSX.Element => {
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
-                <Link to='home' spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>
+                <Link to='home' spy={true} smooth={true} offset={0} duration={500} onClick={() => {setActive(false)}}>
                     <h2>
                         <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
                     </h2>
