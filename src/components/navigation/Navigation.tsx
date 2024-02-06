@@ -4,7 +4,7 @@ import styles from './Navigation.module.scss'
 import XIcon from '@/components/icons/xIcon/xIcon'
 import { Link } from "react-scroll";
 import useWindowDimensions from "../../hooks/useWindowDimensions"
-import { useRouter } from 'next/router'
+import {useRouter} from "next/router";
 
 export const Navigation = (): React.JSX.Element => {
     const [isMobileMenuHidden, setMobileMenuHidden] = useState(true);
@@ -12,15 +12,16 @@ export const Navigation = (): React.JSX.Element => {
     const [isTabletScreen, setTabletScreen] = useState(false);
     const [isActive, setActive] = useState(false)
     const screenWidth = useWindowDimensions().width;
-    const router = useRouter()
+    const router = useRouter();
 
     /*useEffect checks if the screen type, this is to control the menu type - Mobile menu or desktop menu
      and tablet menu which is a combination*/
     useEffect(()=>{
-        if(screenWidth < 1400) {
+        console.log(router.pathname)
+        if(screenWidth < 1400 && router.pathname !== '/') {
             setTabletScreen(true);
             setMobileScreen(false);
-            if(screenWidth < 800){
+            if(screenWidth < 800 && router.pathname !== '/'){
                 setMobileScreen(true);
                 setTabletScreen(false);
             }
@@ -29,7 +30,7 @@ export const Navigation = (): React.JSX.Element => {
             setMobileScreen(false);
             setTabletScreen(false);
         }
-    },[screenWidth, router])
+    },[screenWidth,router.pathname])
 
     //hides mobile menu when a scroll happens
     useEffect(() => {
