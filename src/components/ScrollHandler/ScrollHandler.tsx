@@ -20,7 +20,7 @@ const ScrollHandler: FC<ScrollHandlerProps> = ({ elementRef, className, initialS
         } else {
             elementRef.current?.classList.remove(className);
         }
-    }, [scrollPosition, screenHeight]);
+    }, [scrollPosition, screenHeight, initialScrollMultiplier, endScrollMultiplier, elementRef, className]);
 
     return null;
 };
