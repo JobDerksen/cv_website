@@ -18,7 +18,7 @@ export const Navigation = (): React.JSX.Element => {
         if(screenWidth < 1400) {
             setTabletScreen(true);
             setMobileScreen(false);
-            if(screenWidth < 820){
+            if(screenWidth < 800){
                 setMobileScreen(true);
                 setTabletScreen(false);
             }
@@ -72,10 +72,16 @@ export const Navigation = (): React.JSX.Element => {
         }
     }
 
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            changeMenu();
+        }
+    };
+
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
-                <Link to='/' spy={true} smooth={true} offset={0} duration={500} onClick={homeSelected}>
+                <Link to='home' spy={true} smooth={true} offset={0} duration={500} onClick={homeSelected}>
                     <h2>
                         <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
                     </h2>
@@ -86,6 +92,7 @@ export const Navigation = (): React.JSX.Element => {
                 <div
                     className={styles.header__menu}
                     onClick={changeMenu}
+                    onKeyDown={handleKeyPress}
                     style={{position:"absolute", zIndex:10001}}
                 >
                     <XIcon receivedState={isActive}/>
@@ -102,7 +109,7 @@ export const Navigation = (): React.JSX.Element => {
                         <ul className={styles.nav_links}>
                             <li>
                                 <Link
-                                    to={'/about'}
+                                    to={'about'}
                                     className={styles.nav_links_notActive}
                                     activeClass={styles.nav_links_active}
                                     spy={true}
@@ -116,7 +123,7 @@ export const Navigation = (): React.JSX.Element => {
                             </li>
                             <li>
                                 <Link
-                                    to={'/projects'}
+                                    to={'projects'}
                                     className={styles.nav_links_notActive}
                                     activeClass={styles.nav_links_active}
                                     spy={true}
@@ -131,7 +138,7 @@ export const Navigation = (): React.JSX.Element => {
                             </li>
                             <li>
                                 <Link
-                                    to={'/contact'}
+                                    to={'contact'}
                                     className={styles.nav_links_notActive}
                                     activeClass={styles.nav_links_active}
                                     spy={true}
