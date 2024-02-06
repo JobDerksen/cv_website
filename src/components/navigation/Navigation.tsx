@@ -4,6 +4,7 @@ import styles from './Navigation.module.scss'
 import XIcon from '@/components/icons/xIcon/xIcon'
 import { Link } from "react-scroll";
 import useWindowDimensions from "../../hooks/useWindowDimensions"
+import { useRouter } from 'next/router'
 
 export const Navigation = (): React.JSX.Element => {
     const [isMobileMenuHidden, setMobileMenuHidden] = useState(true);
@@ -11,6 +12,7 @@ export const Navigation = (): React.JSX.Element => {
     const [isTabletScreen, setTabletScreen] = useState(false);
     const [isActive, setActive] = useState(false)
     const screenWidth = useWindowDimensions().width;
+    const router = useRouter()
 
     /*useEffect checks if the screen type, this is to control the menu type - Mobile menu or desktop menu
      and tablet menu which is a combination*/
@@ -27,7 +29,7 @@ export const Navigation = (): React.JSX.Element => {
             setMobileScreen(false);
             setTabletScreen(false);
         }
-    },[screenWidth])
+    },[screenWidth, router])
 
     //hides mobile menu when a scroll happens
     useEffect(() => {
@@ -72,12 +74,6 @@ export const Navigation = (): React.JSX.Element => {
         }
     }
 
-    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
-            changeMenu();
-        }
-    };
-
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
@@ -92,7 +88,6 @@ export const Navigation = (): React.JSX.Element => {
                 <div
                     className={styles.header__menu}
                     onClick={changeMenu}
-                    onKeyDown={handleKeyPress}
                     style={{position:"absolute", zIndex:10001}}
                 >
                     <XIcon receivedState={isActive}/>
