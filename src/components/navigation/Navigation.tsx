@@ -6,66 +6,43 @@ import { Link } from "react-scroll";
 import useWindowDimensions from "../../hooks/useWindowDimensions"
 
 export const Navigation = (): React.JSX.Element => {
-    const [isMobileMenuHidden, setMobileMenuHidden] = useState(true);
     const [isMobileScreen, setMobileScreen] = useState(false);
-    const [isTabletScreen, setTabletScreen] = useState(false);
     const [isActive, setActive] = useState(false)
     const screenWidth = useWindowDimensions().width;
 
     /*useEffect checks if the screen type, this is to control the menu type - Mobile menu or desktop menu
      and tablet menu which is a combination*/
     useEffect(()=>{
-        if(screenWidth < 1400) {
-            setTabletScreen(true);
-            setMobileScreen(false);
-            if(screenWidth < 800){
-                setMobileScreen(true);
-                setTabletScreen(false);
-            }
-        }
-        else {
-            setMobileScreen(false);
-            setTabletScreen(false);
-        }
+        if(screenWidth <= 800) setMobileScreen(true);
+        else setMobileScreen(false);
     },[screenWidth])
 
     //hides mobile menu when a scroll happens
     useEffect(() => {
-        const handleScroll = () => {
-            if(!isMobileMenuHidden && isMobileScreen){
-                linkSelected()
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', closeMenu);
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', closeMenu);
         };
-    }, [isMobileMenuHidden, isMobileScreen]);
+    }, [isActive]);
 
-    //hides and opens menu for mobile
-    const changeMenu = () => {
-        setMobileScreen(true)
-        setMobileMenuHidden(!isMobileMenuHidden);
-    };
 
     //when page link is pressed on mobile menu and changes hamburger/X icon
     const linkSelected = () => {
         if(isMobileScreen){
             setActive(!isActive)
-            changeMenu();
         }
     }
     /*when home is pressed - makes sure menu doesn't open or hamburger
      changes but closes the menu if it is open (only use case really would be on home
      screen since if on other screen the scroll is activated which closes the menu anyway)*/
-    const homeSelected = ()=>{
-        if(!isMobileMenuHidden)
+    const closeMenu = ()=>{
+        if(isActive)
             linkSelected()
     }
 
     //if on tablet or mobile the scroll offset has to account for the menu
     const returnOffset = () => {
-        if(isMobileScreen || isTabletScreen){
+        if(screenWidth < 1400){
             return -52
         } else {
             return 0
@@ -75,7 +52,7 @@ export const Navigation = (): React.JSX.Element => {
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
-                <Link to='home' spy={true} smooth={true} offset={0} duration={500} onClick={homeSelected}>
+                <Link to='home' spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>
                     <h2>
                         <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
                     </h2>
@@ -85,16 +62,18 @@ export const Navigation = (): React.JSX.Element => {
             <div className={styles.header__right}>
                 <div
                     className={styles.header__menu}
-                    onClick={changeMenu}
+                    onClick={()=>{setActive(!isActive)}}
                     style={{position:"absolute", zIndex:10001}}
                 >
-                    <XIcon receivedState={isActive}/>
+                    <div onClick={()=>{setActive(!isActive)}}>
+                        <XIcon receivedState={isActive}/>
+                    </div>
                 </div>
                 <div
                     className={clsx({
-                        [styles['slide-out-animation']]: isMobileScreen && !isTabletScreen,
-                        [styles['header__desktop-links']]: isMobileMenuHidden,
-                        [styles['header__mobile-links']]: !isMobileMenuHidden
+                        [styles['slide-out-animation']]: isMobileScreen && isActive,
+                        [styles['header__desktop-links']]: !isActive,
+                        [styles['header__mobile-links']]: isActive
                     })}
                 >
 
