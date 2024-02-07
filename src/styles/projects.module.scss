@@ -1,3 +1,71 @@
 .container {
-  padding-top: 4rem;
+  background-color: #232b2b;
+  min-height: 100vh;
+}
+.gradient {
+  background: linear-gradient(to left, rgba(#b21f1f,1) 0%, rgba(#360033,1) 25%, rgba(#23074d,1) 75%, rgba(#1a2a6c,1) 100%);
+  background-size: 200%;
+  background-position-x: 100%;
+  transition: 2s background-position ease-out;
+
+  &_after {
+    background-position-x: 0;
+  }
+}
+
+.hero {
+  min-height: 0;
+  padding: 0.5rem;
+
+
+  background-size: 66%;
+  background-position: -1rem -15rem;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  @media only screen and (max-width: 1024px) {
+    .avia-safari #top .avia-full-stretch{
+      background-attachment: scroll !important;
+      background-position: 5rem -15rem;
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    .avia-safari #top .avia-full-stretch{
+      background-attachment: scroll !important;
+      background-size: 100vh;
+      background-position: 40% -7rem;
+    }
+  }
+  @media (max-width: 1024px) {
+    background-size: 100vh;
+    background-position: 40% -5rem;
+  }
+}
+
+.pageTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1.5rem;
+  padding-left: 1.5rem;
+  margin-left: 5vw;
+  mix-blend-mode: lighten;
+  color: #e0e0e0;
+  transition: 0.5s ease-in-out;
+  text-align: left;
+  justify-content: start;
+  @media (max-width: 1024px) {
+    mix-blend-mode: unset;
+    font-size: 1rem;
+    letter-spacing: 0;
+    margin-left: 60vw;
+  }
+  &_scroll {
+    font-size: 4rem;
+    margin-left: 10vw;
+    @media (max-width: 1024px) {
+      font-size: 2rem;
+      letter-spacing: 1rem;
+      padding-left: 1rem;
+      margin-left: unset;
+    }
+  }
 }

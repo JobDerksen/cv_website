@@ -62,6 +62,7 @@ export const Navigation = (): React.JSX.Element => {
                     offset={0}
                     duration={500}
                     onClick={()=>{route('#home')}}
+                    href={'#home'}
                 >
                     <h2>
                         <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
@@ -91,7 +92,7 @@ export const Navigation = (): React.JSX.Element => {
                         <ul className={styles.nav_links}>
                             <li>
                                 <Link
-                                    to={'about'}
+                                    to={'#about'}
                                     className={styles.nav_links_notActive}
                                     activeClass={styles.nav_links_active}
                                     spy={true}
@@ -99,13 +100,14 @@ export const Navigation = (): React.JSX.Element => {
                                     offset={returnOffset()}
                                     duration={500}
                                     onClick={()=>{linkSelected("#about")}}
+                                    href={'#about'}
                                 >
                                     About
                                 </Link>
                             </li>
                             <li>
                                 <Link
-                                    to={'projects'}
+                                    to={'#portfolio'}
                                     className={styles.nav_links_notActive}
                                     activeClass={styles.nav_links_active}
                                     spy={true}
@@ -113,6 +115,7 @@ export const Navigation = (): React.JSX.Element => {
                                     offset={0}
                                     duration={500}
                                     onClick={()=>{linkSelected("#portfolio")}}
+                                    href={'#portfolio'}
                                 >
 
                                     Portfolio
@@ -120,7 +123,7 @@ export const Navigation = (): React.JSX.Element => {
                             </li>
                             <li>
                                 <Link
-                                    to={'contact'}
+                                    to={'#contact'}
                                     className={styles.nav_links_notActive}
                                     activeClass={styles.nav_links_active}
                                     spy={true}
@@ -128,6 +131,7 @@ export const Navigation = (): React.JSX.Element => {
                                     offset={0}
                                     duration={500}
                                     onClick={()=>{linkSelected("#contact")}}
+                                    href={'#contact'}
                                 >
                                     Contact
                                 </Link>
