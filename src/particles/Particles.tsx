@@ -1,5 +1,6 @@
+import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import style from './Particles.module.scss'
+import styles from './Particles.module.scss'
 import {
     type Container,
     type ISourceOptions,
@@ -12,88 +13,102 @@ import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSl
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 const ParticlesComp = () => {
+    const [init, setInit] = useState(false);
+
+    // this should be run only once per application lifetime
+    useEffect(() => {
+        initParticlesEngine(async (engine) => {
+            // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+            // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+            // starting from v2 you can add only the features you need reducing the bundle size
+            //await loadAll(engine);
+            //await loadFull(engine);
+            await loadSlim(engine);
+            //await loadBasic(engine);
+        }).then(() => {
+            setInit(true);
+        });
+    }, []);
+
+    const particlesLoaded = async (container?: Container): Promise<void> => {
+        console.log(container);
+    };
+
+    const options: ISourceOptions = useMemo(
+        () => ({
+            fullScreen:
+                {
+                    enable: false,
+                },
+            fpsLimit: 120,
+            interactivity: {
+                events: {
+                    onClick: {
+                        enable: true,
+                        mode: "push",
+                    },
+                    onHover: {
+                        enable: true,
+                        mode: "repulse",
+                    },
+                },
+                modes: {
+                    push: {
+                        quantity: 4,
+                    },
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4,
+                    },
+                },
+            },
+            particles: {
+                color: {
+                    value: "#ffffff",
+                },
+                move: {
+                    direction: 'right',
+                    enable: true,
+                    outModes: {
+                        default: 'out'
+                    },
+                    random: false,
+                    speed: 3,
+                    straight: false,
+                },
+                number: {
+                    density: {
+                        enable: true,
+                    },
+                    value: 500,
+                },
+                opacity: {
+                    value: 0.5,
+                },
+                shape: {
+                    type: "circle",
+                },
+                size: {
+                    value: { min: 0.5, max: 2 },
+                },
+            },
+            detectRetina: true,
+        }),
+        [],
+    );
+
+    if (init) {
         return (
             <Particles
-                options={{
-                    fullScreen: {
-                        enable: false,
-                        zIndex: 0
-                    },
-                    particles: {
-                        number: {
-                            value: 200,
-                            density: {
-                                enable: true,
-                            }
-                        },
-                        color: {
-                            value: "#ffffff"
-                        },
-                        shape: {
-                            type: "circle",
-                        },
-                        opacity: {
-                            value: 1,
-                        },
-                        size: {
-                            value: 30,
-                        },
-                        links: {
-                            enable: false
-                        },
-                        move: {
-                            enable: true,
-                            speed: 3,
-                            direction: "none",
-                            random: false,
-                            straight: false,
-
-                        }
-                    },
-                    interactivity: {
-                        detect_on: "canvas",
-                        events: {
-                            onHover: {
-                                enable: true,
-                                mode: "bubble",
-                                parallax: {
-                                    enable: false,
-                                    force: 60,
-                                    smooth: 10
-                                }
-                            },
-                            onClick: {
-                                enable: true,
-                                mode: "push"
-                            },
-                        },
-                        modes: {
-                            grab: {
-                                distance: 400,
-                                lineLinked: {
-                                    opacity: 1
-                                }
-                            },
-                            bubble: {
-                                distance: 400,
-                                size: 100,
-                                duration: 2,
-                                opacity: 1,
-                                speed: 2
-                            },
-                            repulse: {
-                                distance: 200
-                            },
-                            push: {
-                                particles_nb: 4
-                            },
-                        }
-                    },
-                    detectRetina: true,
-                    fpsLimit: 60,
-                }}
+                id="tsparticles"
+                particlesLoaded={particlesLoaded}
+                options={options}
+                className={styles.tsparticles}
             />
         );
+    }
 
+    return <></>;
 };
+
 export default ParticlesComp;

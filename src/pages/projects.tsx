@@ -19,7 +19,7 @@ const Projects = () => {
         }
         return () => {
             if (heroSizeRef.current) {
-                // eslint-disable-next-line react-hooks/exhaustive-deps
+
                 observer.unobserve(heroSizeRef.current);
             }
         };
@@ -36,11 +36,12 @@ const Projects = () => {
                 <div ref={gradientRef} className={styles.gradient}>
                     <section className={styles.hero} ref={heroSizeRef}>
                         <h1 ref={aboutRef} className={styles.pageTitle}>PORTFOLIO</h1>
+                        <div style={{height: contentHeightBanner}} className={styles.particleContainer}>
+                            <ParticlesComp/>
+                        </div>
                     </section>
                 </div>
             </div>
-
-            <ParticlesComp/>
 
             <div>
                 My projects
