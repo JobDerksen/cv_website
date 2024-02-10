@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.2.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.2.1",
     "clsx": "^2.0.0",
     "embla-carousel-react": "^8.0.0-rc22",
     "glob-parent": "^6.0.2",

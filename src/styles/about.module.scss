@@ -68,8 +68,9 @@
 }
 
 .body {
-  background-color: #e0e0e0;
+  background: linear-gradient(to bottom, rgba(#e0e0e0,1) 85%, rgba(#161616 ,1) 105%);;
   min-height: 100vh;
+  padding-bottom: 7.5rem;
 }
 
 
