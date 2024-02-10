@@ -101,6 +101,7 @@ export const Navigation = (): React.JSX.Element => {
                                     duration={500}
                                     onClick={()=>{linkSelected("#about")}}
                                     href={'#about'}
+                                    isDynamic={true}
                                 >
                                     About
                                 </Link>
@@ -112,7 +113,7 @@ export const Navigation = (): React.JSX.Element => {
                                     activeClass={styles.nav_links_active}
                                     spy={true}
                                     smooth={true}
-                                    offset={0}
+                                    offset={returnOffset()}
                                     duration={500}
                                     onClick={()=>{linkSelected("#portfolio")}}
                                     href={'#portfolio'}

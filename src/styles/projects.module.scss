@@ -1,5 +1,5 @@
 .container {
-  background-color: #232b2b;
+  background: #161616;
   min-height: 100vh;
 }
 .gradient {
@@ -17,28 +17,6 @@
   min-height: 0;
   padding: 0.5rem;
 
-
-  background-size: 66%;
-  background-position: -1rem -15rem;
-  background-attachment: fixed;
-  background-repeat:no-repeat;
-  @media only screen and (max-width: 1024px) {
-    .avia-safari #top .avia-full-stretch{
-      background-attachment: scroll !important;
-      background-position: 5rem -15rem;
-    }
-  }
-  @media only screen and (max-width: 1024px) {
-    .avia-safari #top .avia-full-stretch{
-      background-attachment: scroll !important;
-      background-size: 100vh;
-      background-position: 40% -7rem;
-    }
-  }
-  @media (max-width: 1024px) {
-    background-size: 100vh;
-    background-position: 40% -5rem;
-  }
 }
 
 .pageTitle {
@@ -56,22 +34,24 @@
     mix-blend-mode: unset;
     font-size: 1rem;
     letter-spacing: 0;
-    margin-left: 60vw;
   }
   &_scroll {
     font-size: 4rem;
-    margin-left: 10vw;
+    margin-left: 15vw;
     @media (max-width: 1024px) {
       font-size: 2rem;
       letter-spacing: 1rem;
       padding-left: 1rem;
-      margin-left: unset;
+      margin-left: 0.25rem;
     }
   }
 }
 
-.particleContainer{
-  width: 100%;
-  position: absolute;
-  height: 100%;
+.particleWidth{
+  opacity: 0;
+  &__after{
+    opacity: 1;
+    transition: 4s;
+  }
 }
+

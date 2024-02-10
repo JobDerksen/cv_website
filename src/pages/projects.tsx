@@ -3,12 +3,19 @@ import Head from "next/head";
 import styles from '@/styles/projects.module.scss'
 import ScrollHandler from "@/components/ScrollHandler/ScrollHandler";
 import ParticlesComp from "@/particles/Particles";
+import clsx from "clsx";
+import useWindowDimensions from "../hooks/useWindowDimensions"
+
 const Projects = () => {
     const aboutRef = useRef<HTMLDivElement>(null);
     const gradientRef = useRef<HTMLDivElement>(null);
 
-    const [contentHeightBanner, setContentHeightBanner] = useState<number | undefined>(0);
+    const [contentHeightBanner, setContentHeightBanner] = useState<number>(0);
     const heroSizeRef = useRef<HTMLDivElement>(null);
+
+    const [showParticles, setShowParticles] = useState(false)
+
+    const screenWidth = useWindowDimensions().width;
 
     useEffect(() => {
         const observer = new ResizeObserver((entries) => {
@@ -19,11 +26,33 @@ const Projects = () => {
         }
         return () => {
             if (heroSizeRef.current) {
-
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 observer.unobserve(heroSizeRef.current);
             }
         };
     }, []);
+
+    useEffect(() => {
+        if(screenWidth < 1024){
+            if(contentHeightBanner > (92)){
+                setShowParticles(true)
+            } else{
+                setShowParticles(false)
+            }
+        }else {
+            if(contentHeightBanner > (184)){
+                setShowParticles(true)
+            } else{
+                setShowParticles(false)
+            }
+        }
+    }, [contentHeightBanner, screenWidth]);
+
+    const balls = () => {
+        if(screenWidth < 1024) return 2.55
+        else return 2.35
+    }
+
     return(
         <div className={styles.container} id='#portfolio'>
             <Head>
@@ -36,9 +65,12 @@ const Projects = () => {
                 <div ref={gradientRef} className={styles.gradient}>
                     <section className={styles.hero} ref={heroSizeRef}>
                         <h1 ref={aboutRef} className={styles.pageTitle}>PORTFOLIO</h1>
-                        <div style={{height: contentHeightBanner}} className={styles.particleContainer}>
-                            <ParticlesComp/>
-                        </div>
+                    </section>
+                    <section className={clsx({
+                        [styles['particleWidth']]: !showParticles,
+                        [styles['particleWidth__after']]: showParticles,
+                    })}>
+                        <ParticlesComp init={showParticles}/>
                     </section>
                 </div>
             </div>
@@ -53,7 +85,7 @@ const Projects = () => {
                 className={styles.pageTitle_scroll}
                 elementRef={aboutRef}
                 initialScrollMultiplier={2}
-                endScrollMultiplier={2.501}
+                endScrollMultiplier={balls()}
             />
 
             <ScrollHandler
