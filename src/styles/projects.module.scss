@@ -1,9 +1,9 @@
 .container {
-  background: linear-gradient(225deg, rgba(#000000,1) 10%, rgba(#181818,1) 100%);
+  background-color: #131313;
   min-height: 100vh;
 }
 .gradient {
-  background: linear-gradient(to left, rgba(black,1) 70%, rgba(#0f0c29,1) 100%);
+  background: linear-gradient(to left, rgba(#131313,1) 65%, rgba(black,1) 95%, rgba(#060410,1) 105%);
   background-size: 200%;
   background-position-x: 100%;
   transition: 2s background-position ease-out;
@@ -20,24 +20,25 @@
 }
 
 .pageTitle {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 600;
-  letter-spacing: 1.5rem;
-  padding-left: 1.5rem;
+  letter-spacing: 1rem;
+  padding-left: 1rem;
   margin-left: 5vw;
-  mix-blend-mode: lighten;
   color: #e0e0e0;
   transition: 0.5s ease-in-out;
   text-align: left;
   justify-content: start;
   @media (max-width: 1024px) {
     mix-blend-mode: unset;
-    font-size: 1rem;
-    letter-spacing: 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.25rem;
   }
   &_scroll {
     font-size: 4rem;
-    margin-left: 15vw;
+    margin-left: 7vw;
+    letter-spacing: 3rem;
+    padding-left: 3rem;
     @media (max-width: 1024px) {
       font-size: 2rem;
       letter-spacing: 1rem;
@@ -53,5 +54,79 @@
     opacity: 1;
     transition: 1s;
   }
+}
+
+.project{
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  gap: 1rem;
+  div{
+    width: 100%;
+  }
+  p{
+    color: #e0e0e0;
+    text-align: left;
+  }
+  section{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex: 0;
+  }
+}
+
+.image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  position: relative;
+  bottom: 0;
+}
+
+.projectLeft{
+  background: linear-gradient(to left, rgba(black,0.6) 50%, rgba(#060410,0.6) 80%, rgba(#060410,1) 90%);
+  margin-top: 3rem;
+  margin-left: 12rem;
+  margin-right: 6rem;
+  padding-right: 1rem;
+  h1{
+    text-align: center;
+    color: #e0e0e0;
+    font-weight: 300;
+    font-size: 2rem;
+    transform: rotate(-90deg);
+  }
+}
+
+.projectRight{
+  background: linear-gradient(to Right, rgba(black,0.6) 50%, rgba(#060410,0.6) 80%, rgba(#060410,1) 90%);
+  margin-top: 3rem;
+  margin-right: 12rem;
+  margin-left: 6rem;
+  padding-left: 1rem;
+  h1{
+    text-align: center;
+    color: #e0e0e0;
+    font-weight: 300;
+    font-size: 2rem;
+    transform: rotate(90deg);
+  }
+}
+
+.outcomes{
+  display: flex;
+  justify-content: center;
+  p{
+    width: 100%;
+  }
+}
+
+.main{
+  margin-left: 7.5rem;
+  margin-right: 7.5rem;
 }
 

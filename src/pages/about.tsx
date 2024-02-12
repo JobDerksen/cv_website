@@ -10,7 +10,7 @@ const About = () => {
     const aboutRef = useRef<HTMLDivElement>(null);
     const gradientRef = useRef<HTMLDivElement>(null);
 
-    const [contentHeightBanner, setContentHeightBanner] = useState<number | undefined>(0);
+    const [contentHeightBanner, setContentHeightBanner] = useState<number>(0);
     const heroSizeRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -71,15 +71,16 @@ const About = () => {
         <ScrollHandler
             className={styles.pageTitle_scroll}
             elementRef={aboutRef}
-            initialScrollMultiplier={0.5}
-            endScrollMultiplier={1.001}
+            startScrollOffset={-100}
+            scrollMultiplier={5.3}
+            endScrollOffset={184}
         />
 
         <ScrollHandler
             className={styles.gradient_after}
             elementRef={gradientRef}
-            initialScrollMultiplier={0.9}
-            endScrollMultiplier={20}
+            scrollMultiplier={5.5}
+            endScrollOffset={2000}
         />
     </div>
     )
