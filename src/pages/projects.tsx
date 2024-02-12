@@ -7,7 +7,7 @@ import clsx from "clsx";
 import useWindowDimensions from "../hooks/useWindowDimensions"
 
 const Projects = () => {
-    const aboutRef = useRef<HTMLDivElement>(null);
+    const portfolioRef = useRef<HTMLDivElement>(null);
     const gradientRef = useRef<HTMLDivElement>(null);
 
     const [contentHeightBanner, setContentHeightBanner] = useState<number>(0);
@@ -50,7 +50,7 @@ const Projects = () => {
 
     const balls = () => {
         if(screenWidth < 1024) return 2.55
-        else return 2.35
+        else return 2.43
     }
 
     return(
@@ -61,10 +61,10 @@ const Projects = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div style={{height: contentHeightBanner, overflow: 'hidden'}}>
+            <header style={{height: contentHeightBanner, overflow: 'hidden'}}>
                 <div ref={gradientRef} className={styles.gradient}>
                     <section className={styles.hero} ref={heroSizeRef}>
-                        <h1 ref={aboutRef} className={styles.pageTitle}>PORTFOLIO</h1>
+                        <h1 ref={portfolioRef} className={styles.pageTitle}>PORTFOLIO</h1>
                     </section>
                     <section className={clsx({
                         [styles['particleWidth']]: !showParticles,
@@ -73,17 +73,15 @@ const Projects = () => {
                         <ParticlesComp init={showParticles}/>
                     </section>
                 </div>
-            </div>
+            </header>
+            {/*https://www.energyvoice.com/oilandgas/north-sea/188096/aberdeen-school-scoops-top-oil-and-gas-challenge/*/}
+            {/*https://www.agcc.co.uk/news-article/aberdeen-grammar-school-wins-top-prize-at-final-of-techfests-stem-in-the-pipeline-oil-and-gas-challenge*/}
+            <main>
 
-            <div>
-                My projects
-                {/*https://www.energyvoice.com/oilandgas/north-sea/188096/aberdeen-school-scoops-top-oil-and-gas-challenge/*/}
-                {/*https://www.agcc.co.uk/news-article/aberdeen-grammar-school-wins-top-prize-at-final-of-techfests-stem-in-the-pipeline-oil-and-gas-challenge*/}
-
-            </div>
+            </main>
             <ScrollHandler
                 className={styles.pageTitle_scroll}
-                elementRef={aboutRef}
+                elementRef={portfolioRef}
                 initialScrollMultiplier={2}
                 endScrollMultiplier={balls()}
             />

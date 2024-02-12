@@ -6,7 +6,7 @@
 .button{
   border: 0.01rem solid #4e5555;
   float: right;
-  background-color: white;
+  background-color: transparent;
   font-family: 'montserrat', sans-serif;
   cursor: pointer;
   padding: 0.75rem;
@@ -45,6 +45,7 @@
 
 .input_container .filled {
   transform: translate(0, 12px) scale(0.8);
+  background-color: transparent;
 }
 
 .input_container label {
@@ -67,6 +68,7 @@
   border: 0.01rem solid #ccc;
   margin-bottom: 0.5rem;
   font-family: 'montserrat', sans-serif;
+  background-color: transparent;
 }
 
 .input_container textarea {
@@ -80,6 +82,7 @@
   margin-bottom: 0.5rem;
   font-family: 'montserrat', sans-serif;
   resize: none;
+  background-color: transparent;
 }
 
 .input_container input:focus {
@@ -125,6 +128,7 @@
   border: 0.01rem solid indianred;
   margin-bottom: 0.5rem;
   font-family: 'montserrat', sans-serif;
+  background-color: transparent;
 }
 
 .input_container_error textarea {
@@ -138,6 +142,7 @@
   margin-bottom: 0.5rem;
   font-family: 'montserrat', sans-serif;
   resize: none;
+  background-color: transparent;
 }
 
 .input_container input:focus {

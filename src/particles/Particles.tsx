@@ -48,7 +48,7 @@ const ParticlesComp:FC<particleProps> = ({init}) => {
                     density: {
                         enable: true,
                     },
-                    value: 175,
+                    value: 200,
                 },
                 opacity: {
                     value: 0.5,
@@ -57,7 +57,7 @@ const ParticlesComp:FC<particleProps> = ({init}) => {
                     type: 'circle',
                 },
                 size: {
-                    value: { min: 0.5, max: 15 },
+                    value: { min: 0.5, max: 2 },
                 },
             },
         }),
