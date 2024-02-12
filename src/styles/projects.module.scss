@@ -1,9 +1,9 @@
 .container {
-  background: #161616;
+  background: linear-gradient(225deg, rgba(#000000,1) 10%, rgba(#181818,1) 100%);
   min-height: 100vh;
 }
 .gradient {
-  background: linear-gradient(to left, rgba(#b21f1f,1) 0%, rgba(#360033,1) 25%, rgba(#23074d,1) 75%, rgba(#1a2a6c,1) 100%);
+  background: linear-gradient(to left, rgba(black,1) 70%, rgba(#0f0c29,1) 100%);
   background-size: 200%;
   background-position-x: 100%;
   transition: 2s background-position ease-out;

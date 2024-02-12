@@ -36,13 +36,13 @@ const About = () => {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico"/>
         </Head>
-        <div style={{height:contentHeightBanner, overflow:'hidden'}}>
+        <header style={{height:contentHeightBanner, overflow:'hidden'}}>
             <div ref={gradientRef} className={styles.gradient}>
                 <section className={styles.hero} ref={heroSizeRef}>
                     <h1 ref={aboutRef} className={styles.pageTitle}>ABOUT ME</h1>
                 </section>
             </div>
-        </div>
+        </header>
         <main className='content' style={{justifyContent:'left'}}>
             <h4 className='sectionHead' style={{marginTop: 50}}>Introduction</h4>
             <h3 className='mainText'>

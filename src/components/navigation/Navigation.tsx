@@ -43,25 +43,32 @@ export const Navigation = (): React.JSX.Element => {
         }
     }
 
+    const [offset, setOffset] = useState(0)
+
     //if on tablet or mobile the scroll offset has to account for the menu
     const returnOffset = () => {
         if(screenWidth < 1400){
-            return -52
-        } else {
-            return 0
+            return offset -52
         }
+        else {
+            return offset
+        }
+
     }
 
     return (
         <nav className={styles.header}>
             <div className={styles.header__left}>
                 <Link
-                    to='home'
+                    to='#home'
                     spy={true}
                     smooth={true}
                     offset={0}
                     duration={500}
-                    onClick={()=>{route('#home')}}
+                    onClick={()=>{
+                        route('#home');
+                        setOffset(0)
+                    }}
                     href={'#home'}
                 >
                     <h2>
@@ -73,7 +80,9 @@ export const Navigation = (): React.JSX.Element => {
             <div className={styles.header__right}>
                 <div
                     className={styles.header__menu}
-                    onClick={()=>{setActive(!isActive)}}
+                    onClick={()=>{
+                        setActive(!isActive)
+                    }}
                     style={{position:"absolute", zIndex:10001}}
                 >
                     <div onClick={()=>{setActive(!isActive)}}>
@@ -99,7 +108,10 @@ export const Navigation = (): React.JSX.Element => {
                                     smooth={true}
                                     offset={returnOffset()}
                                     duration={500}
-                                    onClick={()=>{linkSelected("#about")}}
+                                    onClick={()=>{
+                                        linkSelected("#about")
+                                        setOffset(-139)
+                                    }}
                                     href={'#about'}
                                     isDynamic={true}
                                 >
@@ -107,6 +119,7 @@ export const Navigation = (): React.JSX.Element => {
                                 </Link>
                             </li>
                             <li>
+                                {/*when banner is expanded the offset needs to be -130*/}
                                 <Link
                                     to={'#portfolio'}
                                     className={styles.nav_links_notActive}
@@ -115,10 +128,13 @@ export const Navigation = (): React.JSX.Element => {
                                     smooth={true}
                                     offset={returnOffset()}
                                     duration={500}
-                                    onClick={()=>{linkSelected("#portfolio")}}
+                                    onClick={()=>{
+                                        linkSelected("#portfolio")
+                                        setOffset(0)
+                                    }}
                                     href={'#portfolio'}
+                                    isDynamic={true}
                                 >
-
                                     Portfolio
                                 </Link>
                             </li>
@@ -131,7 +147,10 @@ export const Navigation = (): React.JSX.Element => {
                                     smooth={true}
                                     offset={0}
                                     duration={500}
-                                    onClick={()=>{linkSelected("#contact")}}
+                                    onClick={()=>{
+                                        linkSelected("#contact")
+                                        setOffset(0)
+                                    }}
                                     href={'#contact'}
                                 >
                                     Contact
