@@ -48,7 +48,7 @@ export const Navigation = (): React.JSX.Element => {
     //if on tablet or mobile the scroll offset has to account for the menu
     const returnOffset = () => {
         if(screenWidth < 1400){
-            return offset -52
+            return offset/3 -52
         }
         else {
             return offset
