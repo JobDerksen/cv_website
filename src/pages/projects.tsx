@@ -42,7 +42,7 @@ const Projects = () => {
                 setShowParticles(false)
             }
         }else {
-            if(contentHeightBanner > (184)){
+            if(contentHeightBanner > (183)){
                 setShowParticles(true)
             } else{
                 setShowParticles(false)
