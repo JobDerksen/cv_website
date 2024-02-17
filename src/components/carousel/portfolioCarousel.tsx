@@ -3,8 +3,8 @@ import useEmblaCarousel from 'embla-carousel-react'
 import homePage from "@/assets/projects/greenkeeper/homePage.jpg";
 import homePageScrolled from "@/assets/projects/greenkeeper/homePageScrolled.jpg";
 import greenHealth from "@/assets/projects/greenkeeper/greenHealth.jpg";
-import robotAssembly from "@/assets/projects/greenkeeper/robotAssemnly.jpg";
-import robotUpright from "@/assets/projects/greenkeeper/robotUpright.jpg";
+import robotAssembly from "@/assets/projects/greenkeeper/RobotAssemnly.jpg";
+import robotUpright from "@/assets/projects/greenkeeper/RobotUpright.jpg";
 import styles from "@/components/carousel/portfolioCarousel.module.scss";
 import Image from "next/image";
 
