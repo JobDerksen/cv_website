@@ -47,7 +47,7 @@ export const Navigation = (): React.JSX.Element => {
 
     //if on tablet or mobile the scroll offset has to account for the menu
     const returnOffset = () => {
-        if(screenWidth < 1400){
+        if(screenWidth <= 1400){
             return offset/3 -52
         }
         else {
@@ -119,7 +119,6 @@ export const Navigation = (): React.JSX.Element => {
                                 </Link>
                             </li>
                             <li>
-                                {/*when banner is expanded the offset needs to be -130*/}
                                 <Link
                                     to={'#portfolio'}
                                     className={styles.nav_links_notActive}

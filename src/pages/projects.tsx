@@ -5,8 +5,7 @@ import ScrollHandler from "@/components/ScrollHandler/ScrollHandler";
 import ParticlesComp from "@/particles/Particles";
 import clsx from "clsx";
 import useWindowDimensions from "../hooks/useWindowDimensions"
-import Image from "next/image";
-import Strathclyde from "../../public/university-of-strathclyde-banner.png";
+import PortfolioCarousel from "@/components/carousel/portfolioCarousel";
 
 const Projects = () => {
     const portfolioRef = useRef<HTMLDivElement>(null);
@@ -82,99 +81,32 @@ const Projects = () => {
                         <section>
                             <h1>Robotic Greenkeeper</h1>
                         </section>
-                        <div>
-                            <Image
-                                src={Strathclyde}
-                                alt={'balls'}
-                                priority={true}
-                                className={styles.image}
-                            />
+                        <div className={styles.balls}>
+                            <PortfolioCarousel/>
                         </div>
                         <div>
                             <div className={styles.outcomes}>
-                                <p>Languages & Skills: </p>
-                                <p>Type: </p>
-                                <p>Year: </p>
+                                <p>Skills Used: <span>Next.js, Typescript, SCSS, HTML, Python, Arduino(C++), Cloud Computing(AWS, Web hosting and APIs), Artificial Intelligence, Soldering, Teamwork</span>
+                                </p>
+                                <p>Type: <span>Group Meng Computing & Electronic Electrical Engineering Project </span>
+                                </p>
                             </div>
-                            <p>Learned:</p>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati
-                                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
-                                animi,
-                                id
-                                est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-                                distinctio.
-                                Nam
-                                libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
-                                id
-                                quod
-                                maxime
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                            <div className={styles.outcomes}>
+                                <p>Description:
+                                    <a>
+                                        This group project is the culmination of my whole educational career and is thus far
+                                        the highlight. This project is a challenge and takes into the computing side and electronic
+                                        engineering side and is so far the most valuable experience I have had the pleasure to be a part of.
+                                        This project is creating a robot which is to scan a golf green to look for and fix pitch marks, indents caused
+                                        by the ball landing onto the surface. It also is to classify the health of the soil on the green
+                                        by testing the nutrient composition.
+                                    </a>
+                                </p>
+                            </div>
 
-                <div className={styles.projectRight}>
-                    <div className={styles.project}>
-                        <div>
-                            <p>Languages & Skills: </p>
-                            <p>Type: </p>
-                            <p>Learned:</p>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati
-                                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi,
-                                id
-                                est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                                Nam
-                                libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id
-                                quod
-                                maxime</p>
-
-                        </div>
-                        <div>
-                            <Image
-                                src={Strathclyde}
-                                alt={'balls'}
-                                priority={true}
-                                className={styles.image}
-                            />
-                        </div>
-                        <section>
-                            <h1>Checkout Assistant</h1>
-                        </section>
-                    </div>
-                </div>
-
-                <div className={styles.projectLeft}>
-                    <div className={styles.project}>
-                        <section>
-                            <h1>Bill splitter</h1>
-                        </section>
-                        <div>
-                            <Image
-                                src={Strathclyde}
-                                alt={'balls'}
-                                priority={true}
-                                className={styles.image}
-                            />
-                        </div>
-                        <div>
-                            <p>Languages & Skills: </p>
-                            <p>Type: </p>
-                            <p>Learned:</p>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati
-                                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi,
-                                id
-                                est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                                Nam
-                                libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id
-                                quod
-                                maxime</p>
+                            <div className={styles.outcomes}>
+                                <p>Year: <span>2023 - Current</span></p>
+                            </div>
 
                         </div>
                     </div>
