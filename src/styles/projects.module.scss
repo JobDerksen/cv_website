@@ -191,6 +191,12 @@
     a{
       font-weight: 100;
       margin-left: 0.5rem;
+      text-decoration: none;
+      span{
+        color: white;
+        font-style: unset;
+        font-weight: 600;
+      }
     }
   }
 }
@@ -208,6 +214,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   object-fit: cover;
 }
+
+.externalLink{
+  background-color: #1a2a6c;
+  padding: 0.3rem 1.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+

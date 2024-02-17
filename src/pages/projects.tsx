@@ -106,6 +106,16 @@ const Projects = () => {
 
                             <div className={styles.outcomes}>
                                 <p>Year: <span>2023 - Current</span></p>
+                                <p>
+                                    <a
+                                        className={styles.externalLink}
+                                        target="_blank"
+                                        href="https://main.d1knm3fjtjv9v5.amplifyapp.com/"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <span>Visit</span>
+                                    </a>
+                                </p>
                             </div>
 
                         </div>

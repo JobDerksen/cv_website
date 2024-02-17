@@ -122,6 +122,7 @@ const Skills = () => {
                             <a>Customer Service, </a>
                             <a>Graphic Design, </a>
                             <a>Creative, </a>
+                            <a>Quick Learner, </a>
                             <a>and Public Speaking </a>
                         </p>
                         <p className='skillText'>
