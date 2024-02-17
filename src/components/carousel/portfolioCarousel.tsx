@@ -1,10 +1,10 @@
 import React, {useCallback} from "react";
 import useEmblaCarousel from 'embla-carousel-react'
-import homePage from "../../../public/homePage.jpg";
-import homePageScrolled from "../../../public/homePageScrolled.jpg";
-import greenHealth from "../../../public/greenHealth.jpg";
-import robotAssembly from "../../../public/robotAssemnly.jpg";
-import robotUpright from "../../../public/robotUpright.jpg";
+import homePage from "@/assets/projects/greenkeeper/homePage.jpg";
+import homePageScrolled from "@/assets/projects/greenkeeper/homePageScrolled.jpg";
+import greenHealth from "@/assets/projects/greenkeeper/greenHealth.jpg";
+import robotAssembly from "@/assets/projects/greenkeeper/robotAssemnly.jpg";
+import robotUpright from "@/assets/projects/greenkeeper/robotUpright.jpg";
 import styles from "@/components/carousel/portfolioCarousel.module.scss";
 import Image from "next/image";
 
