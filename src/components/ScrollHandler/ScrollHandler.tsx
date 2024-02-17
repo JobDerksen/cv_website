@@ -5,22 +5,23 @@ import useWindowDimensions from "../../hooks/useWindowDimensions"
 interface ScrollHandlerProps {
     className: string;
     elementRef: React.RefObject<HTMLDivElement>;
-    initialScrollMultiplier: number;
-    endScrollMultiplier: number;
+    scrollMultiplier: number;
+    endScrollOffset: number;
+    startScrollOffset?: number;
 }
 
-const ScrollHandler: FC<ScrollHandlerProps> = ({ elementRef, className, initialScrollMultiplier,endScrollMultiplier }) => {
+const ScrollHandler: FC<ScrollHandlerProps> = ({ elementRef, className, scrollMultiplier,endScrollOffset, startScrollOffset = 0}) => {
     const scrollPosition = useScroll(); //hook which gets the scroll position
     const screenHeight = useWindowDimensions().height; //this gets height of the screen and responds searchbar
 
     useEffect(() => {
         //initial and end scroll multipliers are used to trigger the start and end scroll position
-        if (scrollPosition.y > screenHeight * initialScrollMultiplier && scrollPosition.y < screenHeight * endScrollMultiplier) {
+        if (scrollPosition.y > ((scrollPosition.total / scrollMultiplier) + startScrollOffset) && scrollPosition.y < ((scrollPosition.total / scrollMultiplier) + endScrollOffset)) {
             elementRef.current?.classList.add(className);
         } else {
             elementRef.current?.classList.remove(className);
         }
-    }, [scrollPosition, screenHeight, initialScrollMultiplier, endScrollMultiplier, elementRef, className]);
+    }, [scrollPosition, screenHeight, scrollMultiplier, elementRef, className, startScrollOffset, endScrollOffset]);
 
     return null;
 };

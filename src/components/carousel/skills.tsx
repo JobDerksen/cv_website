@@ -32,7 +32,7 @@ const Skills = () => {
 
             }>
                 <div className={clsx({
-                    [styles['styles.embla__slide']]: isMobileScreen,
+                    [styles['embla__slide']]: isMobileScreen,
                     ['desktopWidth']: !isMobileScreen,
                 })}>
                     <InfoCard
@@ -74,7 +74,7 @@ const Skills = () => {
                     </InfoCard>
                 </div>
                 <div className={clsx({
-                    [styles['styles.embla__slide']]: isMobileScreen,
+                    [styles['embla__slide']]: isMobileScreen,
                     ['desktopWidth']: !isMobileScreen,
                 })}>
                     <InfoCard
@@ -104,7 +104,7 @@ const Skills = () => {
                     </InfoCard>
                 </div>
                 <div className={clsx({
-                    [styles['styles.embla__slide']]: isMobileScreen,
+                    [styles['embla__slide']]: isMobileScreen,
                     ['desktopWidth']: !isMobileScreen,
                 })}>
                     <InfoCard
@@ -122,6 +122,7 @@ const Skills = () => {
                             <a>Customer Service, </a>
                             <a>Graphic Design, </a>
                             <a>Creative, </a>
+                            <a>Quick Learner, </a>
                             <a>and Public Speaking </a>
                         </p>
                         <p className='skillText'>

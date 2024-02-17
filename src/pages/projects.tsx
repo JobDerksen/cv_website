@@ -5,6 +5,7 @@ import ScrollHandler from "@/components/ScrollHandler/ScrollHandler";
 import ParticlesComp from "@/particles/Particles";
 import clsx from "clsx";
 import useWindowDimensions from "../hooks/useWindowDimensions"
+import PortfolioCarousel from "@/components/carousel/portfolioCarousel";
 
 const Projects = () => {
     const portfolioRef = useRef<HTMLDivElement>(null);
@@ -33,25 +34,20 @@ const Projects = () => {
     }, []);
 
     useEffect(() => {
-        if(screenWidth < 1024){
+        if(screenWidth <= 1024){
             if(contentHeightBanner > (92)){
                 setShowParticles(true)
             } else{
                 setShowParticles(false)
             }
         }else {
-            if(contentHeightBanner > (184)){
+            if(contentHeightBanner > (183)){
                 setShowParticles(true)
             } else{
                 setShowParticles(false)
             }
         }
     }, [contentHeightBanner, screenWidth]);
-
-    const balls = () => {
-        if(screenWidth < 1024) return 2.55
-        else return 2.43
-    }
 
     return(
         <div className={styles.container} id='#portfolio'>
@@ -76,21 +72,76 @@ const Projects = () => {
             </header>
             {/*https://www.energyvoice.com/oilandgas/north-sea/188096/aberdeen-school-scoops-top-oil-and-gas-challenge/*/}
             {/*https://www.agcc.co.uk/news-article/aberdeen-grammar-school-wins-top-prize-at-final-of-techfests-stem-in-the-pipeline-oil-and-gas-challenge*/}
-            <main>
+            <main className={styles.main}>
+                <h4 className='sectionHead' style={{color:'#e0e0e0e0'}}>University Projects <span
+                    style={{fontStyle:'italic'}}>2019 - Present</span>
+                </h4>
+                <div className={styles.projectLeft}>
+                    <div className={styles.project}>
+                        <section>
+                            <h1>Robotic Greenkeeper</h1>
+                        </section>
+                        <div className={styles.balls}>
+                            <PortfolioCarousel/>
+                        </div>
+                        <div>
+                            <div className={styles.outcomes}>
+                                <p>Skills Used: <span>Next.js, Typescript, SCSS, HTML, Python, Arduino(C++), Cloud Computing(AWS, Web hosting and APIs), Artificial Intelligence, Soldering, Teamwork</span>
+                                </p>
+                                <p>Type: <span>Group Meng Computing & Electronic Electrical Engineering Project </span>
+                                </p>
+                            </div>
+                            <div className={styles.outcomes}>
+                                <p>Description:
+                                    <a>
+                                        This group project is the culmination of my whole educational career and is thus far
+                                        the highlight. This project is a challenge and takes into the computing side and electronic
+                                        engineering side and is so far the most valuable experience I have had the pleasure to be a part of.
+                                        This project is creating a robot which is to scan a golf green to look for and fix pitch marks, indents caused
+                                        by the ball landing onto the surface. It also is to classify the health of the soil on the green
+                                        by testing the nutrient composition.
+                                    </a>
+                                </p>
+                            </div>
 
+                            <div className={styles.outcomes}>
+                                <p>Year: <span>2023 - Current</span></p>
+                                <p>
+                                    <a
+                                        className={styles.externalLink}
+                                        target="_blank"
+                                        href="https://main.d1knm3fjtjv9v5.amplifyapp.com/"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <span>Visit</span>
+                                    </a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <h4 className='sectionHead' style={{color: '#e0e0e0e0'}}>Personal Projects <span
+                    style={{fontStyle: 'italic'}}>2021 - Present</span>
+                </h4>
+                <h4 className='sectionHead' style={{color: '#e0e0e0e0'}}>School Projects <span
+                    style={{fontStyle: 'italic'}}>2017 - 2019</span>
+                </h4>
             </main>
             <ScrollHandler
                 className={styles.pageTitle_scroll}
                 elementRef={portfolioRef}
-                initialScrollMultiplier={2}
-                endScrollMultiplier={balls()}
+                startScrollOffset={-100}
+                scrollMultiplier={2.3}
+                endScrollOffset={184}
             />
 
             <ScrollHandler
                 className={styles.gradient_after}
                 elementRef={gradientRef}
-                initialScrollMultiplier={2}
-                endScrollMultiplier={20}
+                startScrollOffset={-100}
+                scrollMultiplier={2.275}
+                endScrollOffset={200000}
             />
         </div>
     )
