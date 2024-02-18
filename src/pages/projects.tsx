@@ -5,7 +5,15 @@ import ScrollHandler from "@/components/ScrollHandler/ScrollHandler";
 import ParticlesComp from "@/particles/Particles";
 import clsx from "clsx";
 import useWindowDimensions from "../hooks/useWindowDimensions"
-import PortfolioCarousel from "@/components/carousel/portfolioCarousel";
+import GreenkeeperCarousel from "../components/carousel/greenkeeperCarousel";
+import PortfolioCard from '../components/cards/portfolioCard'
+import CheckoutCarousel from "@/components/carousel/checkoutCarousel";
+import TachometerCarousel from "@/components/carousel/tachometerCarousel";
+import Image from "next/image";
+import EmptyCalc from "@/assets/projects/billSplitter/EmptyCalc.jpg";
+import FilledCalc from "@/assets/projects/billSplitter/FilledCalc.jpg";
+import SelectCurrency from "@/assets/projects/billSplitter/SelectCurrency.jpg";
+import BostonMetroCarousel from "@/components/carousel/bostonMetroCarousel";
 
 const Projects = () => {
     const portfolioRef = useRef<HTMLDivElement>(null);
@@ -15,6 +23,7 @@ const Projects = () => {
     const heroSizeRef = useRef<HTMLDivElement>(null);
 
     const [showParticles, setShowParticles] = useState(false)
+    const [flip, setFlip] = useState(false)
 
     const screenWidth = useWindowDimensions().width;
 
@@ -35,12 +44,14 @@ const Projects = () => {
 
     useEffect(() => {
         if(screenWidth <= 1024){
+            setFlip(true)
             if(contentHeightBanner > (92)){
                 setShowParticles(true)
             } else{
                 setShowParticles(false)
             }
         }else {
+            setFlip(false)
             if(contentHeightBanner > (183)){
                 setShowParticles(true)
             } else{
@@ -76,72 +87,168 @@ const Projects = () => {
                 <h4 className='sectionHead' style={{color:'#e0e0e0e0'}}>University Projects <span
                     style={{fontStyle:'italic'}}>2019 - Present</span>
                 </h4>
-                <div className={styles.projectLeft}>
-                    <div className={styles.project}>
-                        <section>
-                            <h1>Robotic Greenkeeper</h1>
-                        </section>
-                        <div className={styles.balls}>
-                            <PortfolioCarousel/>
-                        </div>
-                        <div>
-                            <div className={styles.outcomes}>
-                                <p>Skills Used: <span>Next.js, Typescript, SCSS, HTML, Python, Arduino(C++), Cloud Computing(AWS, Web hosting and APIs), Artificial Intelligence, Soldering, Teamwork</span>
-                                </p>
-                                <p>Type: <span>Group Meng Computing & Electronic Electrical Engineering Project </span>
-                                </p>
-                            </div>
-                            <div className={styles.outcomes}>
-                                <p>Description:
-                                    <a>
-                                        This group project is the culmination of my whole educational career and is thus far
-                                        the highlight. This project is a challenge and takes into the computing side and electronic
-                                        engineering side and is so far the most valuable experience I have had the pleasure to be a part of.
-                                        This project is creating a robot which is to scan a golf green to look for and fix pitch marks, indents caused
-                                        by the ball landing onto the surface. It also is to classify the health of the soil on the green
-                                        by testing the nutrient composition.
-                                    </a>
-                                </p>
-                            </div>
+                <PortfolioCard
+                    title={'Robotic Greenkeeper'}
+                    skills={'Next.js, Typescript, SCSS, HTML, Python, Arduino(C++), Cloud Computing(AWS, Web hosting and APIs), Artificial Intelligence, Gira, Teamwork'}
+                    type={'Group Meng Computing & Electronic Electrical Engineering Project '}
+                    year={'2023 - Current'}
+                    description={
+                        'This group project is the culmination of my whole educational career and is thus far the highlight. ' +
+                        'This project is a challenge and takes into the computing side and electronic engineering side ' +
+                        'and is so far the most valuable experience I have had the pleasure to be a part of. This project ' +
+                        'is creating a robot which is to scan a golf green to look for and fix pitch marks, indents caused ' +
+                        'by the ball landing onto the surface. It also is to classify the health of the soil on the green ' +
+                        'by testing the nutrient composition.'
+                    }
+                    url={"https://main.d1knm3fjtjv9v5.amplifyapp.com/"}
+                    swap={true}
+                    flip={flip}
+                >
+                    <GreenkeeperCarousel/>
+                </PortfolioCard>
+                <PortfolioCard
+                    title={'Checkout Assistant'}
+                    skills={'React Native, Javascript, SQL, PHP, APIs'}
+                    type={'Fourth Year Project, Mobile App'}
+                    year={'2022 - 2023'}
+                    description={''}
+                    url={""}
+                    swap={false}
+                    flip={flip}
+                >
 
-                            <div className={styles.outcomes}>
-                                <p>Year: <span>2023 - Current</span></p>
-                                <p>
-                                    <a
-                                        className={styles.externalLink}
-                                        target="_blank"
-                                        href="https://main.d1knm3fjtjv9v5.amplifyapp.com/"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <span>Visit</span>
-                                    </a>
-                                </p>
-                            </div>
+                    <CheckoutCarousel/>
+                </PortfolioCard>
+                <PortfolioCard
+                    title={'Tachometer'}
+                    skills={'React Native, Javascript, PCB design, Soldering'}
+                    type={'Third Year Group Project, Mobile App'}
+                    year={'2021 - 2022'}
+                    description={''}
+                    url={""}
+                    swap={true}
+                    flip={flip}
+                >
 
-                        </div>
+                    <TachometerCarousel/>
+                </PortfolioCard>
+                <PortfolioCard
+                    title={'Bill Splitter'}
+                    skills={'Javascript, APIs, HTML, CSS, MVC'}
+                    type={'Third Year Solo Project, Web/Mobile App'}
+                    year={'2022'}
+                    description={''}
+                    url={""}
+                    swap={false}
+                    flip={flip}
+                >
+
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src={SelectCurrency}
+                            alt={'home page of app'}
+                            priority={true}
+                            className={styles.image}
+                        />
+                        <Image
+                            src={EmptyCalc}
+                            alt={'home page of app scrolled further'}
+                            priority={true}
+                            className={styles.image}
+                        />
+                        <Image
+                            src={FilledCalc}
+                            alt={'health of green'}
+                            priority={true}
+                            className={styles.image}
+                        />
+
                     </div>
-                </div>
+                </PortfolioCard>
+                <PortfolioCard
+                    title={'Boston Metro System'}
+                    skills={'Java, Sorting Algorithms, OOP, Agile, Swing'}
+                    type={'Third Year Project, Mobile App'}
+                    year={'2022'}
+                    description={''}
+                    url={""}
+                    swap={true}
+                    flip={flip}
+                >
+
+                    <BostonMetroCarousel/>
+                </PortfolioCard>
                 <h4 className='sectionHead' style={{color: '#e0e0e0e0'}}>Personal Projects <span
                     style={{fontStyle: 'italic'}}>2021 - Present</span>
                 </h4>
+                <PortfolioCard
+                    title={'Calorie Tracking App'}
+                    skills={'Next.js, Typescript, SCSS, HTML, Python, Arduino(C++), Cloud Computing(AWS, Web hosting and APIs), Artificial Intelligence, Soldering, Teamwork'}
+                    type={'Group Meng Computing & Electronic Electrical Engineering Project '}
+                    year={'2022'}
+                    description={''}
+                    url={""}
+                    swap={false}
+                    flip={flip}
+                >
+                    <GreenkeeperCarousel/>
+                </PortfolioCard>
+                <PortfolioCard
+                    title={'This Website'}
+                    skills={'React Native, '}
+                    type={'Fourth Year Project, Mobile App'}
+                    year={'Current'}
+                    description={''}
+                    url={""}
+                    swap={true}
+                    flip={flip}
+                >
+
+                    <CheckoutCarousel/>
+                </PortfolioCard>
                 <h4 className='sectionHead' style={{color: '#e0e0e0e0'}}>School Projects <span
                     style={{fontStyle: 'italic'}}>2017 - 2019</span>
                 </h4>
+                <PortfolioCard
+                    title={'F1 in Schools'}
+                    skills={'Next.js, Typescript, SCSS, HTML, Python, Arduino(C++), Cloud Computing(AWS, Web hosting and APIs), Artificial Intelligence, Soldering, Teamwork'}
+                    type={'Group Meng Computing & Electronic Electrical Engineering Project '}
+                    year={'2023 - Current'}
+                    description={''}
+                    url={""}
+                    swap={false}
+                    flip={flip}
+                >
+                    <GreenkeeperCarousel/>
+                </PortfolioCard>
+                <PortfolioCard
+                    title={'Stem in the Pipeline'}
+                    skills={'React Native, '}
+                    type={'Fourth Year Project, Mobile App'}
+                    year={'2022 - 2023'}
+                    description={''}
+                    url={""}
+                    swap={true}
+                    flip={flip}
+                >
+
+                    <CheckoutCarousel/>
+                </PortfolioCard>
             </main>
             <ScrollHandler
                 className={styles.pageTitle_scroll}
                 elementRef={portfolioRef}
                 startScrollOffset={-100}
-                scrollMultiplier={2.3}
-                endScrollOffset={184}
+                scrollMultiplier={3.5}
+                endScrollOffset={368}
             />
 
             <ScrollHandler
                 className={styles.gradient_after}
                 elementRef={gradientRef}
                 startScrollOffset={-100}
-                scrollMultiplier={2.275}
-                endScrollOffset={200000}
+                scrollMultiplier={3.5}
+                endScrollOffset={368}
             />
         </div>
     )

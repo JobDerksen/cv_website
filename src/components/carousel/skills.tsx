@@ -1,4 +1,4 @@
-import InfoCard from "@/components/infoCards/infoCard";
+import InfoCard from "@/components/cards/infoCard";
 import hand from "../../../public/hand.png";
 import styles from "./carousel.module.scss";
 import skillhands from "../../../public/skillhands.png";

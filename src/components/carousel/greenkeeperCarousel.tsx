@@ -1,14 +1,14 @@
 import React, {useCallback} from "react";
 import useEmblaCarousel from 'embla-carousel-react'
-import homePage from "@/assets/projects/greenkeeper/homePage.jpg";
-import homePageScrolled from "@/assets/projects/greenkeeper/homePageScrolled.jpg";
-import greenHealth from "@/assets/projects/greenkeeper/greenHealth.jpg";
-import robotAssembly from "@/assets/projects/greenkeeper/RobotAssemnly.jpg";
-import robotUpright from "@/assets/projects/greenkeeper/RobotUpright.jpg";
-import styles from "@/components/carousel/portfolioCarousel.module.scss";
+import homePage from "../../assets/projects/greenkeeper/homePage.jpg";
+import homePageScrolled from "../../assets/projects/greenkeeper/homePageScrolled.jpg";
+import greenHealth from "../../assets/projects/greenkeeper/greenHealth.jpg";
+import robotAssembly from "../../assets/projects/greenkeeper/RobotAssemnly.jpg";
+import robotUpright from "../../assets/projects/greenkeeper/RobotUpright.jpg";
+import styles from "./portfolioCarousel.module.scss";
 import Image from "next/image";
 
-const PortfolioCarousel = () => {
+const GreenkeeperCarousel = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel()
 
     const scrollPrev = useCallback(() => {
@@ -26,7 +26,7 @@ const PortfolioCarousel = () => {
                     <div className={styles.imageContainer}>
                         <Image
                             src={robotUpright}
-                            alt={'balls'}
+                            alt={'Robotic green keeper robot'}
                             priority={true}
                             className={styles.image}
                         />
@@ -36,7 +36,7 @@ const PortfolioCarousel = () => {
                     <div className={styles.imageContainer}>
                         <Image
                             src={robotAssembly}
-                            alt={'balls'}
+                            alt={'Robotic green keeper robot upside down under construction'}
                             priority={true}
                             className={styles.image}
                         />
@@ -46,19 +46,19 @@ const PortfolioCarousel = () => {
                     <div className={styles.imageContainer}>
                         <Image
                             src={homePage}
-                            alt={'balls'}
+                            alt={'home page of app'}
                             priority={true}
                             className={styles.image}
                         />
                         <Image
                             src={homePageScrolled}
-                            alt={'balls'}
+                            alt={'home page of app scrolled further'}
                             priority={true}
                             className={styles.image}
                         />
                         <Image
                             src={greenHealth}
-                            alt={'balls'}
+                            alt={'health of green'}
                             priority={true}
                             className={styles.image}
                         />
@@ -74,4 +74,4 @@ const PortfolioCarousel = () => {
     )
 }
 
-export default PortfolioCarousel;
+export default GreenkeeperCarousel;
