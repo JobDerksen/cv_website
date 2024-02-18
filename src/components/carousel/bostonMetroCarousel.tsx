@@ -1,8 +1,11 @@
 import React, {useCallback} from "react";
 import useEmblaCarousel from 'embla-carousel-react'
-import CalculatedRoute from "../../assets/projects/bostonMetro/CalculatedRoute.jpg";
-import Main from "../../assets/projects/bostonMetro/Main.jpg";
-import Personal from "../../assets/projects/bostonMetro/Personal.jpg"
+// @ts-ignore
+import CalculatedRoute from "../../assets/projects/bostonMetro/CalculatedRoute.JPG";
+// @ts-ignore
+import Main from "../../assets/projects/bostonMetro/Main.JPG";
+// @ts-ignore
+import Personal from "../../assets/projects/bostonMetro/Personal.JPG"
 import styles from "./portfolioCarousel.module.scss";
 import Image from "next/image";
 
