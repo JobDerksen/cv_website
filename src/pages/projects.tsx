@@ -14,6 +14,7 @@ import EmptyCalc from "@/assets/projects/billSplitter/EmptyCalc.jpg";
 import FilledCalc from "@/assets/projects/billSplitter/FilledCalc.jpg";
 import SelectCurrency from "@/assets/projects/billSplitter/SelectCurrency.jpg";
 import BostonMetroCarousel from "@/components/carousel/bostonMetroCarousel";
+import Model from '@/components/3Dmodel/3DModel'
 
 const Projects = () => {
     const portfolioRef = useRef<HTMLDivElement>(null);
@@ -182,8 +183,8 @@ const Projects = () => {
                     style={{fontStyle: 'italic'}}>2021 - Present</span>
                 </h4>
                 <PortfolioCard
-                    title={'Calorie Tracking App'}
-                    skills={'Next.js, Typescript, SCSS, HTML, Python, Arduino(C++), Cloud Computing(AWS, Web hosting and APIs), Artificial Intelligence, Soldering, Teamwork'}
+                    title={'Calorie Tracking Mobile App'}
+                    skills={'React Native'}
                     type={'Group Meng Computing & Electronic Electrical Engineering Project '}
                     year={'2022'}
                     description={''}
@@ -211,21 +212,23 @@ const Projects = () => {
                 </h4>
                 <PortfolioCard
                     title={'F1 in Schools'}
-                    skills={'Next.js, Typescript, SCSS, HTML, Python, Arduino(C++), Cloud Computing(AWS, Web hosting and APIs), Artificial Intelligence, Soldering, Teamwork'}
-                    type={'Group Meng Computing & Electronic Electrical Engineering Project '}
-                    year={'2023 - Current'}
+                    skills={''}
+                    type={'Extra Curricular Project'}
+                    year={'2018-2019'}
                     description={''}
                     url={""}
                     swap={false}
                     flip={flip}
                 >
-                    <GreenkeeperCarousel/>
+                    <div className={styles.image}>
+                        <Model/>
+                    </div>
                 </PortfolioCard>
                 <PortfolioCard
                     title={'Stem in the Pipeline'}
-                    skills={'React Native, '}
-                    type={'Fourth Year Project, Mobile App'}
-                    year={'2022 - 2023'}
+                    skills={''}
+                    type={'Extra Curricular Project'}
+                    year={'2019'}
                     description={''}
                     url={""}
                     swap={true}
