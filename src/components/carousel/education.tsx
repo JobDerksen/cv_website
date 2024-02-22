@@ -1,4 +1,4 @@
-import InfoCard from "@/components/infoCards/infoCard";
+import InfoCard from "@/components/cards/infoCard";
 import styles from "./carousel.module.scss";
 import React, {useEffect, useState} from "react";
 import useEmblaCarousel from 'embla-carousel-react'

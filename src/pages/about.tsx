@@ -72,14 +72,14 @@ const About = () => {
             className={styles.pageTitle_scroll}
             elementRef={aboutRef}
             startScrollOffset={-100}
-            scrollMultiplier={5.3}
+            scrollMultiplier={8}
             endScrollOffset={184}
         />
 
         <ScrollHandler
             className={styles.gradient_after}
             elementRef={gradientRef}
-            scrollMultiplier={5.5}
+            scrollMultiplier={7.75}
             endScrollOffset={2000}
         />
     </div>
