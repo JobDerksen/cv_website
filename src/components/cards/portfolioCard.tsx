@@ -8,7 +8,7 @@ interface cardProps {
     type: string,
     year: string,
     description: string,
-    url: string,
+    url ?: string,
     children: ReactNode,
     swap: boolean,
     flip: boolean,
@@ -48,7 +48,11 @@ const PortfolioCard: FC<cardProps> = ({title,skills, type,year,description, url,
                             </a>
                         </p>
                     </div>
-                    <div className={styles.outcomes}>
+                    <div
+                        className={clsx({
+                        [styles['outcomes']]: url,
+                        [styles['none']]: !url
+                    })}>
                         <p>
                             <a
                                 className={styles.externalLink}
@@ -105,7 +109,11 @@ const PortfolioCard: FC<cardProps> = ({title,skills, type,year,description, url,
                         </p>
                     </div>
 
-                    <div className={styles.outcomes}>
+                    <div
+                        className={clsx({
+                            [styles['outcomes']]: url,
+                            [styles['none']]: !url
+                        })}>
                         <p>
                             <a
                                 className={styles.externalLink}
@@ -119,12 +127,12 @@ const PortfolioCard: FC<cardProps> = ({title,skills, type,year,description, url,
                     </div>
 
                 </div>
-                <div className={styles.balls}>
-                    {children}
-                </div>
-                <section>
-                    <h1
-                        className={clsx({
+                    <div className={styles.balls}>
+                        {children}
+                    </div>
+                    <section>
+                        <h1
+                            className={clsx({
                         [styles['']]: !flip,
                         [styles['none']]: flip,})}
                     >

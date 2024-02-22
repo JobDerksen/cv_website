@@ -13,10 +13,11 @@ const MeshComponent = () => {
     const gltf = useLoader(GLTFLoader, fileUrl);
 
     useFrame(() => {
-        mesh.current.rotation.y += 0.005;
-        mesh.current.position.y = -2;
-        mesh.current.position.z = -13.5;
-        mesh.current.rotation.x = 0.4;
+        mesh.current.position.x = -5;
+
+        mesh.current.rotation.x = 1;
+        mesh.current.rotation.z += 0.01;
+        mesh.current.rotation.y = 1.2;
     });
 
     return (
@@ -29,10 +30,10 @@ const MeshComponent = () => {
 const Model = () => {
     return (
         <div className={styles.container}>
-            <Canvas>
-                <OrbitControls maxAzimuthAngle={-100}/>
+            <Canvas camera={{ position: [0, 8, 8] }}>
+                <OrbitControls />
                 <ambientLight />
-                <pointLight intensity={100} color={'#FFF'}/>
+                <pointLight intensity={75} color={'#FFF'} position={[2,2,2]}/>
                 <MeshComponent />
             </Canvas>
         </div>

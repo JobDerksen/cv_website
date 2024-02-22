@@ -113,7 +113,6 @@ const Projects = () => {
                     type={'Fourth Year Project, Mobile App'}
                     year={'2022 - 2023'}
                     description={''}
-                    url={""}
                     swap={false}
                     flip={flip}
                 >
@@ -126,7 +125,6 @@ const Projects = () => {
                     type={'Third Year Group Project, Mobile App'}
                     year={'2021 - 2022'}
                     description={''}
-                    url={""}
                     swap={true}
                     flip={flip}
                 >
@@ -139,7 +137,7 @@ const Projects = () => {
                     type={'Third Year Solo Project, Web/Mobile App'}
                     year={'2022'}
                     description={''}
-                    url={""}
+                    url={'https://devweb2021.cis.strath.ac.uk/~ypb19142/MAD_JobDerksen_2sdfsdfsfsdf/BillSplitter/index.html'}
                     swap={false}
                     flip={flip}
                 >
@@ -172,7 +170,6 @@ const Projects = () => {
                     type={'Third Year Project, Mobile App'}
                     year={'2022'}
                     description={''}
-                    url={""}
                     swap={true}
                     flip={flip}
                 >
@@ -188,7 +185,6 @@ const Projects = () => {
                     type={'Group Meng Computing & Electronic Electrical Engineering Project '}
                     year={'2022'}
                     description={''}
-                    url={""}
                     swap={false}
                     flip={flip}
                 >
@@ -200,7 +196,6 @@ const Projects = () => {
                     type={'Fourth Year Project, Mobile App'}
                     year={'Current'}
                     description={''}
-                    url={""}
                     swap={true}
                     flip={flip}
                 >
@@ -216,13 +211,11 @@ const Projects = () => {
                     type={'Extra Curricular Project'}
                     year={'2018-2019'}
                     description={''}
-                    url={""}
+                    url={'https://overdrive18.wixsite.com/home'}
                     swap={false}
                     flip={flip}
                 >
-                    <div className={styles.image}>
-                        <Model/>
-                    </div>
+                    <Model/>
                 </PortfolioCard>
                 <PortfolioCard
                     title={'Stem in the Pipeline'}
@@ -230,7 +223,6 @@ const Projects = () => {
                     type={'Extra Curricular Project'}
                     year={'2019'}
                     description={''}
-                    url={""}
                     swap={true}
                     flip={flip}
                 >

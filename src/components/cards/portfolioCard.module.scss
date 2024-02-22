@@ -35,8 +35,8 @@
 }
 
 .projectLeft {
-  background: linear-gradient(to left, rgba(black, 0.6) 50%, rgba(#060410, 0.6) 80%, rgba(#060410, 1) 90%);
-  margin-top: 2rem;
+  background: linear-gradient(to left, rgba(black, 0.6) 30%, rgba(#060410, 0.6) 50%, rgba(#060410, 1) 100%);
+  margin-top: 4rem;
   margin-left: 15vw;
   padding: 1rem;
   @media (max-width: 1600px) {
@@ -85,8 +85,8 @@
 }
 
 .projectRight{
-  background: linear-gradient(to right, rgba(black, 0.6) 50%, rgba(#060410, 0.6) 80%, rgba(#060410, 1) 90%);
-  margin-top: 2rem;
+  background: linear-gradient(to right, rgba(black, 0.6) 30%, rgba(#060410, 0.6) 50%, rgba(#060410, 1) 100%);
+  margin-top: 4rem;
   margin-right: 15vw;
   padding: 1rem;
   @media (max-width: 1600px) {

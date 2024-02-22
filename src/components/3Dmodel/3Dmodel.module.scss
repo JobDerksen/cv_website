@@ -1,8 +1,17 @@
 .container{
-  height: 30vh;
+  height: 45vh;
   display: flex;
   justify-content: center;
   align-items: center;
+    @media (max-width: 700px) {
+      height: 38vh;
+    }
+    @media (max-width: 500px) {
+      height: 35vh;
+    }
+    @media (max-width: 405px) {
+      height: 30vh;
+    }
   canvas{
 
   }
