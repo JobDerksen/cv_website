@@ -15,6 +15,9 @@ import FilledCalc from "@/assets/projects/billSplitter/FilledCalc.jpg";
 import SelectCurrency from "@/assets/projects/billSplitter/SelectCurrency.jpg";
 import BostonMetroCarousel from "@/components/carousel/bostonMetroCarousel";
 import Model from '@/components/3Dmodel/3DModel'
+import ResModel from '@/components/3Dmodel/reservoir'
+import CalorieTrackerCarousel from "@/components/carousel/calorieTrackerCarousel";
+import WebsiteCarousel from "@/components/carousel/websiteCarousel";
 
 const Projects = () => {
     const portfolioRef = useRef<HTMLDivElement>(null);
@@ -82,10 +85,9 @@ const Projects = () => {
                     </section>
                 </div>
             </header>
-            {/*https://www.energyvoice.com/oilandgas/north-sea/188096/aberdeen-school-scoops-top-oil-and-gas-challenge/*/}
             {/*https://www.agcc.co.uk/news-article/aberdeen-grammar-school-wins-top-prize-at-final-of-techfests-stem-in-the-pipeline-oil-and-gas-challenge*/}
             <main className={styles.main}>
-                <h4 className='sectionHead' style={{color:'#e0e0e0e0'}}>University Projects <span
+                <h4 className='sectionHeadPortfolio' style={{color:'#e0e0e0e0'}}>University Projects <span
                     style={{fontStyle:'italic'}}>2019 - Present</span>
                 </h4>
                 <PortfolioCard
@@ -112,7 +114,13 @@ const Projects = () => {
                     skills={'React Native, Javascript, SQL, PHP, APIs'}
                     type={'Fourth Year Project, Mobile App'}
                     year={'2022 - 2023'}
-                    description={''}
+                    description={
+                        'The project aim was to help shoppers simplify their grocery shopping scan their groceries ' +
+                        'as they are shopping and then have the app generate a barcode which was to be scanned by the cashier ' +
+                        'The app has the ability to have shoppers scan items using the phones camera to retrieve the ' +
+                        'item name and price off a custom database through the use of PHP and SQL. The app also stored ' +
+                        'and displays statistics based off the spending and shop preferences.'
+                }
                     swap={false}
                     flip={flip}
                 >
@@ -176,7 +184,7 @@ const Projects = () => {
 
                     <BostonMetroCarousel/>
                 </PortfolioCard>
-                <h4 className='sectionHead' style={{color: '#e0e0e0e0'}}>Personal Projects <span
+                <h4 className='sectionHeadPortfolio' style={{color: '#e0e0e0e0'}}>Personal Projects <span
                     style={{fontStyle: 'italic'}}>2021 - Present</span>
                 </h4>
                 <PortfolioCard
@@ -188,7 +196,7 @@ const Projects = () => {
                     swap={false}
                     flip={flip}
                 >
-                    <GreenkeeperCarousel/>
+                    <CalorieTrackerCarousel/>
                 </PortfolioCard>
                 <PortfolioCard
                     title={'This Website'}
@@ -200,9 +208,9 @@ const Projects = () => {
                     flip={flip}
                 >
 
-                    <CheckoutCarousel/>
+                    <WebsiteCarousel/>
                 </PortfolioCard>
-                <h4 className='sectionHead' style={{color: '#e0e0e0e0'}}>School Projects <span
+                <h4 className='sectionHeadPortfolio' style={{color: '#e0e0e0e0'}}>School Projects <span
                     style={{fontStyle: 'italic'}}>2017 - 2019</span>
                 </h4>
                 <PortfolioCard
@@ -215,7 +223,10 @@ const Projects = () => {
                     swap={false}
                     flip={flip}
                 >
-                    <Model/>
+                    <div className={styles.model}>
+                        <Model/>
+                    </div>
+
                 </PortfolioCard>
                 <PortfolioCard
                     title={'Stem in the Pipeline'}
@@ -225,25 +236,28 @@ const Projects = () => {
                     description={''}
                     swap={true}
                     flip={flip}
+                    url={'https://www.energyvoice.com/oilandgas/north-sea/188096/aberdeen-school-scoops-top-oil-and-gas-challenge/'}
                 >
 
-                    <CheckoutCarousel/>
+                    <div className={styles.model}>
+                        <ResModel/>
+                    </div>
                 </PortfolioCard>
             </main>
             <ScrollHandler
                 className={styles.pageTitle_scroll}
                 elementRef={portfolioRef}
-                startScrollOffset={-100}
-                scrollMultiplier={3.5}
-                endScrollOffset={368}
+                startScrollOffset={0}
+                scrollMultiplier={4}
+                endScrollOffset={185}
             />
 
             <ScrollHandler
                 className={styles.gradient_after}
                 elementRef={gradientRef}
-                startScrollOffset={-100}
-                scrollMultiplier={3.5}
-                endScrollOffset={368}
+                startScrollOffset={0}
+                scrollMultiplier={4}
+                endScrollOffset={185}
             />
         </div>
     )
