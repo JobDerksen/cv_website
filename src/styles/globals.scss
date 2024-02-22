@@ -103,7 +103,19 @@ body {
   @media (max-width: 820px) {
     font-size: 1rem;
   }
+}
 
+.sectionHeadPortfolio{
+  width: 100%;
+  color: black;
+  border-bottom-color: black;
+  border-bottom: solid;
+  border-width: 0.05rem;
+  font-size: 2rem;
+  font-weight: 600;
+  @media (max-width: 820px) {
+    font-size: 1.25rem;
+  }
 }
 
 .sectionHeadNoUnderline{
