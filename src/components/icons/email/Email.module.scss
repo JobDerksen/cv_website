@@ -1,14 +1,14 @@
 .emailIcon {
   width: 35px;
   height: 25px;
-  background-color: #232b2b;
+  background-color: transparent;
   border: 2px solid #e0e0e0;
   position: relative;
   border-radius: 5px;
   @media (max-width: 415px) {
     width: 23.3333px;
     height: 16.667px;
-    border: 1px solid transparent;
+    border: 1px solid #e0e0e0;
   }
 }
 

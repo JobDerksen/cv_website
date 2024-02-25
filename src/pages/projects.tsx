@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import Head from "next/head";
 import styles from '@/styles/projects.module.scss'
 import ScrollHandler from "@/components/ScrollHandler/ScrollHandler";
-import ParticlesComp from "@/particles/Particles";
+import ParticlesComp from "../../components/src/particles/Particles";
 import clsx from "clsx";
 import useWindowDimensions from "../hooks/useWindowDimensions"
 import GreenkeeperCarousel from "../components/carousel/greenkeeperCarousel";
@@ -28,8 +28,6 @@ const Projects = () => {
 
     const [showParticles, setShowParticles] = useState(false)
     const [flip, setFlip] = useState(false)
-    const [scrollMultiplier, setScrollMultiplier] = useState(2.35)
-    const [endScroll, setEndScroll] = useState(184)
 
     const screenWidth = useWindowDimensions().width;
 
@@ -51,9 +49,6 @@ const Projects = () => {
     useEffect(() => {
         if(screenWidth <= 1024){
             setFlip(true)
-            setEndScroll(94)
-            if(screenWidth < 760) setScrollMultiplier(2.1)
-            else setScrollMultiplier(2.35)
             if(contentHeightBanner > (92)){
                 setShowParticles(true)
             } else{
@@ -61,8 +56,6 @@ const Projects = () => {
             }
         }else {
             setFlip(false)
-            setEndScroll(184)
-            setScrollMultiplier(2.35)
             if(contentHeightBanner > (183)){
                 setShowParticles(true)
             } else{
@@ -227,7 +220,9 @@ const Projects = () => {
                     year={'Current'}
                     description={
                         'I Made this website to display my portfolio and to show off my developer skills ' +
-                        'it as been a highly fulfilling and creative process.'
+                        'it as been a highly fulfilling and creative process. The website exists under two domains ' +
+                        'Jobderksen.com and Jobderksen.tech which is a web3 domain, I got this domain since I thought it may come ' +
+                        'of further use in the future.'
                 }
                     swap={true}
                     flip={flip}
@@ -286,17 +281,13 @@ const Projects = () => {
             <ScrollHandler
                 className={styles.pageTitle_scroll}
                 elementRef={portfolioRef}
-                startScrollOffset={0}
-                scrollMultiplier={scrollMultiplier}
-                endScrollOffset={100 + endScroll}
+                startScrollOffset={1800}
             />
 
             <ScrollHandler
                 className={styles.gradient_after}
                 elementRef={gradientRef}
-                startScrollOffset={0}
-                scrollMultiplier={scrollMultiplier}
-                endScrollOffset={100 + endScroll}
+                startScrollOffset={1800}
             />
         </div>
     )

@@ -35,15 +35,13 @@ export const Navigation = (): React.JSX.Element => {
         }
     }
 
-    const [offset, setOffset] = useState(0)
-
     //if on tablet or mobile the scroll offset has to account for the menu
     const returnOffset = () => {
         if(screenWidth <= 1400){
-            return offset/3 -52
+            return -52;
         }
         else {
-            return offset
+            return 0
         }
 
     }
@@ -59,7 +57,6 @@ export const Navigation = (): React.JSX.Element => {
                     duration={500}
                     onClick={()=>{
                         setActive(false)
-                        setOffset(0)
                     }}
 
                 >
@@ -102,7 +99,6 @@ export const Navigation = (): React.JSX.Element => {
                                     duration={500}
                                     onClick={()=>{
                                         linkSelected()
-                                        setOffset(-139)
                                     }}
                                     isDynamic={true}
                                 >
@@ -120,7 +116,6 @@ export const Navigation = (): React.JSX.Element => {
                                     duration={500}
                                     onClick={()=>{
                                         linkSelected()
-                                        setOffset(0)
                                     }}
                                     isDynamic={true}
                                 >
@@ -138,7 +133,6 @@ export const Navigation = (): React.JSX.Element => {
                                     duration={500}
                                     onClick={()=>{
                                         linkSelected()
-                                        setOffset(0)
                                     }}
                                 >
                                     Contact
