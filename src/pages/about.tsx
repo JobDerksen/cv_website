@@ -4,6 +4,7 @@ import styles from '@/styles/about.module.scss'
 import ScrollHandler from '../components/ScrollHandler/ScrollHandler'
 import Skills from '@/components/carousel/skills'
 import Education from '@/components/carousel/education'
+import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 
 const About = () => {
@@ -12,6 +13,10 @@ const About = () => {
 
     const [contentHeightBanner, setContentHeightBanner] = useState<number>(0);
     const heroSizeRef = useRef<HTMLDivElement>(null);
+
+    const [endScroll, setEndScroll] = useState(184)
+
+    const screenWidth = useWindowDimensions().width;
 
     useEffect(() => {
         const observer = new ResizeObserver((entries) => {
@@ -27,6 +32,14 @@ const About = () => {
             }
         };
     }, []);
+
+    useEffect(() => {
+        if(screenWidth <= 1024){
+            setEndScroll(94)
+        }else {
+            setEndScroll(184)
+        }
+    }, [screenWidth]);
 
     return(
     <div className={styles.body} id='#about'>
@@ -71,16 +84,16 @@ const About = () => {
         <ScrollHandler
             className={styles.pageTitle_scroll}
             elementRef={aboutRef}
-            startScrollOffset={-150}
-            scrollMultiplier={8}
-            endScrollOffset={184}
+            startScrollOffset={0}
+            scrollMultiplier={0.75}
+            endScrollOffset={100+endScroll}
         />
 
         <ScrollHandler
             className={styles.gradient_after}
             elementRef={gradientRef}
-            startScrollOffset={-100}
-            scrollMultiplier={8}
+            startScrollOffset={0}
+            scrollMultiplier={0.9}
             endScrollOffset={2000}
         />
     </div>

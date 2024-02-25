@@ -28,6 +28,8 @@ const Projects = () => {
 
     const [showParticles, setShowParticles] = useState(false)
     const [flip, setFlip] = useState(false)
+    const [scrollMultiplier, setScrollMultiplier] = useState(2.35)
+    const [endScroll, setEndScroll] = useState(184)
 
     const screenWidth = useWindowDimensions().width;
 
@@ -49,6 +51,9 @@ const Projects = () => {
     useEffect(() => {
         if(screenWidth <= 1024){
             setFlip(true)
+            setEndScroll(94)
+            if(screenWidth < 760) setScrollMultiplier(2.1)
+            else setScrollMultiplier(2.35)
             if(contentHeightBanner > (92)){
                 setShowParticles(true)
             } else{
@@ -56,6 +61,8 @@ const Projects = () => {
             }
         }else {
             setFlip(false)
+            setEndScroll(184)
+            setScrollMultiplier(2.35)
             if(contentHeightBanner > (183)){
                 setShowParticles(true)
             } else{
@@ -129,10 +136,16 @@ const Projects = () => {
                 </PortfolioCard>
                 <PortfolioCard
                     title={'Tachometer'}
-                    skills={'React Native, Javascript, PCB design, Soldering'}
+                    skills={'React Native, Javascript, Bluetooth, PCB design, Microcontroller, Soldering'}
                     type={'Third Year Group Project, Mobile App'}
                     year={'2021 - 2022'}
-                    description={''}
+                    description={
+                        'My group and I decided on a tachometer which is a device used to detect RPM. We designed and created a PCB which ' +
+                        'used an infrared LED and a photo diode to cause a voltage change to make a square wave which can be converted ' +
+                        'into an RPM on the microcontroller. We created a mobile app which connected to the microcontroller via a bluetooth module ' +
+                        'the RPM value was displayed in app along with a graph against time. We also implemented a game where three players compete to spin a 3D printed ' +
+                        'hand crank the fastest within 20 seconds.'
+                }
                     swap={true}
                     flip={flip}
                 >
@@ -141,10 +154,14 @@ const Projects = () => {
                 </PortfolioCard>
                 <PortfolioCard
                     title={'Bill Splitter'}
-                    skills={'Javascript, APIs, HTML, CSS, MVC'}
-                    type={'Third Year Solo Project, Web/Mobile App'}
+                    skills={'Javascript, HTML, CSS, APIs, MVC'}
+                    type={'Solo Project, Web/Mobile App'}
                     year={'2022'}
-                    description={''}
+                    description={
+                        'It is a simple web application meant to split a bill, it allows the user to include ' +
+                        'a tip and to round up it is then split evenly. The user can also select the currency of their home ' +
+                        'and the country they are visiting to see the conversions - note that the API we had to use no longer works ' +
+                        'so when visiting the application it will not display correctly.'}
                     url={'https://devweb2021.cis.strath.ac.uk/~ypb19142/MAD_JobDerksen_2sdfsdfsfsdf/BillSplitter/index.html'}
                     swap={false}
                     flip={flip}
@@ -175,24 +192,29 @@ const Projects = () => {
                 <PortfolioCard
                     title={'Boston Metro System'}
                     skills={'Java, Sorting Algorithms, OOP, Agile, Swing'}
-                    type={'Third Year Project, Mobile App'}
+                    type={'Third Year Project'}
                     year={'2022'}
-                    description={''}
+                    description={
+                        'The Boston Metro System is a java application which has a user input their departing station ' +
+                        'and their destination, the user will be shown the route and if they need to change to a different ' +
+                        'line and the time of their journey.'}
                     swap={true}
                     flip={flip}
                 >
-
                     <BostonMetroCarousel/>
                 </PortfolioCard>
                 <h4 className='sectionHeadPortfolio' style={{color: '#e0e0e0e0'}}>Personal Projects <span
                     style={{fontStyle: 'italic'}}>2021 - Present</span>
                 </h4>
                 <PortfolioCard
-                    title={'Calorie Tracking Mobile App'}
+                    title={'Calorie Tracking Mobile'}
                     skills={'React Native'}
-                    type={'Group Meng Computing & Electronic Electrical Engineering Project '}
+                    type={'Mobile App'}
                     year={'2022'}
-                    description={''}
+                    description={
+                        'This app was created to allow me to track my daily caloric and protein intake ' +
+                        'I made this for myself as I wanted an easy to use app to keep on track of my goals to aid ' +
+                        'my gym progress. I found other apps over complicated so instead of using them I made my own.'}
                     swap={false}
                     flip={flip}
                 >
@@ -200,10 +222,13 @@ const Projects = () => {
                 </PortfolioCard>
                 <PortfolioCard
                     title={'This Website'}
-                    skills={'React Native, '}
-                    type={'Fourth Year Project, Mobile App'}
+                    skills={'Next.js'}
+                    type={'Website'}
                     year={'Current'}
-                    description={''}
+                    description={
+                        'I Made this website to display my portfolio and to show off my developer skills ' +
+                        'it as been a highly fulfilling and creative process.'
+                }
                     swap={true}
                     flip={flip}
                 >
@@ -215,10 +240,17 @@ const Projects = () => {
                 </h4>
                 <PortfolioCard
                     title={'F1 in Schools'}
-                    skills={''}
-                    type={'Extra Curricular Project'}
+                    skills={'CAD, Teamwork'}
+                    type={'Extra Curricular School Project'}
                     year={'2018-2019'}
-                    description={''}
+                    description={
+                        'F1 in Schools is a global competition where schools enter and need to design a small ' +
+                        'car which is raced in a straight line using a CO2 canister, teams need ' +
+                        'to fund all the aspects of the competition by using sponsors. There are many aspects besides the car ' +
+                        'such as a pit display, presentations, team uniforms and innovations. My team was placed First ' +
+                        'in Scotland and were invited to the world final in Abu Dhabi but were unable to attend due to the whole team ' +
+                        'starting university and having to fund the money for the flights.'
+                }
                     url={'https://overdrive18.wixsite.com/home'}
                     swap={false}
                     flip={flip}
@@ -230,10 +262,17 @@ const Projects = () => {
                 </PortfolioCard>
                 <PortfolioCard
                     title={'Stem in the Pipeline'}
-                    skills={''}
+                    skills={'CAD, Cost Analysis'}
                     type={'Extra Curricular Project'}
                     year={'2019'}
-                    description={''}
+                    description={
+                        'This was a local competition between schools in Aberdeen where each team is given ' +
+                        'a map where there is an underwater oil reservoir, the total oil in the reservoir needs to be calculated ' +
+                        'and a plan then needs to be developed which consists of how to retrieve the oil by choosing the type of oil rigs ' +
+                        'and how to transfer the oil back to the coast considering the total cost and calculating when the ' +
+                        'operation becomes profitable and what the profit projections are along with creating a report and a ' +
+                        'a display. The model shown is a 3D model of the reservoir.'
+                }
                     swap={true}
                     flip={flip}
                     url={'https://www.energyvoice.com/oilandgas/north-sea/188096/aberdeen-school-scoops-top-oil-and-gas-challenge/'}
@@ -248,16 +287,16 @@ const Projects = () => {
                 className={styles.pageTitle_scroll}
                 elementRef={portfolioRef}
                 startScrollOffset={0}
-                scrollMultiplier={4}
-                endScrollOffset={185}
+                scrollMultiplier={scrollMultiplier}
+                endScrollOffset={100 + endScroll}
             />
 
             <ScrollHandler
                 className={styles.gradient_after}
                 elementRef={gradientRef}
                 startScrollOffset={0}
-                scrollMultiplier={4}
-                endScrollOffset={185}
+                scrollMultiplier={scrollMultiplier}
+                endScrollOffset={100 + endScroll}
             />
         </div>
     )

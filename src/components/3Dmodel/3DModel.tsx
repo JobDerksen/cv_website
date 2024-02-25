@@ -31,7 +31,7 @@ const Model = () => {
     return (
         <div className={styles.container}>
             <Canvas camera={{ position: [0, 8, 10] }}>
-                <OrbitControls />
+                <OrbitControls/>
                 <ambientLight />
                 <pointLight intensity={75} color={'#FFF'} position={[2,2,2]}/>
                 <MeshComponent />

@@ -16,7 +16,7 @@ const ScrollHandler: FC<ScrollHandlerProps> = ({ elementRef, className, scrollMu
 
     useEffect(() => {
         //initial and end scroll multipliers are used to trigger the start and end scroll position
-        if (scrollPosition.y > ((scrollPosition.total / scrollMultiplier) + startScrollOffset) && scrollPosition.y < ((scrollPosition.total / scrollMultiplier) + endScrollOffset)) {
+        if (scrollPosition.y > ((screenHeight *  scrollMultiplier) + startScrollOffset) && scrollPosition.y < ((screenHeight *  scrollMultiplier) + endScrollOffset)) {
             elementRef.current?.classList.add(className);
         } else {
             elementRef.current?.classList.remove(className);
