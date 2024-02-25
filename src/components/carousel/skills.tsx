@@ -56,7 +56,6 @@ const Skills = () => {
                                 <a>PHP, </a>
                                 <a>XML, </a>
                                 <a>XQuery, </a>
-                                <a>RDF, </a>
                                 <a>SPARQL, </a>
                                 <a>OWL, </a>
                                 <a>HTML, </a>
