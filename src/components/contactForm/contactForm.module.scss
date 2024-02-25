@@ -4,32 +4,34 @@
 }
 
 .button{
-  border: 0.01rem solid #4e5555;
+  border: 0.01rem solid #e0e0e0;
+  border-radius: 0.5rem;
   float: right;
   background-color: transparent;
   font-family: 'montserrat', sans-serif;
   cursor: pointer;
   padding: 0.75rem;
   font-size: 1rem;
-  color: #4e5555;
-  font-weight: 400;
+  color: #e0e0e0;
+  font-weight: 600;
+  transition: 0.4s;
   @media (max-width: 800px) {
     margin: 0 0.75rem 0.5rem;
   }
 }
 
 .button:hover{
-  background-color: #4e5555;
-  color: white;
+  background-color: #e0e0e0;
+  color: #2a2a2a;
   @media (max-width: 800px) {
-    background-color: white;
-    color: #4e5555;
+    background-color: #e0e0e0;
+    color: #2a2a2a;
   }
 }
 
 .button:active {
-  background-color: #4e5555;
-  color: white;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
 }
 
 .input_container {
@@ -40,7 +42,7 @@
 
 .input_container:focus-within label {
   transform: translate(0, 12px) scale(0.8);
-  color: #4e5555;
+  color: #e0e0e0;
 }
 
 .input_container .filled {
@@ -54,7 +56,7 @@
   transform: translate(0, 23px) scale(1);
   transform-origin: top left;
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  color: #4e5555;
+  color: #e0e0e0;
   left: 16px;
   top: -0.6rem;
 }
@@ -65,10 +67,21 @@
   box-shadow: none;
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   padding: 24px 16px 4px 16px;
-  border: 0.01rem solid #ccc;
+  border: 0.01rem solid #e0e0e0;
   margin-bottom: 0.5rem;
   font-family: 'montserrat', sans-serif;
   background-color: transparent;
+  color: #e0e0e0;
+}
+
+.input_container input:-webkit-autofill,
+.input_container input:-webkit-autofill:hover,
+.input_container input:-webkit-autofill:focus,
+.input_container input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #e0e0e0;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px #2a2a2a;
 }
 
 .input_container textarea {
@@ -78,11 +91,12 @@
   box-shadow: none;
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   padding: 24px 16px 4px 16px;
-  border: 0.01rem solid #ccc;
+  border: 0.01rem solid #e0e0e0;
   margin-bottom: 0.5rem;
   font-family: 'montserrat', sans-serif;
   resize: none;
   background-color: transparent;
+  color: #e0e0e0;
 }
 
 .input_container input:focus {
@@ -114,7 +128,7 @@
   transform: translate(0, 23px) scale(1);
   transform-origin: top left;
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  color: #4e5555;
+  color: #e0e0e0;
   left: 16px;
   top: -8px;
 }

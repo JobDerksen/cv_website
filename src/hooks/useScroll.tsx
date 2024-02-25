@@ -17,7 +17,7 @@ const useScroll = (): ScrollPosition => {
         setScrollPosition({
             x: window.scrollX,
             y: window.scrollY,
-            total: window.document.documentElement.scrollHeight
+            total: window.document.documentElement.scrollHeight,
         });
     };
 

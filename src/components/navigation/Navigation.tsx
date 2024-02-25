@@ -4,13 +4,11 @@ import styles from './Navigation.module.scss'
 import XIcon from '@/components/icons/xIcon/xIcon'
 import { Link } from "react-scroll";
 import useWindowDimensions from "../../hooks/useWindowDimensions"
-import {useRouter} from "next/router";
 
 export const Navigation = (): React.JSX.Element => {
     const [isMobileScreen, setMobileScreen] = useState(false);
     const [isActive, setActive] = useState(false)
     const screenWidth = useWindowDimensions().width;
-    const router = useRouter();
 
     /*useEffect checks if the screen type, this is to control the menu type - Mobile menu or desktop menu
      and tablet menu which is a combination*/
@@ -30,28 +28,20 @@ export const Navigation = (): React.JSX.Element => {
         };
     }, [isActive, isMobileScreen]);
 
-    const route = (path: string) =>{
-        setActive(false)
-        router.push(path).then(() => {})
-    }
-
     //when page link is pressed on mobile menu and changes hamburger/X icon
-    const linkSelected = (path: string) => {
-        router.push(path).then(() => {})
+    const linkSelected = () => {
         if(isMobileScreen){
             setActive(!isActive)
         }
     }
 
-    const [offset, setOffset] = useState(0)
-
     //if on tablet or mobile the scroll offset has to account for the menu
     const returnOffset = () => {
         if(screenWidth <= 1400){
-            return offset/3 -52
+            return -52;
         }
         else {
-            return offset
+            return 0
         }
 
     }
@@ -66,10 +56,9 @@ export const Navigation = (): React.JSX.Element => {
                     offset={0}
                     duration={500}
                     onClick={()=>{
-                        route('#home');
-                        setOffset(0)
+                        setActive(false)
                     }}
-                    href={'#home'}
+
                 >
                     <h2>
                         <span style={{fontWeight:600}}>Job</span> <span>Derksen</span>
@@ -109,10 +98,8 @@ export const Navigation = (): React.JSX.Element => {
                                     offset={returnOffset()}
                                     duration={500}
                                     onClick={()=>{
-                                        linkSelected("#about")
-                                        setOffset(-139)
+                                        linkSelected()
                                     }}
-                                    href={'#about'}
                                     isDynamic={true}
                                 >
                                     About
@@ -128,10 +115,8 @@ export const Navigation = (): React.JSX.Element => {
                                     offset={returnOffset()}
                                     duration={500}
                                     onClick={()=>{
-                                        linkSelected("#portfolio")
-                                        setOffset(0)
+                                        linkSelected()
                                     }}
-                                    href={'#portfolio'}
                                     isDynamic={true}
                                 >
                                     Portfolio
@@ -147,10 +132,8 @@ export const Navigation = (): React.JSX.Element => {
                                     offset={0}
                                     duration={500}
                                     onClick={()=>{
-                                        linkSelected("#contact")
-                                        setOffset(0)
+                                        linkSelected()
                                     }}
-                                    href={'#contact'}
                                 >
                                     Contact
                                 </Link>

@@ -37,13 +37,13 @@
 .buttons{
   display: flex;
   position: absolute;
-  margin-top: -5rem;
+  margin-top: -2.5rem;
+  padding-left: 1rem;
   gap: 2rem;
-
   a {
     text-decoration: none;
-    font-size: 5rem;
-    font-weight: 200;
+    font-size: 3rem;
+    font-weight: 400;
     opacity: 0.75;
     mix-blend-mode: difference;
     color: white;

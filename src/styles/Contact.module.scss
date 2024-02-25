@@ -11,7 +11,7 @@
 }
 
 .background{
-  background-color: #e0e0e0;
+  background-color :#2a2a2a;
 }
 
 .telephoneContainer{
@@ -22,7 +22,7 @@
 .telephone{
   text-align: center;
   font-size: 1.5rem;
-  color: #232b2b;
+  color: #e0e0e0;
   @media (max-width: 415px) {
     font-size: 1rem;
   }
@@ -35,7 +35,7 @@
 }
 .links{
   font-size: 1.5rem;
-  color: #232b2b;
+  color: #e0e0e0;
   margin-left: 0.2rem;
 
   @media (max-width: 415px) {
@@ -45,6 +45,7 @@
 .image{
   height: 2rem;
   width: 2rem;
+  filter: brightness(100);
   @media (max-width: 415px) {
     height: 1.5rem;
     width: 1.5rem;
@@ -53,6 +54,7 @@
   &__linkedin {
     height: 2rem;
     width: 2.3518rem;
+    filter: brightness(100);
     @media (max-width: 415px) {
       height: 1.5rem;
       width: 1.7639rem;
