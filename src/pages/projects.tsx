@@ -116,9 +116,9 @@ const Projects = () => {
                     year={'2022 - 2023'}
                     description={
                         'The project aim was to help shoppers simplify their grocery shopping scan their groceries ' +
-                        'as they are shopping and then have the app generate a barcode which was to be scanned by the cashier ' +
-                        'The app has the ability to have shoppers scan items using the phones camera to retrieve the ' +
-                        'item name and price off a custom database through the use of PHP and SQL. The app also stored ' +
+                        'as they are shopping and then have the app generate a barcode which is to be scanned by the cashier. ' +
+                        'The app has the ability to scan the barcodes of grocery items using the phones camera which retrieves the ' +
+                        'item name and price off a custom database with the use of PHP and SQL. The app also stores ' +
                         'and displays statistics based off the spending and shop preferences.'
                 }
                     swap={false}
@@ -153,8 +153,10 @@ const Projects = () => {
                     description={
                         'It is a simple web application meant to split a bill, it allows the user to include ' +
                         'a tip and to round up it is then split evenly. The user can also select the currency of their home ' +
-                        'and the country they are visiting to see the conversions - note that the API we had to use no longer works ' +
-                        'so when visiting the application it will not display correctly.'}
+                        'and the country they are visiting to see the conversions. ' +
+                        '- note that the API we had to use no longer works ' +
+                        'so when visiting the application it will not display correctly.'
+                }
                     url={'https://devweb2021.cis.strath.ac.uk/~ypb19142/MAD_JobDerksen_2sdfsdfsfsdf/BillSplitter/index.html'}
                     swap={false}
                     flip={flip}
@@ -207,7 +209,8 @@ const Projects = () => {
                     description={
                         'This app was created to allow me to track my daily caloric and protein intake ' +
                         'I made this for myself as I wanted an easy to use app to keep on track of my goals to aid ' +
-                        'my gym progress. I found other apps over complicated so instead of using them I made my own.'}
+                        'my gym progress. I found other apps over complicated so instead of using them I made my own. '
+                        }
                     swap={false}
                     flip={flip}
                 >
@@ -219,9 +222,9 @@ const Projects = () => {
                     type={'Website'}
                     year={'Current'}
                     description={
-                        'I Made this website to display my portfolio and to show off my developer skills ' +
+                        'I Made this website to display my portfolio and to show off my skills ' +
                         'it as been a highly fulfilling and creative process. The website exists under two domains ' +
-                        'Jobderksen.com and Jobderksen.tech which is a web3 domain, I got this domain since I thought it may come ' +
+                        'Jobderksen.com and Jobderksen.tech which is an NFT/web3 domain, I got this domain since I thought it may come ' +
                         'of further use in the future.'
                 }
                     swap={true}
@@ -243,7 +246,7 @@ const Projects = () => {
                         'car which is raced in a straight line using a CO2 canister, teams need ' +
                         'to fund all the aspects of the competition by using sponsors. There are many aspects besides the car ' +
                         'such as a pit display, presentations, team uniforms and innovations. My team was placed First ' +
-                        'in Scotland and were invited to the world final in Abu Dhabi but were unable to attend due to the whole team ' +
+                        'in Scotland and were invited to the world final in Abu Dhabi but unfortunately were unable to attend due to the whole team ' +
                         'starting university and having to fund the money for the flights.'
                 }
                     url={'https://overdrive18.wixsite.com/home'}
@@ -262,7 +265,7 @@ const Projects = () => {
                     year={'2019'}
                     description={
                         'This was a local competition between schools in Aberdeen where each team is given ' +
-                        'a map where there is an underwater oil reservoir, the total oil in the reservoir needs to be calculated ' +
+                        'a map where there is a sub sea oil reservoir, the total oil in the reservoir needs to be calculated ' +
                         'and a plan then needs to be developed which consists of how to retrieve the oil by choosing the type of oil rigs ' +
                         'and how to transfer the oil back to the coast considering the total cost and calculating when the ' +
                         'operation becomes profitable and what the profit projections are along with creating a report and a ' +
